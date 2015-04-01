@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  
+使用HibernateTemplate访问数据
+
+Spring 的 HibernateTemplate 在 Hibernate Session之上提供了一个抽象层，
+其主要功能是简化打开和关闭Hibernate会话，并且把Hibernate的特定异常转化为Spring ORM异常之一。
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+             
+	<!-- 配置DAO -->             
+	<bean id="personDao" class="hibernate.HibernatePersonDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<!-- 配置 HibernateTemplate -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
+		<!-- sessionFactory属性是 org.hibernate.SessionFactory 实现的一个引用。 -->
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!--  
+	使用典型的Hibernate映射文件
+	
+	如果要使用Hibernate的典型XML映射文件，就应该使用Spring的LocalSessionFactoryBean。
+	它是个Spring工厂Bean，用于生成HibernateSessionFactory实例，从一个或多个XML映射文件获取映射元数据。
+	
+	如果使用基于Annotation的域对象，可以使用Spring的AnnotationSessionFactoryBean来创建SessionFactory。
+	-->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<list>
+				<!-- 这里可以有多个hbm文件 -->
+				<value>hibernate/Person.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/test" />
+		<property name="username" value="root" />
+		<property name="password" value="woailo99" />
+	</bean>
+</beans>         

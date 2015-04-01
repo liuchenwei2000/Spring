@@ -1,0 +1,17 @@
+
+Spring能自动装配Bean与Bean之间的依赖关系，无需使用ref属性显式指定依赖Bean。由容器检查XML配置文件内容，根据某种规则，为主调Bean注入依赖关系。
+
+自动装配可通过<beans>元素的default-autowire属性指定，也可以通过<bean>元素的autowire属性指定。
+也就是说，自动装配可以指定到单独的Bean，容器完全可以让某些Bean使用自动装配，而另一些不使用。
+
+自动装配可以减少配置文件的工作量，但降低了依赖关系的透明性和清晰性，也降低了程序的可读性。
+
+autowire的属性值有如下几个：
+no：不使用自动装配。Bean依赖必须通过ref元素定义。
+byName：根据属性名自动装配。
+byType：根据属性类型自动装配。
+constructor：根据Bean的构造函数参数类型自动装配。
+autodetect：自动探测装配，即先使用constructor来自动装配，然后使用byType方式。
+
+当一个Bean既使用自动装配，又使用ref显式指定依赖时，则显式指定的依赖覆盖自动装配。
+如果不想让某些Bean作为自动装配的候选者，可以为其设置autowire-candidate="false"。

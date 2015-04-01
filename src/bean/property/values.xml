@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+配置<property>时，如果setter方法的形参是基本类型、String、日期等，可直接使用value指定字面值即可。
+如果形参是复合类（POJO），那就需要传入一个对象实例，要么使用ref引用一个容器中已配置的Bean，要么使用<bean>临时配置一个嵌套Bean。
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd
+               ">
+	<!--  
+	Spring允许如下元素为Bean实例的属性指定值：
+	value
+	ref
+	bean
+	list、set、map以及props。
+	-->
+	<bean id="car" class="bean.Car">
+		<!--  
+		<value>元素用于指定基本类型及字符串类型的属性值。
+		Spring将数据从XML文件中解析出来之后，会利用java.beans.PropertyEditor完成类型转换：
+		从String类型传换为所需的参数值类型。如果目标类型是基本数据类型，通常都可以正确转换。
+		-->
+		<property name="name" value="vic" />
+	</bean>
+	
+	<bean id="walkman" class="quickstart.Walkman">
+		<constructor-arg name="name" value="Sony" />
+		<!--  
+		如果需要为Bean配置的属性值是容器中的另一个Bean实例，则应该是用<ref>元素。<ref>元素可指定如下属性：
+		bean：引用在同一份XML配置文件中的其它Bean实例的id值。
+		-->
+		<property name="tape" ref="atape" />
+	</bean>
+	
+	<bean id="atape" class="quickstart.Tape" />
+	
+	<bean id="walkman2" class="quickstart.Walkman">
+		<constructor-arg name="name" value="Sony" />
+		<!--  
+		如果某个Bean不想被Spring容器直接访问，可以使用嵌套Bean。嵌套Bean限制了Bean的访问，但提高了程序的内聚性。
+		-->
+		<property name="tape">
+			<!-- 属性值为嵌套Bean，因为不能由Spring容器直接访问，所以Bean可以没有id属性。 -->
+			<bean class="quickstart.Tape" />
+		</property>
+	</bean>
+</beans>         

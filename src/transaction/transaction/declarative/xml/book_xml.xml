@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Spring2.0专门为声明式事务提供了一些新的配置元素，这些元素位于tx名称空间，而且可以通过添加 spring-tx-4.0.xsd 模式来使用。
+aop名称空间也应该被包括在内，因为这些新的声明式事务配置元素依赖于一些新的AOP配置元素。
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-4.0.xsd
+           http://www.springframework.org/schema/aop 
+           http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+    
+    <!-- 
+	使用<tx:advice>来声明事务性策略。<tx:advice>声明一个事务时，需要一个事务管理器。
+	根据约定，<tx:advice>假定事务管理器会被声明为id为transactionManager的Bean，
+	如果真正的事务管理器有不同的id（比如是txManager），那么将需要在transactionManager参数中指定这个事务管理器的id。
+	-->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+    	<!-- 事务参数在一个<tx:attributes>元素中定义，它包含一个或多个<tx:method>元素。 -->
+    	<tx:attributes>
+    		<!--  
+    		<tx:method>元素为某个（或某些）由name参数（可使用通配符）指定的方法定义事务参数。有以下属性：
+    		propagation：事务的传播规则。
+    		isolation：事务隔离级别。
+    		read-only：事务只读模式。
+    		timeout：为事务定义超时。
+    		rollback-for：指定哪些受查异常应该回滚事务。
+    		no-rollback-for：指定哪些异常不需要回滚事务而继续执行。
+    		-->
+    		<tx:method name="save*" propagation="REQUIRED" />
+    		<tx:method name="find*" propagation="SUPPORTS" read-only="true" />
+    		<tx:method name="delete*" propagation="REQUIRED" isolation="SERIALIZABLE" />
+    	</tx:attributes>
+    </tx:advice>
+    
+    <!--  
+    <tx:advice>只是定义了AOP通知，用于把事务边界通知给方法。但是这只是事务通知，而不是完整的事务切面。
+	在<tx:advice>中没有声明哪些Bean应该被通知————需要一个切点来做这件事。
+	为了完整定义事务性切面，必须定义一个通知其（advisor）。
+    -->
+    <aop:config>
+    	<!-- 
+    	这里的pointcut属性使用切入点表达式表明通知器适用于BookDao接口的所有方法。
+    	哪些方法应该真正运行在事务中以及方法的事务属性都是由这个事务通知来定义的。
+    	-->
+    	<aop:advisor pointcut="execution(* transaction.BookDao.*(..))" advice-ref="txAdvice"/>
+    </aop:config>
+    	       
+	<!-- 配置DAO -->
+	<bean id="bookDao" class="transaction.declarative.BookDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- 配置TransactionManager -->
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/test" />
+		<property name="username" value="root" />
+		<property name="password" value="woailo99" />
+	</bean>
+</beans>         

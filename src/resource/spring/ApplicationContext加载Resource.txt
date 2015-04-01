@@ -1,0 +1,9 @@
+
+当程序创建ApplicationContext实例时，通常也是以Resource的方式来访问配置文件的，所以ApplicationContext完全支持
+ClassPathResource、FileSystemResource、ServletContextResource等资源访问方式。
+
+ApplicationContext实现类可以指定访问策略，具体如下：
+
+ClassPathXmlApplicationContext：对应使用ClassPathResource进行资源访问。
+FileSystemApplicationContext：对应使用FileSystemResource进行资源访问。
+XmlWebApplicationContext：对应使用ServletContextResource进行资源访问。

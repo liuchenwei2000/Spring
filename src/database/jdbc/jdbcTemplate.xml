@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  
+使用JdbcTemplate访问数据
+
+编写基于JDBC的DAO涉及配置JDBC模板Bean、把它装配到DAO类、使用这个模板访问数据库。
+这个过程需要在Spring配置文件里至少配置3个Bean：一个数据源、一个模板、一个DAO。
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+             
+	<!-- 配置DAO -->             
+	<bean id="employeeDao" class="jdbc.JdbcEmployeeDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<!-- 配置 JdbcTemplate -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/test" />
+		<property name="username" value="root" />
+		<property name="password" value="woailo99" />
+	</bean>
+</beans>         

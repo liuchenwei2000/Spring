@@ -1,0 +1,11 @@
+
+ApplicationContext允许以声明的方式操作容器，无需手动创建它，可利用如ContextLoader的支持类，在Web应用启动时自动创建ApplicationContext；也可以采用编程方式创建它。
+
+除了提供BeanFactory所支持的全部功能外，ApplicationContext还有一些额外的功能：
+1，ApplicationContext继承MessageSource接口，因此提供国际化支持。
+2，资源访问，比如URL和文件。
+3，事件机制。
+4，载入多个配置文件。
+5，以声明式的方式启动并创建Spring容器。
+
+ApplicationContext包括BeanFactory的全部功能，应该优先使用，除非某些对内存非常关键的应用才考虑使用BeanFactory。

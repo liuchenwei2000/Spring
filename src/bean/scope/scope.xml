@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               
+	<!--  
+	容器中Bean的作用域：
+	
+	singleton
+	单例模式，在整个Spring容器中将只有一个实例。Spring默认使用的作用域。
+	
+	prototype
+	原型模式，每次通过容器的getBean方法获取的都是一个新的实例。
+	Spring仅仅创建Bean实例，一旦创建成功，容器不再跟踪实例，也不会维护Bean实例的状态。
+	
+	request
+	对于每次HTTP请求都产生一个新实例。当请求响应结束后，该实例消失。
+	实际上通常只会将Web应用的控制器Bean才指定成request作用域。
+	
+	session
+	对于每次HTTP Session都产生一个新实例。
+	
+	global session
+	每个全局的HTTP Session对应一个Bean实例。
+	
+	后面三个作用域只有在Web应用使用Spring时才有效，并且必须在Web应用中增加额外配置才会生效。
+	-->
+	<bean id="default" class="bean.scope.Bean" />
+	<bean id="singleton" class="bean.scope.Bean" scope="singleton" />
+	<bean id="prototype" class="bean.scope.Bean" scope="prototype" />
+</beans>         

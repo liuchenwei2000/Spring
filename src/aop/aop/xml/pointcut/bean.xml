@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-2.0.xsd" 
+	>
+    
+    <!--  
+	<aop:pointcut>元素来定义切入点。
+	当它作为<aop:config>元素的子元素定义时，表名该切入点可被多个切面共享；
+	当它作为<aop:aspect>元素的子元素定义时，表明该切入点只能在对应的切面中有效。
+    -->
+    <aop:config>
+    	<!--  
+    	通常指定以下两个属性：
+    	id：指定切入点的标识名。
+    	expression：指定切入点表达式。
+    	-->
+    	<aop:pointcut id="common_pointcut" expression="execution(* *.*(..))"/>
+    	
+    	<!-- 如果使用了注解定义了切入点，也可以通过如下方式指定切入点。 -->
+    	<aop:pointcut id="anno_pointcut" expression="aop.annotation.pointcut.SystemPointcut.anyMethod()" />
+    	
+    	<aop:aspect id="adviceAspect" ref="adviceBean">
+    		<aop:pointcut id="private_pointcut" expression="execution(* *.call*(..))"/>
+    		<!-- 使用 pointcut-ref 来引用切入点id -->
+    		<aop:before pointcut-ref="private_pointcut" method="enterMethod"/>
+    		<aop:after-returning pointcut-ref="common_pointcut" method="leaveMethod" returning="returnObj"/>
+    	</aop:aspect>
+    </aop:config>
+    
+	<bean id="adviceBean" class="aop.xml.FiveAdviceAspect" />
+	
+	<bean id="abean" class="aop.Bean" />
+</beans>         

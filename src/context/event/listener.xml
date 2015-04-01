@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+
+	<!--  
+	在Spring中配置一个实现了ApplicationListener的Bean时，Spring容器会自动把这个Bean当成容器事件的监听器。
+	当系统创建、加载Spring容器时会自动触发容器事件，监听器可以监听到这些事件，
+	除此之外，还可以调用ApplicationContext的publishEvent方法来主动触发容器事件，
+	-->
+	<bean class="context.event.MyListener" />
+</beans>         

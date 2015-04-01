@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  
+	有一批Bean的大量配置信息完全相同，只有少量配置不同，如何来简化这种配置？Spring提供了Bean继承来应对这个问题。
+	可以先为这些Bean配置一个Bean模板——将这些Bean中相同的配置信息配置成Bean模板，因为Spring容器无需创建Bean模板的实例，
+	所以通常将这个Bean模板配置成抽象Bean。有了Bean模板之后，将实际的Bean实例配置成该Bean模板的子Bean即可。
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+	<!-- 
+	抽象Bean，就是指定abstract属性为true的Bean。抽象Bean不能被实例化，Spring容器不会创建抽象Bean的实例。
+	抽象Bean的价值在于其通常作为父Bean被继承。当某个Bean将作为其他Bean的模板使用时，该Bean通常不需要实例化。
+	为了阻止Bean模板被预初始化，可使用 abstract="true" 将该模板Bean设置为抽象Bean。
+	-->
+	<bean id="father" class="bean.abstracts.Televison" abstract="true">
+		<property name="name" value="TV" />
+	</bean>
+	
+	<!--  
+	子Bean定义可以从父Bean继承实现类、构造器参数、属性值等信息。
+	除此之外，子Bean配置可以增加新的配置信息，并可指定新的配置信息覆盖父Bean的定义。
+	子Bean无法从父Bean继承如下属性：depends-on、autowire、singleton、scope、lazy-init，这些属性将总是从子Bean定义中获得，或采用默认值。
+	-->
+	<!-- 
+	通过<bean>元素的parent属性即可指定该Bean是一个子Bean，parent属性指定该Bean所继承的父Bean的id。 
+	如果父Bean定义中有class属性，则子Bean定义中可省略class属性，子Bean将采用与父Bean相同的实现类。
+	-->
+	<bean id="child1" parent="father" />
+	
+	<!-- 子Bean完全可以使用其他class类，并配置自己的属性值。 -->
+	<bean id="child2" parent="father" class="bean.abstracts.Computer" >
+		<property name="name" value="PC" />
+	</bean>
+	
+	<!-- 
+	抽象Bean因为无需实例化，因此可以没有class属性。 
+	抽象Bean不能实例化，所以不能通过getBean()显式地获取实例，也不能将抽象Bean注入成其他Bean的属性。
+	-->
+	<bean id="base" abstract="true">
+		<property name="content" value="this is content." />
+	</bean>
+	
+	<bean id="child3" class="bean.abstracts.Televison" parent="base" />
+</beans>         

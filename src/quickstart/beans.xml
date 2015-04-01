@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 根元素是 beans，可以接受0个或多个 bean 元素，每个bean元素配置一个bean实例。 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               
+	<!-- 
+	id：指定Bean的惟一标识，程序通过id属性值来访问该Bean实例。
+	class：指定Bean的实现类，此处不可再用接口，必须使用实现类，Spring容器会使用XML解析器读取该属性值，并利用反射来创建该实现类的实例。
+	-->
+	<bean id="walkman" class="quickstart.Walkman">
+		<constructor-arg name="name" value="Sony" />
+		<!-- 
+		Spring会自动接管每个<bean>定义里的<property>元素定义：
+		首先调用无参数（本例使用了参数）的构造器创建默认的Bean实例后，调用对应的setter方法为程序注入属性值。
+		<property>定义的属性值将不再由该Bean来主动设置、管理，而是接收Spring的注入。
+		-->
+		<property name="tape" ref="atape" />
+	</bean>
+	
+	<bean id="walkman2" class="quickstart.Walkman">
+		<constructor-arg name="name" value="Sony" />
+		<!-- 使用构造注入：构造注入可以在构造器中决定依赖关系的注入顺序，优先依赖的优先注入。 -->
+		<constructor-arg name="tape" ref="atape" />
+	</bean>
+	
+	<bean id="atape" class="quickstart.Tape" />
+</beans>         

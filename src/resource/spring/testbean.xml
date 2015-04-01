@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               
+	<bean id="testbean" class="resource.spring.TestBean">
+		<!-- 注入资源：配置资源的位置，并使用file:前缀，指明让Spring从文件系统加载book.xml文件。 -->
+		<property name="resource" value="file:resources/books.xml" />
+	</bean>
+</beans>         

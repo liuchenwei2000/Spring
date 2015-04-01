@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 需要添加AOP用到的信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-2.0.xsd" 
+	>
+               
+	<!-- 
+	在Spring配置文件中增加如下片段来启用Aspect支持。 
+	AnnotationAwareAspectJAutoProxyCreator是一个Bean后处理器，它将会为容器中的Bean生成AOP代理。
+	-->
+	<bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator" />
+	
+	<!--  
+	配置一个带@Aspect注解的Bean，Spring容器将会自动识别该Bean，并将该Bean作为切面处理。
+	当使用@Aspect修饰一个类时，Spring不会把该Bean当成组件Bean处理，因此负责自动增强的后处理Bean将会忽略该Bean，不会对其进行任何增强处理。
+	<bean class="aop.annotation.BeforeAspect" />
+	<bean class="aop.annotation.AfterAspect" />
+	<bean class="aop.annotation.AfterReturningAspect" />
+	<bean class="aop.annotation.AfterThrowingAspect" />
+	<bean class="aop.annotation.AroundAspect" />
+	<bean class="aop.annotation.JoinPointAspect" />
+	-->
+	<bean class="aop.annotation.AccessArgsAspect" />
+	
+	<bean id="abean" class="aop.Bean" />
+</beans>         

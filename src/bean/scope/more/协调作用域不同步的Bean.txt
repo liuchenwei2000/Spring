@@ -1,0 +1,15 @@
+
+当两个singleton作用域Bean存在依赖关系时，或当prototype作用域Bean依赖singleton作用域Bean时，通过属性定义依赖关系就足够了。
+但当singleton作用域Bean依赖prototype作用域Bean时，singleton Bean只有一次初始化的机会，它的依赖关系也只在初始化阶段被设置，
+它所依赖的prototype Bean则需要每次都得到一个全新的实例，这将导致singleton Bean的依赖得不到即时更新，
+而始终都是调用同一个prototype Bean实例，这就违背了设置prototype Bean的初衷：
+本来希望它具有prototype行为，但实际上它却表现出singleton行为了。
+
+解决上述问题有两种方法：
+1，部分放弃依赖注入
+singleton Bean每次需要prototype Bean时，主动向容器请求新的Bean实例。这样一来会导致代码与Spring API耦合，造成代码污染。
+2，利用方法注入。
+
+方法注入通常使用lookup方法注入，利用它可以让Spring容器重写其中Bean的抽象或具体方法，
+返回查找容器中其他Bean的结果，被查找的Bean通常是一个非singleton Bean（尽管也可以是一个singleton）。
+Spring通过使用cglib库修改客户端类的字节码，从而实现了上述功能。

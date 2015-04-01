@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               
+	<!-- 
+	PropertyPathFactoryBean用来获得目标Bean的属性值（实际上就是它的getter方法返回值），
+	获得的值可注入给其他Bean，也可以直接定义成新的Bean。
+	-->
+	 
+	<!-- 定义将要被引用的目标 Bean -->
+	<bean id="father" class="bean.adv.propertypath.Father">
+		<property name="age" value="30" />
+		<!-- 使用嵌套Bean定义属性值 -->
+		<property name="son">
+			<bean class="bean.adv.propertypath.Son">
+				<property name="age" value="3" />	
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- 
+	定义son1的Bean，该Bean的age属性值不是直接注入的，而是依赖于其他Bean的属性值。
+	-->
+	<bean id="son1" class="bean.adv.propertypath.Son">
+		<property name="age">
+			<!-- 访问Bean属性的简单方式，可以将father Bean的son属性的age属性值赋给son1 Bean的age属性。 -->
+			<bean id="father.son.age" class="org.springframework.beans.factory.config.PropertyPathFactoryBean" />
+		</property>
+	</bean>
+	
+	<!-- Bean实例的属性值，不仅可以注入到另一个Bean，还可以直接定义成新的Bean实例，这也是通过PropertyPathFactoryBean完成的。 -->
+	<bean id="son2" class="org.springframework.beans.factory.config.PropertyPathFactoryBean">
+		<!-- targetBeanName：用于指定目标Bean，确定获取哪个Bean的属性值。 -->
+		<property name="targetBeanName" value="father" />
+		<!-- propertyPath：用于指定属性，确定获取目标Bean的哪个属性值。-->
+		<property name="propertyPath" value="son" />
+	</bean>
+	
+	<!-- 甚至可以将基本类型数据的属性值定义成Bean实例 -->
+	<bean id="theAge" class="org.springframework.beans.factory.config.PropertyPathFactoryBean">
+		<property name="targetBeanName" value="father" />
+		<!-- 此处的属性可使用复合属性的形式，如下：  -->
+		<property name="propertyPath" value="son.age" />
+	</bean>
+	
+	<!-- 目标Bean既可以是容器中已有的Bean实例，也可以是嵌套Bean实例。 -->
+	<bean id="newAge" class="org.springframework.beans.factory.config.PropertyPathFactoryBean">
+		<!-- targetObject：用于指定目标嵌套Bean实例，确定获取哪个Bean的属性值。 -->
+		<property name="targetObject">
+			<bean class="bean.adv.propertypath.Son">
+				<property name="age" value="15" />
+			</bean>
+		</property>
+		<property name="propertyPath" value="age" />
+	</bean>
+</beans>         

@@ -1,0 +1,36 @@
+
+execution表达式：用于匹配执行方法的连接点，这是Spring AOP中最主要的切入点指示符。格式如下：
+
+execution(modifiers-pattern ret-type-pattern declaring-type-pattern name-pattern(param-pattern) throws-pattern)
+
+其中execution是不变的，用于作为execution表达式的开头，其他各部分解释如下：
+
+modifiers-pattern：指定方法的修饰符，支持通配符，该部分可省略。
+ret-type-pattern：指定方法返回值类型，支持通配符，可以使用 * 通配符来匹配所有返回值类型。
+declaring-type-pattern：指定方法所属的类，支持通配符，该部分可省略。
+name-pattern：
+指定方法声明中的形参列表，支持两个通配符：*和..，其中*代表一个任意类型的参数，而 .. 代表零个或多个任意类型的参数。
+例如：()匹配不接受任何参数的方法；(*)匹配只接受一个任意类型参数的方法；
+(*,String)匹配接受两个参数的方法且第一个参数是任意类型第二个参数是String类型；(..)匹配接受任意数量参数的方法。
+param-pattern：
+throws-pattern：指定方法声明抛出的异常，支持通配符，该部分可省略。
+
+示例：
+// 匹配任意public方法的执行
+execution(public * * (..));
+// 匹配方法名以"set"开始的方法的执行
+execution(* set* (..));
+// 匹配org.app.Service类里定义的任意方法的执行
+execution(* org.app.Service.* (..));
+// 匹配org.app包中任意类任意方法的执行
+execution(* org.app.*.* (..));
+
+
+Spring支持使用以下三个逻辑运算符来组合切入点表达式：
+&&：要求连接点同时匹配两个切入点表达式。
+||：要求连接点匹配任意一个切入点表达式。
+!：要求连接点不匹配切入点表达式。
+
+比如 execution(* *.*(..)) && args(food, time) 需要切入点匹配如下两个条件：
+1，匹配任意方法的执行
+2，匹配的方法必须两个参数，第一个参数是food类型，第二个参数是time类型（food、time类型由增强处理方法来决定）。

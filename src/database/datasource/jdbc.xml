@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  
+最简单的数据源是通过JDBC配置的。
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+              
+	<!-- 
+	Spring提供了两个基于JDBC的数据源：
+	DriverManagerDataSource：在每个连接请求时都新建一个连接，它提供的连接没有进行池管理。
+	SingleConnectionDataSource：在每个连接请求时都返回同一个连接，可以看作是只有一个连接的池。 
+	-->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/test" />
+		<property name="username" value="root" />
+		<property name="password" value="woailo99" />
+	</bean>
+</beans>         

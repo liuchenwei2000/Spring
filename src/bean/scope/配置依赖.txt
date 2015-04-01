@@ -1,0 +1,11 @@
+
+Java应用中各组件的相互调用的实质可以归纳为依赖关系。Bean的依赖接受Spring容器管理，依赖关系的值要么是一个确定的值，要么是Spring容器中其他Bean的引用。
+
+Spring在实例化容器时，会校验BeanFactory中每一个Bean的配置，这些校验包括：
+1，Bean引用的依赖Bean是否指向一个合法的Bean。
+2，Bean的普通属性值是否获得了一个有效值。
+
+对于singleton作用域的Bean，如果没有强行取消其预初始化行为，Spring会在容器创建时预初始化所有的singleton Bean，与此同时，
+该Bean所依赖的Bean也会被一起实例化。（在这一点上，ApplicationContext和BeanFactory的处理是不一致的，后者会等到程序需要Bean实例时才创建Bean。）
+
+Spring允许为singleton作用域的Bean指定 lazy-init="true"，这意味着该Bean只有在需要时才会被实例化，而不再是跟随ApplicationContext启动而实例化。

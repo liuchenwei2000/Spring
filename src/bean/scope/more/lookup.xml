@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+	
+	<!-- 定义一个Toy实例，指定prototype的作用域 -->
+    <bean id="toy" class="bean.scope.more.Toy" scope="prototype">
+		<property name="name" value="toy" />
+	</bean>
+	
+	<!-- 直接配置属性的方式无法达到prototype的目的 -->
+	<bean id="worker1" class="bean.scope.more.Worker">
+    	<property name="toy" ref="toy" />
+    </bean>
+    
+    <!-- 每次调用getToy方法将获取新的Toy对象 -->
+    <bean id="worker2" class="bean.scope.more.Worker">
+    	<!--  
+    	使用<lookup-method>元素可以让Spring负责为指定方法（抽象或具体方法皆可）提供方法体。
+    	name：指定需要让Spring实现的方法。
+    	bean：指定Spring实现该方法后的返回值。
+    	
+    	使用lookup方法注入后，每次调用getToy()方法都将生成一个新的Toy实例。
+    	-->
+    	<lookup-method name="getToy" bean="toy" />
+    </bean>
+</beans>         

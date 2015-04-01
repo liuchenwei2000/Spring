@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               
+	<bean id="bean1" class="bean.other.BeanWhoKnowsID" />
+	
+	<!-- 
+	Spring默认总是先初始化主调Bean，然后再初始化依赖Bean。
+	在极端情况下，Bean之间的依赖不够直接，比如某个类初始化时必须保证另一个类实例已初始化完。 
+	为了让指定Bean在目标Bean之前初始化，可以使用depends-on属性，该属性可以在初始化主调Bean之前，强制初始化一个或多个Bean。
+	-->
+	<bean id="dao" class="bean.other.DAO" depends-on="datasource">
+		<property name="name" value="dao" />
+	</bean>
+	
+	<bean id="datasource" class="bean.other.DataSource">
+		<property name="name" value="datasource" />
+	</bean>
+</beans>         

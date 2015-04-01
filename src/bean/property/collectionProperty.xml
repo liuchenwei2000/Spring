@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+如果Bean的属性是个集合，则可以使用<list>、<set>、<map>、<props>元素分别来设置类型为List、Set、Map、Properties的集合属性值。
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd
+               ">
+               
+	<bean id="bean" class="bean.property.Bean">
+		<!-- 为数组属性配置属性值，和List属性是一样的 -->
+		<property name="array">
+			<!--  
+			当使用<list>等集合元素配置属性时，还需要手动配置集合项。
+			由于集合项又可以是基本类型值、引用容器中其他Bean、嵌套Bean或集合属性等，
+			所以<list>等集合元素可以接受value、ref、bean、集合元素作为其子元素。
+			-->
+			<list>
+				<!-- 每个value、ref、bean都配置成一个元素。 -->
+				<value>array1</value>
+				<value>array2</value>
+				<value>array3</value>
+			</list>
+		</property>
+		
+		<!-- 为List属性配置属性值 -->
+		<property name="list">
+			<list>
+				<!-- 每个value、ref、bean都配置成一个元素。 -->
+				<value>list1</value>
+				<value>list2</value>
+				<value>list3</value>
+			</list>
+		</property>
+		
+		<!-- 为复合对象List属性配置属性值 -->
+		<property name="cars">
+			<list>
+				<!-- 每个value、ref、bean都配置成一个元素。 -->
+				<bean class="bean.Car">
+					<property name="name" value="nest car1" />
+				</bean>
+				<ref bean="car" />
+				<bean class="bean.Car">
+					<property name="name" value="nest car2" />
+				</bean>
+			</list>
+		</property>
+		
+		<!-- 为Set属性配置属性值 -->
+		<property name="set">
+			<set>
+				<!-- 每个value、ref、bean都配置成一个元素。 -->
+				<value>set1</value>
+				<value>set2</value>
+				<value>set3</value>
+			</set>
+		</property>
+		
+		<!-- 为Map属性配置属性值 -->
+		<property name="map">
+			<!--  
+			因为Map中的每个元素由key-value两部分组成，所以需要使用<entry>来配置一个Map元素，它支持如下4个属性：
+			
+			key：如果Map的key是基本类型值或字符串，则使用该属性。
+			key-ref：如果Map的key是容器中另一个Bean实例，则使用该属性指定Bean的id。
+			value：如果Map的value是基本类型值或字符串，则使用该属性。
+			value-ref：如果Map的value是容器中另一个Bean实例，则使用该属性指定Bean的id。
+			-->
+			<map>
+				<!-- 每个entry配置一个key-value对。 -->
+				<entry key="key1" value="value1"/>
+				<entry key="key2" value="value2"/>
+				<entry key="key3" value="value3"/>
+			</map>
+		</property>
+		
+		<!-- 为复合对象Map属性配置属性值 -->
+		<property name="carMap">
+			<map>
+				<!-- 每个entry配置一个key-value对。 -->
+				<entry key="car1" value-ref="car"/>
+				<entry key="car2" value-ref="V"/>
+				<entry key="car3" value-ref="horse"/>
+			</map>
+		</property>
+		
+		<!-- 为Properties属性配置属性值 -->
+		<property name="properties">
+			<props>
+				<!-- 每个prop元素配置一个属性项，其中key指定属性名。 -->
+				<prop key="prop1">pvalue1</prop>
+				<prop key="prop2">pvalue2</prop>
+				<prop key="prop3">pvalue3</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="car" class="bean.Car">
+		<property name="name" value="vic" />
+	</bean>
+	
+	<bean id="V" class="bean.Car">
+		<property name="name" value="V" />
+	</bean>
+	
+	<bean id="horse" class="bean.Car">
+		<property name="name" value="horse" />
+	</bean>
+</beans>         

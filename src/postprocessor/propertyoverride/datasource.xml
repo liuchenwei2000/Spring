@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+	
+	<!-- 
+	PropertyOverrideConfigurer的属性文件指定的信息可以直接覆盖XML配置文件中的元数据，即PropertyOverrideConfigurer允许XML配置文件中有默认的配置信息。
+	
+	如果PropertyOverrideConfigurer的属性文件配置了一些数据，则这些数据会覆盖原配置文件里相应的数据，
+	可以认为Spring配置信息是XML配置文件和属性文件的总和，当XML配置文件和属性文件指定的元数据不一致时，以属性文件为主。
+	-->
+	<bean class="org.springframework.beans.factory.config.PropertyOverrideConfigurer">
+		<property name="locations">
+			<list>
+				<!-- 如果有多个属性文件，依次在下面列出来。 -->
+				<value>postprocessor/propertyoverride/datasource.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="datasource" class="postprocessor.propertyoverride.DataSource">
+    	<property name="driver" value="com.mysql.jdbc.Driver" />
+    	<property name="url" value="mock_url" />
+    	<property name="username" value="mock_username" />
+    	<property name="password" value="mock_password" />
+    </bean>
+</beans>         
