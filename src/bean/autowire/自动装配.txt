@@ -7,6 +7,7 @@ SpringÄÜ×Ô¶¯×°ÅäBeanÓëBeanÖ®¼äµÄÒÀÀµ¹ØÏµ£¬ÎÞÐèÊ¹ÓÃrefÊôÐÔÏÔÊ½Ö¸¶¨ÒÀÀµBean¡£ÓÉÈÝÆ
 ×Ô¶¯×°Åä¿ÉÒÔ¼õÉÙÅäÖÃÎÄ¼þµÄ¹¤×÷Á¿£¬µ«½µµÍÁËÒÀÀµ¹ØÏµµÄÍ¸Ã÷ÐÔºÍÇåÎúÐÔ£¬Ò²½µµÍÁË³ÌÐòµÄ¿É¶ÁÐÔ¡£
 
 autowireµÄÊôÐÔÖµÓÐÈçÏÂ¼¸¸ö£º
+
 no£º²»Ê¹ÓÃ×Ô¶¯×°Åä¡£BeanÒÀÀµ±ØÐëÍ¨¹ýrefÔªËØ¶¨Òå¡£
 byName£º¸ù¾ÝÊôÐÔÃû×Ô¶¯×°Åä¡£
 byType£º¸ù¾ÝÊôÐÔÀàÐÍ×Ô¶¯×°Åä¡£

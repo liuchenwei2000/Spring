@@ -48,9 +48,9 @@ public class IOUtil {
 		InputStreamReader reader = null;
 		try {
 			reader = new InputStreamReader(is);
-			int character = -1;
-			while ((character = reader.read()) != -1) {
-				System.out.print((char) character);
+			int c = -1;
+			while ((c = reader.read()) != -1) {
+				System.out.print((char) c);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

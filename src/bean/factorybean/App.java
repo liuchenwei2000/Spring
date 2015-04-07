@@ -24,7 +24,6 @@ public class App {
 		PersonFactoryBean factory = (PersonFactoryBean) context.getBean("&person");
 		System.out.println(factory.getClass());
 		
-		
 		((ClassPathXmlApplicationContext) context).close();
 	}
 }

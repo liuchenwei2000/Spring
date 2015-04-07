@@ -31,7 +31,7 @@ public class Order implements DisposableBean {
 	}
 
 	/**
-	 * (non-Javadoc)
+	 * 实例销毁前会调用本方法
 	 * 
 	 * @see org.springframework.beans.factory.DisposableBean#destroy()
 	 */

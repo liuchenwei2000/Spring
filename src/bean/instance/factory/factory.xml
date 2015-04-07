@@ -12,7 +12,7 @@
 	需要注意的是，factory-method 指定的工厂方法必须是静态的。
 	-->
 	<bean id="dog" class="bean.instance.factory.BeingFactory" factory-method="create">
-		<!-- 如果静态工厂方法需要参数，则使用传 constructor-arg 入。 -->
+		<!-- 如果静态工厂方法需要参数，则使用 constructor-arg 传入 。 -->
 		<constructor-arg name="type" value="dog" />
 		<!-- property配置普通依赖注入属性。 -->
     	<property name="message" value="I'm a dog" />

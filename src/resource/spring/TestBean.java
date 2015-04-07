@@ -12,8 +12,8 @@ import resource.IOUtil;
 /**
  * 需要访问资源的Bean示例
  * <p>
- * 当应用程序中的Bean实例需要访问资源时，除了使用Resource实现类或ApplicationContext获取资源外，
- * Spring还可以直接利用依赖注入来达到目的。这样允许动态配置资源文件位置，无需将资源文件位置写在代码中。
+ * 当应用程序中的Bean实例需要访问资源时，除了使用Resource实现类或ApplicationContext获取资源外，Spring还可以直接利用依赖注入来达到目的。
+ * 这样允许动态配置资源文件位置，无需将资源文件位置写在代码中。
  * 
  * @author 刘晨伟
  * 

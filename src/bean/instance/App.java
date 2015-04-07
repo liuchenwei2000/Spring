@@ -14,7 +14,7 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("bean/instance/read.xml");
 		
-		System.out.println("reader=" + context.getBean("reader"));
+		System.out.printf("reader=%s", context.getBean("reader"));
 		
 		((ClassPathXmlApplicationContext) context).close();
 	}

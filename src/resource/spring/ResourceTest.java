@@ -17,8 +17,8 @@ import resource.IOUtil;
  * 当Spring应用需要进行资源访问时，实际上并不需要直接使用Resource实现类，而是调用ResourceLoader实例的getResource()方法来获得资源。
  * ResourceLoader将会负责选择Resource的实现类，也就是确定具体的资源访问策略，从而将应用程序与具体的资源访问策略分离开来。
  * <p>
- * 而ApplicationContext就是ResourceLoader接口的实现类，当通过ApplicationContext
- * 实例获取Resource实例时，默认采用与ApplicationContext相同的资源访问策略。
+ * 而ApplicationContext就是ResourceLoader接口的实现类，当通过ApplicationContext实例获取Resource实例时，
+ * 默认采用与ApplicationContext相同的资源访问策略。
  * 
  * @author 刘晨伟
  * 

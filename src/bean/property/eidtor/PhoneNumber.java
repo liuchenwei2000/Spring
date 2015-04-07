@@ -4,9 +4,7 @@
 package bean.property.eidtor;
 
 /**
- * Ê¾Àı
- * <p>
- * 
+ * µç»°ºÅÂë
  * 
  * @author Áõ³¿Î°
  * 

@@ -2,7 +2,7 @@
 
 <!--  
 	有一批Bean的大量配置信息完全相同，只有少量配置不同，如何来简化这种配置？Spring提供了Bean继承来应对这个问题。
-	可以先为这些Bean配置一个Bean模板——将这些Bean中相同的配置信息配置成Bean模板，因为Spring容器无需创建Bean模板的实例，
+	可以先为这些Bean配置一个Bean模板————将这些Bean中相同的配置信息配置成Bean模板，因为Spring容器无需创建Bean模板的实例，
 	所以通常将这个Bean模板配置成抽象Bean。有了Bean模板之后，将实际的Bean实例配置成该Bean模板的子Bean即可。
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -21,8 +21,7 @@
 	</bean>
 	
 	<!--  
-	子Bean定义可以从父Bean继承实现类、构造器参数、属性值等信息。
-	除此之外，子Bean配置可以增加新的配置信息，并可指定新的配置信息覆盖父Bean的定义。
+	子Bean定义可以从父Bean继承实现类、构造器参数、属性值等信息。此外，子Bean配置可以增加新的配置信息，并可指定新的配置信息覆盖父Bean的定义。
 	子Bean无法从父Bean继承如下属性：depends-on、autowire、singleton、scope、lazy-init，这些属性将总是从子Bean定义中获得，或采用默认值。
 	-->
 	<!-- 

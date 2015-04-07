@@ -4,9 +4,7 @@
 package bean.instance.factory2;
 
 /**
- * Ê¾Àı
- * <p>
- * 
+ * ÈË
  * 
  * @author Áõ³¿Î°
  * 

@@ -11,7 +11,7 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
  * 容器后处理器示例
  * <p>
  * Bean后处理器负责处理容器中的所有Bean实例，而容器后处理器则负责处理容器本身。
- * 容器后处理器通常用于对Spring容器进行处理，并且总是在容器实例化任何其他的Bean之前，读取配置文件的元数据，并有可能修改这些元数据。
+ * 容器后处理器通常用于对Spring容器进行处理，并且总是在容器实例化任何其他的Bean之前读取配置文件的元数据，并有可能修改这些元数据。
  * 
  * @author 刘晨伟
  * 

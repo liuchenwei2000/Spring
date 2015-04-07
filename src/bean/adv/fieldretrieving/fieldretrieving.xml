@@ -7,7 +7,7 @@
                http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
                
 	<!-- 
-	PropertyPathFactoryBean获得目标Bean的Field值之后，得到的值可注入给其他Bean，也可以直接定义成新的Bean。
+	FieldRetrievingFactoryBean获得目标Bean的Field值之后，得到的值可注入给其他Bean，也可以直接定义成新的Bean。
 	-->
 	
 	<!-- 将bean.adv.fieldretrieving.Child类的 DEFAULT_AG 值赋给child1的age属性。-->

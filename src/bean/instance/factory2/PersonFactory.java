@@ -4,7 +4,7 @@
 package bean.instance.factory2;
 
 /**
- * 创建IPerson实例的工厂
+ * 创建IPerson实例的实例工厂
  * 
  * @author 刘晨伟
  * 

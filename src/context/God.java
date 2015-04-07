@@ -26,8 +26,6 @@ public class God implements ApplicationContextAware {
 
 	/**
 	 * 这个方法将由Spring调用，Spring调用该方法时会将Spring容器作为参数传入该方法。
-	 * <p>
-	 * 方法参数applicationContext指向创建它的ApplicationContext实例。
 	 * 
 	 * @see org.springframework.context.ApplicationContextAware#setApplicationContext(org.springframework.context.ApplicationContext)
 	 */

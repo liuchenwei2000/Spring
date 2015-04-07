@@ -14,8 +14,13 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("resource/spring/testbean.xml");
 		
-		TestBean bean = (TestBean) context.getBean("testbean");
-		bean.parse();
+		System.out.println("Resource by file:");
+		TestBean byFile = (TestBean) context.getBean("byFile");
+		byFile.parse();
+		
+		System.out.println("Resource by classpath:");
+		TestBean byClasspath = (TestBean) context.getBean("byClasspath");
+		byClasspath.parse();
 
 		((ClassPathXmlApplicationContext) context).close();
 	}

@@ -43,8 +43,7 @@
 	</bean>
 	
 	<!-- 
-	将Bean方法返回值定义成Bean实例。
-	通常不采用这种配置方法，而是采用factory-method的方式来配置Bean。
+	将Bean方法返回值定义成Bean实例。通常不采用这种配置方法，而是采用factory-method的方式来配置Bean。
 	-->
 	<bean id="theString" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
 		<property name="targetObject" ref="valueGenerator" />

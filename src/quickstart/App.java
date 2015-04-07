@@ -10,7 +10,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 主程序运行类
  * <p>
  * Spring容器是生成Bean实例的工厂，负责创建Bean实例，并管理其生命周期。
- * Bean是Spring管理的基本单位，在基于Spring的JavaEE应用中，所有的组件都被当成Bean处理，包括数据源、Hibernate的SessionFactory、事务管理器等。
+ * Bean是Spring管理的基本单位，在基于Spring的JavaEE应用中，所有的组件都被当成Bean处理，
+ * 包括数据源、Hibernate的SessionFactory、事务管理器等。
  * 这里的Bean是广义的概念，可以是POJO而不仅仅是标准的JavaBean。
  * 
  * @author 刘晨伟
@@ -46,9 +47,7 @@ public class App {
 		 * ApplicationContext的常用实现类有：
 		 * FileSystemXmlApplicationContext：以基于文件系统的XML配置文件创建ApplicationContext实例。
 		 * ClassPathXmlApplicationContext：以classpath（类路径）下的XML配置文件创建ApplicationContext实例。
-		 * AnnotationConfigApplicationContext、
-		 * XmlWebApplicationContext、
-		 * AnnotationConfigWebApplicationContext。
+		 * AnnotationConfigApplicationContext、XmlWebApplicationContext、 AnnotationConfigWebApplicationContext。
 		 */
 		ApplicationContext context = new ClassPathXmlApplicationContext("quickstart/beans.xml");
 		// Walkman 实例的属性值并不是程序主动设置的，而是由Spring容器来负责注入的。

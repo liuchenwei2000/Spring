@@ -4,7 +4,7 @@
 package bean.instance.factory;
 
 /**
- * 创建IBeing实例的工厂
+ * 创建IBeing实例的静态工厂
  * 
  * @author 刘晨伟
  * 

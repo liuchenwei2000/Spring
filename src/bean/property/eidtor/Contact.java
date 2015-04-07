@@ -4,9 +4,7 @@
 package bean.property.eidtor;
 
 /**
- * 示例
- * <p>
- * 
+ * 联系人
  * 
  * @author 刘晨伟
  * 

@@ -29,7 +29,7 @@ public class Bean {
 	private Set<String> set;
 	// 普通Map属性
 	private Map<String, String> map;
-	// 普复合对象Map属性
+	// 复合对象Map属性
 	private Map<String, Car> carMap;
 	// 普通Properties属性
 	private Properties properties;

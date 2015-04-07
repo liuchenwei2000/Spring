@@ -7,7 +7,7 @@
                http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
 	
 	<!-- 
-	使用 init-method 属性指定某个方法应在Bean全部依赖关系设置结束后自动执行。
+	init-method 属性指定某个方法应在Bean全部依赖关系设置结束后自动执行。
 	使用这种方法不需将代码与Spring的接口耦合在一起，代码污染小。
 	
 	对于实现接口的Bean，无需使用init-method属性来指定初始化方法，配置该Bean实例与配置普通Bean实例完全一样，

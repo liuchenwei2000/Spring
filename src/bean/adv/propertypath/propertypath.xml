@@ -7,8 +7,7 @@
                http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
                
 	<!-- 
-	PropertyPathFactoryBean用来获得目标Bean的属性值（实际上就是它的getter方法返回值），
-	获得的值可注入给其他Bean，也可以直接定义成新的Bean。
+	PropertyPathFactoryBean用来获得目标Bean的属性值（实际上就是它的getter方法返回值），获得的值可注入给其他Bean，也可以直接定义成新的Bean。
 	-->
 	 
 	<!-- 定义将要被引用的目标 Bean -->

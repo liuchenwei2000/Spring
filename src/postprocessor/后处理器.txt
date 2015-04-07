@@ -1,6 +1,6 @@
 
 Spring框架提供了很好的扩展性，除了可以与各种第三方框架良好整合外，其IoC容器还允许开发者进行扩展，
-这种扩展无需事先BeanFactory或ApplicationContext接口，而是允许通过两个后处理器对IoC容器进行扩展。
+这种扩展无需实现BeanFactory或ApplicationContext接口，而是允许通过两个后处理器对IoC容器进行扩展。
 
 Bean后处理器：对容器中的Bean进行后处理，对Bean功能进行额外加强。
 容器后处理器：对IoC容器进行后处理，用于增强容器功能。

@@ -1,3 +1,4 @@
+
 传统JavaBean和Spring中Bean存在如下区别：
 1，用处不同
 传统JavaBean更多作为值对象传递参数（DTO）；Spring的Bean用处几乎无所不包，任何应用组件都被称为Bean。
