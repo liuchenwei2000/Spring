@@ -24,9 +24,11 @@ public class TemplateTest {
 	/**
 	 * @param args
 	 */
-	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		JdbcTemplate jdbcTemplate = new JdbcTemplate();
+		jdbcTemplate.execute("insert ...");
+		
 		HibernateTemplate hibernateTemplate = new HibernateTemplate();
+		hibernateTemplate.persist(new Order());
 	}
 }

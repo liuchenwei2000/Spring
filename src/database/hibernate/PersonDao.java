@@ -14,11 +14,11 @@ package hibernate;
  */
 public interface PersonDao {
 
-	public void save(Person employee);
+	public void save(Person person);
 	
-	public void update(Person employee);
+	public void update(Person person);
 	
-	public void delete(Person employee);
+	public void delete(Person person);
 	
 	public Person find(Long id);
 }

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--  
-当Spring程序运行在一个JavaEE应用服务器中的时候，可以配置为通过JNDI获取数据源。这样做的好处是：
+当Spring程序运行在一个JavaEE应用服务器中的时候，可以配置为通过JNDI获取数据源。
+这样做的好处是：
 数据源可以在程序之外进行管理，程序本身只需要在访问数据库时请求数据源即可。
 而且，应用服务器管理的数据源通常会被组合起来，从而具有更好的性能，并能够由系统管理员进行热切换。
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
                http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
                http://www.springframework.org/schema/context
