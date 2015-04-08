@@ -6,12 +6,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
 	http://www.springframework.org/schema/aop 
-	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd" 
-	>
+	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
     
     <!--  
 	在Spring的配置文件中，所有切面、切入点和增强处理都必须定义在<aop:config>元素内部，<beans>元素下可以有多个<aop:config>元素。
-	一个<aop:config>可以包含 pointcut、advisor和aspect元素，且这三个元素必须按照此顺序来定义。
     -->
     
     <aop:config>

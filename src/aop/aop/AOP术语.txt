@@ -28,4 +28,3 @@ AOP¿ò¼Ü´´½¨µÄ¶ÔÏó£¬Ò²¾ÍÊÇ¶ÔÄ¿±ê¶ÔÏóµÄ¼ÓÇ¿¡£SpringÖÐµÄAOP´úÀí¼È¿ÉÒÔÊÇJDK¶¯Ì¬´úÀí£
 
 AOP´úÀíÆäÊµÊÇÓÉAOP¿ò¼Ü¶¯Ì¬Éú³ÉµÄÒ»¸ö´úÀí¶ÔÏó£¬¸Ã´úÀí¿É×÷ÎªÄ¿±ê¶ÔÏóÊ¹ÓÃ£¬Ëü°üº¬ÁËÄ¿±ê¶ÔÏóµÄÈ«²¿·½·¨£¬
 µ«´úÀíÖÐµÄ·½·¨ÓëÄ¿±ê¶ÔÏóµÄ·½·¨´æÔÚ²îÒì£ºAOP·½·¨ÔÚÌØ¶¨ÇÐÈëµãÌí¼ÓÁËÔöÇ¿´¦Àí£¬²¢»Øµ÷ÁËÄ¿±ê¶ÔÏóµÄ·½·¨¡£
-

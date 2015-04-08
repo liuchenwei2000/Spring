@@ -24,11 +24,11 @@ public class FiveAdviceAspect {
 		System.out.println("离开方法，释放资源......");
 	}
 	
-	public void leaveMethod(Object returnObj) {// 方法参数名为 returnObj，与上面的 returning 属性值对应
+	public void leaveMethod(Object returnObj) {// 方法参数名为 returnObj，与XML中配置的 returning 属性值对应
 		System.out.println("离开方法，方法返回值是：" + returnObj);
 	}
 	
-	public void catchException(Object ex) {// 方法参数名为 ex，与上面的 throwing 属性值对应
+	public void catchException(Object ex) {// 方法参数名为 ex，与XML中配置的 throwing 属性值对应
 		System.out.println("捕获未处理异常对象：" + ex);
 	}
 	

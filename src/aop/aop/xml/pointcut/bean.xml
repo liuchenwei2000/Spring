@@ -6,8 +6,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
 	http://www.springframework.org/schema/aop 
-	http://www.springframework.org/schema/aop/spring-aop-2.0.xsd" 
-	>
+	http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
     
     <!--  
 	<aop:pointcut>元素来定义切入点。
