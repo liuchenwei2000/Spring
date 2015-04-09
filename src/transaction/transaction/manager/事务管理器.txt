@@ -1,8 +1,8 @@
 
-不论选择程序控制事务还是声明式事务，都需要使用一个Spring事务管理器连接特定平台的事务实现。
+不论选择程序控制事务还是声明式事务，都需要使用一个Spring事务管理器（TransactionManager）连接特定平台的事务实现。
 
-Spring的事务管理不需要与特定的事务API耦合，包含编程式事务和声明式事务。对于不同的持久化技术，编程式事务提供一致的编程风格，
-通过模板化的操作一致性地管理事务；声明式事务基于Spring AOP，通过简单的XML配置就可以轻松使用事务。
+Spring的事务管理不需要与特定的事务API耦合，包含编程式事务和声明式事务。
+对于不同的持久化技术，编程式事务提供一致的编程风格，通过模板化的操作一致性地管理事务；声明式事务基于Spring AOP，通过简单的XML配置就可以轻松使用事务。
 
 Spring不直接管理事务，它只是提供有很多可供选择的事务管理器，将事务管理的责任委托给JTA或相应的持久化机制所提供的某个特定平台事务实现。
 比如基于JDBC的DataSourceTransactionManager、基于Hibernate的HibernateTransactionManager、基于JPA的JpaTransactionManager、基于JTA的JtaTransactionManager等等。

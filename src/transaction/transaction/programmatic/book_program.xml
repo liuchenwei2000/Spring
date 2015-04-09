@@ -3,7 +3,8 @@
 声明式事务只能限制在方法级上，如果需要对事务边界进行更为细微的控制，那只能选择编程式事务（programmatic transaction）。
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
                http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
                http://www.springframework.org/schema/context
@@ -17,7 +18,7 @@
 	
 	<!-- 配置TransactionTemplate -->
 	<bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
-		<!-- TransactionTemplate需要被注入一个TransactionManager来实现管理事务的功能。 -->
+		<!-- TransactionTemplate需要注入一个TransactionManager来实现管理事务的功能。 -->
 		<property name="transactionManager" ref="transactionManager" />
 	</bean>
 	

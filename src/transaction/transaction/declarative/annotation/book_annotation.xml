@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-tx命名空间还提供有<tx:annotation-driven>元素，用来支持注解驱动的声明式事务。
+tx命名空间还提供有<tx:annotation-driven>元素，用来支持基于注解驱动的声明式事务。
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -16,7 +16,6 @@ tx命名空间还提供有<tx:annotation-driven>元素，用来支持注解驱�
            http://www.springframework.org/schema/tx 
            http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
     
-
 	<!-- 
 	<tx:annotation-driven>元素告诉Spring在类层面或者方法层面检查应用程序上下文中的所有Bean，并且寻找标注了@Transactional 的Bean。
 	对于每一个标注了@Transactional 的Bean，<tx:annotation-driven>元素将自动把事务通知的内容通知给它。

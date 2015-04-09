@@ -3,7 +3,8 @@
 在Spring2.0之前，声明式事务管理通过使用TransactionProxyFactoryBean代理POJO来完成，它知道如何通过使用事务性边界包裹一个POJO的方法来代理它们。
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
                http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
                http://www.springframework.org/schema/context
@@ -18,8 +19,8 @@
 		<!-- 装配事务管理器 -->
 		<property name="transactionManager" ref="transactionManager" />
 		<!-- 
-		TransactionProxyFactoryBean将基于在transactionAttributes属性中定义的事务参数，
-		来使用这个事务管理器启动、挂起、提交和回滚事务。声明哪些方法将在一个事务内运行，以及相应的事务参数是什么。
+		TransactionProxyFactoryBean将基于在transactionAttributes属性中定义的事务参数，来使用这个事务管理器启动、挂起、提交和回滚事务。
+		声明哪些方法将在一个事务内运行，以及相应的事务参数是什么。
 		-->
 		<property name="transactionAttributes">
 			<props>

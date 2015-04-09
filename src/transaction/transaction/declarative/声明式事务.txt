@@ -5,6 +5,6 @@ Spring¶ÔÉùÃ÷Ê½ÊÂÎñ¹ÜÀíµÄÖ§³ÖÊÇÍ¨¹ýËüµÄAOP¿ò¼ÜÀ´ÊµÏÖµÄ£¬ÒòÎªÊÂÎñÊÇÏµÍ³¼¶µÄ·þÎñ£¬Á
 ¿ÉÒÔ°ÑSpringµÄÊÂÎñÏëÏó³ÉÊÇÒ»¸öÇÐÃæ£¬ÓÃÊÂÎñÐÔ±ß½ç°ü¹ü×ÅÒ»¸ö·½·¨¡£
 
 SpringÌá¹©ÁËÈýÖÖÅäÖÃÉùÃ÷Ê½ÊÂÎñµÄ·½Ê½£º
-1£¬Ê¹ÓÃSpring AOP´úÀíBean¡£
+1£¬Ê¹ÓÃSpringµÄ TransactionProxyFactoryBean¡£
 2£¬Ê¹ÓÃ¼òµ¥µÄXMLÉùÃ÷£¨XML-declared£©¡£
 3£¬Ê¹ÓÃ×¢ÊÍÇý¶¯£¨annotation-driven£©ÊÂÎñ¡£
