@@ -6,14 +6,17 @@
                http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
                http://www.springframework.org/schema/context
                http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
-               
-	<!-- 如果需要为Bean实例指定多个别名，可以在name属性中使用逗号或空格来分隔多个别名，然后可以通过任一别名即可访问该Bean实例。 -->
-	<bean id="car" name="mycar,mydear,horse" class="bean.Car">
-		<property name="name" value="Benz" />
+    
+    <!-- 导入依赖的XML配置文件 --> 
+    <import resource="dao.xml"/>
+    <!--  
+           还能像如下方式进行 import ：
+    <import resource="file:C:/config/services.xml"/>
+    <import resource="classpath:/config/services.xml"/>
+    -->
+    
+	<bean id="business" class="bean.imports.BusinessLayer" >
+		<!-- 这里直接可以访问 dao.xml 文件中的 bean id -->
+		<property name="dao" ref="dao" />
 	</bean>
-	<!--  
-	也可以使用<alias>元素来指定Bean的别名：
-	name 属性指定一个Bean实例的标识名，表明将为该Bean实例指定别名。alias 属性指定一个别名。
-	-->
-	<alias name="mycar" alias="car1"/>
 </beans>         
