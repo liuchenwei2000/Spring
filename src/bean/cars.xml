@@ -13,7 +13,8 @@
 	</bean>
 	<!--  
 	也可以使用<alias>元素来指定Bean的别名：
-	name 属性指定一个Bean实例的标识名，表明将为该Bean实例指定别名。alias 属性指定一个别名。
+	name 属性指定一个Bean实例的标识名，表明将为该Bean实例指定别名。
+	alias 属性指定一个别名。
 	-->
 	<alias name="mycar" alias="car1"/>
 </beans>         
