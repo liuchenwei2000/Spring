@@ -7,10 +7,12 @@ import org.springframework.stereotype.Component;
 
 /**
  * 
+ * <p>
  * 
- * @author Áõ³¿Î°
- *
- * ´´½¨ÈÕÆÚ£º2015Äê11ÔÂ19ÈÕ
+ * 
+ * @author åˆ˜æ™¨ä¼Ÿ
+ * 
+ * åˆ›å»ºæ—¥æœŸï¼š2015å¹´11æœˆ21æ—¥
  */
 @Component
 public class User {
