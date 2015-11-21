@@ -9,17 +9,17 @@ import hibernate.PersonDao;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 /**
- * ¼Ì³ĞHibernateDaoSupportµÄPersonDaoÊµÏÖ
+ * ç»§æ‰¿HibernateDaoSupportçš„PersonDaoå®ç°
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ30ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ30æ—¥
  */
 public class HibernatePersonDao extends HibernateDaoSupport implements PersonDao {
 
 	@Override
 	public void save(Person person) {
-		// Ö±½ÓÍ¨¹ı¸¸ÀàµÄgetHibernateTemplate()»ñÈ¡HibernateTemplate¶ÔÏó
+		// ç›´æ¥é€šè¿‡çˆ¶ç±»çš„getHibernateTemplate()è·å–HibernateTemplateå¯¹è±¡
 		getHibernateTemplate().saveOrUpdate(person);
 	}
 

@@ -8,24 +8,24 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 /**
- * ÓµÓĞ·ÃÎÊSpringÈİÆ÷ÄÜÁ¦µÄBeanÊ¾Àı
+ * æ‹¥æœ‰è®¿é—®Springå®¹å™¨èƒ½åŠ›çš„Beanç¤ºä¾‹
  * <p>
- * ÈİÆ÷ÖĞµÄBean¿ÉÄÜĞèÒªÖ÷¶¯·ÃÎÊSpringÈİÆ÷±¾Éí£¬ÊµÏÖBeanFactoryAware½Ó¿ÚµÄBean»áÓµÓĞ·ÃÎÊBeanFactoryÈİÆ÷µÄÄÜÁ¦¡£
- * Í¬Àí£¬ÊµÏÖApplicationContextAware½Ó¿ÚµÄBeanÄÜ¹»·ÃÎÊApplicationContext¡£
+ * å®¹å™¨ä¸­çš„Beanå¯èƒ½éœ€è¦ä¸»åŠ¨è®¿é—®Springå®¹å™¨æœ¬èº«ï¼Œå®ç°BeanFactoryAwareæ¥å£çš„Beanä¼šæ‹¥æœ‰è®¿é—®BeanFactoryå®¹å™¨çš„èƒ½åŠ›ã€‚
+ * åŒç†ï¼Œå®ç°ApplicationContextAwareæ¥å£çš„Beanèƒ½å¤Ÿè®¿é—®ApplicationContextã€‚
  * <p>
- * ÊµÏÖ½Ó¿ÚÈÃBeanÓµÓĞÁË·ÃÎÊÈİÆ÷µÄÄÜÁ¦£¬µ«ÎÛÈ¾ÁË´úÂë£¬µ¼ÖÂ´úÂëÓëSpring½Ó¿ÚñîºÏÔÚÒ»Æğ¡£
- * Òò´Ë£¬Èç¹û²»ÊÇÌØ±ğ±ØÒª£¬½¨Òé²»ÒªÖ±½Ó·ÃÎÊÈİÆ÷¡£
+ * å®ç°æ¥å£è®©Beanæ‹¥æœ‰äº†è®¿é—®å®¹å™¨çš„èƒ½åŠ›ï¼Œä½†æ±¡æŸ“äº†ä»£ç ï¼Œå¯¼è‡´ä»£ç ä¸Springæ¥å£è€¦åˆåœ¨ä¸€èµ·ã€‚
+ * å› æ­¤ï¼Œå¦‚æœä¸æ˜¯ç‰¹åˆ«å¿…è¦ï¼Œå»ºè®®ä¸è¦ç›´æ¥è®¿é—®å®¹å™¨ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ13ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ13æ—¥
  */
 public class God implements ApplicationContextAware {
 	
 	private ApplicationContext applicationContext;
 
 	/**
-	 * Õâ¸ö·½·¨½«ÓÉSpringµ÷ÓÃ£¬Springµ÷ÓÃ¸Ã·½·¨Ê±»á½«SpringÈİÆ÷×÷Îª²ÎÊı´«Èë¸Ã·½·¨¡£
+	 * è¿™ä¸ªæ–¹æ³•å°†ç”±Springè°ƒç”¨ï¼ŒSpringè°ƒç”¨è¯¥æ–¹æ³•æ—¶ä¼šå°†Springå®¹å™¨ä½œä¸ºå‚æ•°ä¼ å…¥è¯¥æ–¹æ³•ã€‚
 	 * 
 	 * @see org.springframework.context.ApplicationContextAware#setApplicationContext(org.springframework.context.ApplicationContext)
 	 */

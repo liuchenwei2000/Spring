@@ -9,37 +9,37 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
 /**
- * args±í´ïÊ½ Ê¾Àý
+ * argsè¡¨è¾¾å¼ ç¤ºä¾‹
  * <p>
- * Èç¹ûÖ»ÊÇÒª·ÃÎÊÄ¿±ê·½·¨µÄ²ÎÊý£¬¿ÉÒÔÊ¹ÓÃargsÀ´°ó¶¨Ä¿±ê·½·¨µÄ²ÎÊý¡£
+ * å¦‚æžœåªæ˜¯è¦è®¿é—®ç›®æ ‡æ–¹æ³•çš„å‚æ•°ï¼Œå¯ä»¥ä½¿ç”¨argsæ¥ç»‘å®šç›®æ ‡æ–¹æ³•çš„å‚æ•°ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ24ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ24æ—¥
  */
-// Ê¹ÓÃ@Aspect×¢½â¶¨ÒåÒ»¸öÇÐÃæÀà
+// ä½¿ç”¨@Aspectæ³¨è§£å®šä¹‰ä¸€ä¸ªåˆ‡é¢ç±»
 @Aspect
 public class AccessArgsAspect {
 	
 	/**
-	 * Èç¹ûÒ»¸öargs±í´ïÊ½ÖÐÖ¸¶¨ÁËÒ»¸ö»ò¶à¸ö²ÎÊý£¬Ôò¸ÃÇÐÈëµã½«Ö»Æ¥Åä¾ßÓÐ¶ÔÓ¦ÐÎ²ÎµÄ·½·¨£¬ÇÒÄ¿±ê·½·¨µÄ²ÎÊýÖµ½«±»´«ÈëÔöÇ¿´¦Àí·½·¨¡£
+	 * å¦‚æžœä¸€ä¸ªargsè¡¨è¾¾å¼ä¸­æŒ‡å®šäº†ä¸€ä¸ªæˆ–å¤šä¸ªå‚æ•°ï¼Œåˆ™è¯¥åˆ‡å…¥ç‚¹å°†åªåŒ¹é…å…·æœ‰å¯¹åº”å½¢å‚çš„æ–¹æ³•ï¼Œä¸”ç›®æ ‡æ–¹æ³•çš„å‚æ•°å€¼å°†è¢«ä¼ å…¥å¢žå¼ºå¤„ç†æ–¹æ³•ã€‚
 	 * 
-	 * &&args(food,time) ÒâÎ¶×ÅÔÚÔöÇ¿´¦Àí·½·¨ÖÐ¶¨Òåfood¡¢timeÁ½¸öÐÎ²Î£¬ÐÎ²ÎÀàÐÍ¿ÉÒÔËæÒâÖ¸¶¨£¬Ò»µ©Ö¸¶¨ÁËÐÎ²ÎÀàÐÍ£¬
-	 * Ôò½«ÓÃÓÚÏÞÖÆ¸ÃÇÐÈëµãÖ»Æ¥ÅäµÚÒ»¸ö²ÎÊýÀàÐÍÊÇString£¬µÚ¶þ¸ö²ÎÊýÀàÐÍÊÇDateµÄ·½·¨¡£
+	 * &&args(food,time) æ„å‘³ç€åœ¨å¢žå¼ºå¤„ç†æ–¹æ³•ä¸­å®šä¹‰foodã€timeä¸¤ä¸ªå½¢å‚ï¼Œå½¢å‚ç±»åž‹å¯ä»¥éšæ„æŒ‡å®šï¼Œä¸€æ—¦æŒ‡å®šäº†å½¢å‚ç±»åž‹ï¼Œ
+	 * åˆ™å°†ç”¨äºŽé™åˆ¶è¯¥åˆ‡å…¥ç‚¹åªåŒ¹é…ç¬¬ä¸€ä¸ªå‚æ•°ç±»åž‹æ˜¯Stringï¼Œç¬¬äºŒä¸ªå‚æ•°ç±»åž‹æ˜¯Dateçš„æ–¹æ³•ã€‚
 	 */
 	@Before(value="execution(* *.*(..)) && args(food, time)")
 	public void enterMethod(String food, Date time){
-		System.out.println("Ä¿±ê·½·¨ÖÐµÄString²ÎÊýÊÇ£º" + food);
-		System.out.println("Ä¿±ê·½·¨ÖÐµÄDate²ÎÊýÊÇ£º" + time);
+		System.out.println("ç›®æ ‡æ–¹æ³•ä¸­çš„Stringå‚æ•°æ˜¯ï¼š" + food);
+		System.out.println("ç›®æ ‡æ–¹æ³•ä¸­çš„Dateå‚æ•°æ˜¯ï¼š" + time);
 	}
 	
 	/**
-	 * args ±í´ïÊ½À¨ºÅÖÐµÄ .. ±íÊ¾¿ÉÆ¥Åä¸ü¶à ²ÎÊý
+	 * args è¡¨è¾¾å¼æ‹¬å·ä¸­çš„ .. è¡¨ç¤ºå¯åŒ¹é…æ›´å¤š å‚æ•°
 	 */
-	// Æ¥Åä¾ßÓÐµÚÒ»¸ö²ÎÊýÊÇString£¬µÚ¶þ¸ö²ÎÊýÊÇintÀàÐÍµÄ·½·¨£¨¶ø²»¹ØÐÄÊÇ·ñ»¹ÓÐ¸ü¶à²ÎÊý£©¡£
+	// åŒ¹é…å…·æœ‰ç¬¬ä¸€ä¸ªå‚æ•°æ˜¯Stringï¼Œç¬¬äºŒä¸ªå‚æ•°æ˜¯intç±»åž‹çš„æ–¹æ³•ï¼ˆè€Œä¸å…³å¿ƒæ˜¯å¦è¿˜æœ‰æ›´å¤šå‚æ•°ï¼‰ã€‚
 	@Before(value="execution(* *.*(..)) && args(name, age, ..)")
 	public void enterMethod(String name, int age){
-		System.out.println("Ä¿±ê·½·¨ÖÐµÄname²ÎÊýÊÇ£º" + name);
-		System.out.println("Ä¿±ê·½·¨ÖÐµÄage²ÎÊýÊÇ£º" + age);
+		System.out.println("ç›®æ ‡æ–¹æ³•ä¸­çš„nameå‚æ•°æ˜¯ï¼š" + name);
+		System.out.println("ç›®æ ‡æ–¹æ³•ä¸­çš„ageå‚æ•°æ˜¯ï¼š" + age);
 	}
 }

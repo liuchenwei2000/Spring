@@ -6,11 +6,11 @@ package transaction;
 /**
  * Book
  * <p>
- * POJO£¬¶ÔÓ¦Êý¾Ý¿âµÄ book ±í¡£
+ * POJOï¼Œå¯¹åº”æ•°æ®åº“çš„ book è¡¨ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ30ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ30æ—¥
  */
 public class Book {
 

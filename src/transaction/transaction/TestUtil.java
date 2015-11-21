@@ -13,16 +13,16 @@ import transaction.Book;
 import transaction.BookDao;
 
 /**
- * Transaction ²¿·Ö²âÊÔ¹¤¾ß
+ * Transaction éƒ¨åˆ†æµ‹è¯•å·¥å…·
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê12ÔÂ5ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´12æœˆ5æ—¥
  */
 public class TestUtil {
 
 	/**
-	 * Ê¹ÓÃÖ¸¶¨XMLÅäÖÃÎÄ¼ş½øĞĞ²âÊÔ
+	 * ä½¿ç”¨æŒ‡å®šXMLé…ç½®æ–‡ä»¶è¿›è¡Œæµ‹è¯•
 	 */
 	public static void run(String xmlFilePath) {
 		ApplicationContext context = new ClassPathXmlApplicationContext(xmlFilePath);
@@ -32,11 +32,11 @@ public class TestUtil {
 		dao.deleteAll();
 		
 		String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-		System.out.println("±£´æÊé¼®...");
+		System.out.println("ä¿å­˜ä¹¦ç±...");
 		dao.save(new Book("1", "Thinking in Java_" + date, "Eckel Bruce"));
 		dao.save(new Book("2", "Spring in Action_" + date, "Craig Walls"));
 
-		System.out.println("²éÑ¯Êé¼®...");
+		System.out.println("æŸ¥è¯¢ä¹¦ç±...");
 		System.out.println(dao.find("Thinking in Java_" + date));
 		
 		dao.save(new Book("3", "Thinking in Java_" + date, "Bruce Eckel"));

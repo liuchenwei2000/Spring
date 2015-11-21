@@ -12,18 +12,18 @@ import java.net.URL;
 import org.springframework.core.io.Resource;
 
 /**
- * Resource½Ó¿ÚÊµÏÖÊ¾Àı
+ * Resourceæ¥å£å®ç°ç¤ºä¾‹
  * <p>
- * Resource±¾ÉíÊÇÒ»¸ö½Ó¿Ú£¬ÊÇ¾ßÌå×ÊÔ´·ÃÎÊ²ßÂÔµÄ³éÏó£¬Ò²ÊÇËùÓĞ×ÊÔ´·ÃÎÊÀàËùÊµÏÖµÄ½Ó¿Ú¡£
+ * Resourceæœ¬èº«æ˜¯ä¸€ä¸ªæ¥å£ï¼Œæ˜¯å…·ä½“èµ„æºè®¿é—®ç­–ç•¥çš„æŠ½è±¡ï¼Œä¹Ÿæ˜¯æ‰€æœ‰èµ„æºè®¿é—®ç±»æ‰€å®ç°çš„æ¥å£ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ23ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ23æ—¥
  */
 public class ResourceImpl implements Resource {
 
 	/**
-	 * ¶¨Î»²¢´ò¿ª×ÊÔ´£¬·µ»Ø×ÊÔ´¶ÔÓ¦µÄÊäÈëÁ÷¡£
+	 * å®šä½å¹¶æ‰“å¼€èµ„æºï¼Œè¿”å›èµ„æºå¯¹åº”çš„è¾“å…¥æµã€‚
 	 * 
 	 * @see org.springframework.core.io.InputStreamSource#getInputStream()
 	 */
@@ -33,7 +33,7 @@ public class ResourceImpl implements Resource {
 	}
 
 	/**
-	 * ·µ»ØResourceËùÖ¸ÏòµÄ×ÊÔ´ÊÇ·ñ´æÔÚ¡£
+	 * è¿”å›Resourceæ‰€æŒ‡å‘çš„èµ„æºæ˜¯å¦å­˜åœ¨ã€‚
 	 * 
 	 * @see org.springframework.core.io.Resource#exists()
 	 */
@@ -43,7 +43,7 @@ public class ResourceImpl implements Resource {
 	}
 
 	/**
-	 * ·µ»Ø×ÊÔ´ÎÄ¼şÊÇ·ñ´ò¿ª¡£
+	 * è¿”å›èµ„æºæ–‡ä»¶æ˜¯å¦æ‰“å¼€ã€‚
 	 * 
 	 * @see org.springframework.core.io.Resource#isOpen()
 	 */
@@ -53,7 +53,7 @@ public class ResourceImpl implements Resource {
 	}
 	
 	/**
-	 * ·µ»Ø×ÊÔ´µÄÃèÊöĞÅÏ¢£¬Í¬ÓÚ×ÊÔ´´¦Àí³ö´íÊ±Êä³ö¸ÃĞÅÏ¢£¬Í¨³£ÊÇÈ«ÏŞ¶¨ÎÄ¼şÃû»òÊµ¼ÊURL¡£
+	 * è¿”å›èµ„æºçš„æè¿°ä¿¡æ¯ï¼ŒåŒäºèµ„æºå¤„ç†å‡ºé”™æ—¶è¾“å‡ºè¯¥ä¿¡æ¯ï¼Œé€šå¸¸æ˜¯å…¨é™å®šæ–‡ä»¶åæˆ–å®é™…URLã€‚
 	 * 
 	 * @see org.springframework.core.io.Resource#getDescription()
 	 */
@@ -63,7 +63,7 @@ public class ResourceImpl implements Resource {
 	}
 
 	/**
-	 * ·µ»Ø×ÊÔ´¶ÔÓ¦µÄURL¶ÔÏó¡£
+	 * è¿”å›èµ„æºå¯¹åº”çš„URLå¯¹è±¡ã€‚
 	 * 
 	 * @see org.springframework.core.io.Resource#getURL()
 	 */
@@ -73,7 +73,7 @@ public class ResourceImpl implements Resource {
 	}
 	
 	/**
-	 * ·µ»Ø×ÊÔ´¶ÔÓ¦µÄFile¶ÔÏó¡£
+	 * è¿”å›èµ„æºå¯¹åº”çš„Fileå¯¹è±¡ã€‚
 	 * 
 	 * @see org.springframework.core.io.Resource#getFile()
 	 */

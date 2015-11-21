@@ -11,37 +11,37 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
 /**
- * ÔÚÇĞÃæÀàÖĞ·ÃÎÊÄ¿±ê·½·¨ĞÅÏ¢Ê¾Àı
+ * åœ¨åˆ‡é¢ç±»ä¸­è®¿é—®ç›®æ ‡æ–¹æ³•ä¿¡æ¯ç¤ºä¾‹
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ24ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ24æ—¥
  */
 @Aspect
 public class JoinPointAspect {
 	
 	/**
-	 * ·ÃÎÊÄ¿±ê·½·¨×î¼òµ¥µÄ×ö·¨ÊÇ¶¨ÒåÔöÇ¿´¦Àí·½·¨Ê±£¬½«µÚÒ»¸ö²ÎÊı¶¨ÒåÎªJoinPointÀàĞÍ£¨ProceedJoinPointÊÇÆä×ÓÀà£©£¬
-	 * µ±ÔöÇ¿´¦Àí·½·¨±»µ÷ÓÃÊ±£¬¸ÃJoinPoint²ÎÊı¾Í´ú±íÁËÖ¯ÈëÔöÇ¿´¦ÀíµÄÁ¬½Óµã¡£
+	 * è®¿é—®ç›®æ ‡æ–¹æ³•æœ€ç®€å•çš„åšæ³•æ˜¯å®šä¹‰å¢å¼ºå¤„ç†æ–¹æ³•æ—¶ï¼Œå°†ç¬¬ä¸€ä¸ªå‚æ•°å®šä¹‰ä¸ºJoinPointç±»å‹ï¼ˆProceedJoinPointæ˜¯å…¶å­ç±»ï¼‰ï¼Œ
+	 * å½“å¢å¼ºå¤„ç†æ–¹æ³•è¢«è°ƒç”¨æ—¶ï¼Œè¯¥JoinPointå‚æ•°å°±ä»£è¡¨äº†ç»‡å…¥å¢å¼ºå¤„ç†çš„è¿æ¥ç‚¹ã€‚
 	 */
 	@Before(value="execution(* *.*(..))")
 	public void enterMethod(JoinPoint jp) {
-		// ·µ»Ø±»ÔöÇ¿·½·¨µÄÇ©ÃûĞÅÏ¢¡£
+		// è¿”å›è¢«å¢å¼ºæ–¹æ³•çš„ç­¾åä¿¡æ¯ã€‚
 		Signature signature = jp.getSignature();
-		System.out.println("¿ªÊ¼½øÈë·½·¨£º" + signature.getName());
-		// ·µ»ØÖ´ĞĞÄ¿±ê·½·¨Ê±µÄ²ÎÊı¡£
+		System.out.println("å¼€å§‹è¿›å…¥æ–¹æ³•ï¼š" + signature.getName());
+		// è¿”å›æ‰§è¡Œç›®æ ‡æ–¹æ³•æ—¶çš„å‚æ•°ã€‚
 		Object[] args = jp.getArgs();
 		if (args != null && args.length > 0) {
-			System.out.println("·½·¨²ÎÊı£º" + Arrays.asList(args));
+			System.out.println("æ–¹æ³•å‚æ•°ï¼š" + Arrays.asList(args));
 		}
 
-		// ·µ»Ø±»Ö¯ÈëÔöÇ¿´¦ÀíµÄÄ¿±ê¶ÔÏó¡£
-		System.out.println("Ä¿±ê¶ÔÏó£º" + jp.getTarget());
+		// è¿”å›è¢«ç»‡å…¥å¢å¼ºå¤„ç†çš„ç›®æ ‡å¯¹è±¡ã€‚
+		System.out.println("ç›®æ ‡å¯¹è±¡ï¼š" + jp.getTarget());
 
-		// ·µ»ØAOP¿ò¼ÜÎªÄ¿±ê¶ÔÏóÉú³ÉµÄ´úÀí¶ÔÏó¡£
+		// è¿”å›AOPæ¡†æ¶ä¸ºç›®æ ‡å¯¹è±¡ç”Ÿæˆçš„ä»£ç†å¯¹è±¡ã€‚
 		Object proxy = jp.getThis();
 		if (proxy != null) {
-			System.out.println("AOP´úÀí¶ÔÏó£º" + proxy.getClass());
+			System.out.println("AOPä»£ç†å¯¹è±¡ï¼š" + proxy.getClass());
 		}
 	}
 }

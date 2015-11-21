@@ -12,19 +12,19 @@ public class App {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// Í¨¹ıÍ¬Ê±¼ÓÔØ¶à¸öXMLÅäÖÃÎÄ¼şµÄ·½Ê½×éºÏÅäÖÃĞÅÏ¢
+		// é€šè¿‡åŒæ—¶åŠ è½½å¤šä¸ªXMLé…ç½®æ–‡ä»¶çš„æ–¹å¼ç»„åˆé…ç½®ä¿¡æ¯
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				new String[] { "bean/imports/dao.xml", "bean/imports/business.xml" });
 
 		DAO dao = (DAO) context.getBean("dao");
 		
 		BusinessLayer business = (BusinessLayer) context.getBean("business");
-		business.setDao(dao);// ÊÖ¶¯Îª BusinessLayer ÉèÖÃ DAO ¶ÔÏó
+		business.setDao(dao);// æ‰‹åŠ¨ä¸º BusinessLayer è®¾ç½® DAO å¯¹è±¡
 		business.doOperation();
 		
 		((ClassPathXmlApplicationContext) context).close();
 		
-		// Í¨¹ıÔÚXMLÅäÖÃÎÄ¼şÖĞÊ¹ÓÃ import µÄ·½Ê½×éºÏÅäÖÃĞÅÏ¢
+		// é€šè¿‡åœ¨XMLé…ç½®æ–‡ä»¶ä¸­ä½¿ç”¨ import çš„æ–¹å¼ç»„åˆé…ç½®ä¿¡æ¯
 		context = new ClassPathXmlApplicationContext("bean/imports/business2.xml");
 
 		business = (BusinessLayer) context.getBean("business");

@@ -4,16 +4,16 @@
 package bean.instance.factory;
 
 /**
- * ´´½¨IBeingÊµÀıµÄ¾²Ì¬¹¤³§
+ * åˆ›å»ºIBeingå®ä¾‹çš„é™æ€å·¥å‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ17ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ17æ—¥
  */
 public class BeingFactory {
 
 	/**
-	 * ¾²Ì¬·½·¨£º¸ù¾İ²ÎÊı´´½¨¶ÔÓ¦µÄIBeingÊµÀı
+	 * é™æ€æ–¹æ³•ï¼šæ ¹æ®å‚æ•°åˆ›å»ºå¯¹åº”çš„IBeingå®ä¾‹
 	 */
 	public static IBeing create(String type) {
 		if ("dog".equals(type.toLowerCase())) {

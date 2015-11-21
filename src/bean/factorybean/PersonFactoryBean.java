@@ -9,21 +9,21 @@ import bean.instance.factory2.Chinese;
 import bean.instance.factory2.IPerson;
 
 /**
- * FactoryBeanÊ¾Àı
+ * FactoryBeanç¤ºä¾‹
  * <p>
- * FactoryBean½Ó¿ÚÊÇ¹¤³§BeanµÄ±ê×¼½Ó¿Ú£¬ÊµÏÖ¸Ã½Ó¿ÚµÄBeanÎŞ·¨×÷ÎªÕı³£BeanÊ¹ÓÃ£¬Ö»ÄÜ×÷Îª¹¤³§BeanÊ¹ÓÃ¡£
- * ½«¹¤³§Bean²¿ÊğÔÚÈİÆ÷ÖĞ£¬²¢Í¨¹ıgetBean()·½·¨À´»ñÈ¡ÊµÀıÊ±£¬ÈİÆ÷·µ»ØµÄÊÇ¸ÃFactoryBeanµÄ²úÆ·¶ø²»ÊÇFactoryBean±¾Éí¡£
+ * FactoryBeanæ¥å£æ˜¯å·¥å‚Beançš„æ ‡å‡†æ¥å£ï¼Œå®ç°è¯¥æ¥å£çš„Beanæ— æ³•ä½œä¸ºæ­£å¸¸Beanä½¿ç”¨ï¼Œåªèƒ½ä½œä¸ºå·¥å‚Beanä½¿ç”¨ã€‚
+ * å°†å·¥å‚Beanéƒ¨ç½²åœ¨å®¹å™¨ä¸­ï¼Œå¹¶é€šè¿‡getBean()æ–¹æ³•æ¥è·å–å®ä¾‹æ—¶ï¼Œå®¹å™¨è¿”å›çš„æ˜¯è¯¥FactoryBeançš„äº§å“è€Œä¸æ˜¯FactoryBeanæœ¬èº«ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ18ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ18æ—¥
  */
 public class PersonFactoryBean implements FactoryBean<IPerson>{
 
 	private static IPerson singleton = new Chinese("A chinese");
 	
 	/**
-	 * ·µ»Ø¸Ã¹¤³§BeanÉú³ÉµÄJavaÊµÀı¡£
+	 * è¿”å›è¯¥å·¥å‚Beanç”Ÿæˆçš„Javaå®ä¾‹ã€‚
 	 * 
 	 * @see org.springframework.beans.factory.FactoryBean#getObject()
 	 */
@@ -33,7 +33,7 @@ public class PersonFactoryBean implements FactoryBean<IPerson>{
 	}
 
 	/**
-	 * ·µ»ØÉú³ÉJavaÊµÀıµÄÊµÏÖÀà¡£
+	 * è¿”å›ç”ŸæˆJavaå®ä¾‹çš„å®ç°ç±»ã€‚
 	 * 
 	 * @see org.springframework.beans.factory.FactoryBean#getObjectType()
 	 */
@@ -43,7 +43,7 @@ public class PersonFactoryBean implements FactoryBean<IPerson>{
 	}
 
 	/**
-	 * ·µ»ØÉú³ÉµÄJavaÊµÀıÊÇ·ñÎªµ¥ÀıÄ£Ê½¡£
+	 * è¿”å›ç”Ÿæˆçš„Javaå®ä¾‹æ˜¯å¦ä¸ºå•ä¾‹æ¨¡å¼ã€‚
 	 * 
 	 * @see org.springframework.beans.factory.FactoryBean#isSingleton()
 	 */

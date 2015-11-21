@@ -16,11 +16,11 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 
 /**
- * ¼Ì³ĞJdbcDaoSupportµÄEmployeeDaoÊµÏÖ
+ * ç»§æ‰¿JdbcDaoSupportçš„EmployeeDaoå®ç°
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ30ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ30æ—¥
  */
 public class NPJdbcEmployeeDao extends NamedParameterJdbcDaoSupport implements EmployeeDao {
 
@@ -31,7 +31,7 @@ public class NPJdbcEmployeeDao extends NamedParameterJdbcDaoSupport implements E
 		parameters.put("name", employee.getName());
 		parameters.put("email", employee.getEmail());
 		parameters.put("age", employee.getAge());
-		// Ö±½ÓÍ¨¹ı¸¸ÀàµÄgetNamedParameterJdbcTemplate()»ñÈ¡NamedParameterJdbcTemplateÊµÀı
+		// ç›´æ¥é€šè¿‡çˆ¶ç±»çš„getNamedParameterJdbcTemplate()è·å–NamedParameterJdbcTemplateå®ä¾‹
 		getNamedParameterJdbcTemplate().update(SQL_SAVE, parameters);
 	}
 	

@@ -6,13 +6,13 @@ package resource;
 import org.springframework.core.io.FileSystemResource;
 
 /**
- * FileSystemResourceʾ��
+ * FileSystemResource示例
  * <p>
- * FileSystemResource�����ڷ����ļ�ϵͳ��Դ��ʹ�ø����������ļ���Դ��û��̫�����ƣ���ΪJDK�����ṩ��File/IOҲ�����ڷ���ϵͳ�ļ���Դ��
+ * FileSystemResource类用于访问文件系统资源，使用该类来访问文件资源并没有太大优势，因为JDK自身提供的File/IO也可用于访问系统文件资源。
  * 
- * @author ����ΰ
+ * @author 刘晨伟
  * 
- * �������ڣ�2014��11��23��
+ * 创建日期：2014年11月23日
  */
 public class FileSystemResourceTest {
 

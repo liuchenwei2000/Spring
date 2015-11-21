@@ -1,31 +1,31 @@
 
-ÔÚSpringÀï£¬ÉùÃ÷Ê½ÊÂÎñÊÇÍ¨ÊÂÎñ²ÎÊýÀ´¶¨ÒåµÄ¡£Ò»¸öÊÂÎñ²ÎÊý¾ÍÊÇ¶ÔÊÂÎñ²ßÂÔÓ¦¸ÃÈçºÎÓ¦ÓÃµ½Ä³¸ö·½·¨µÄÒ»¶ÎÃèÊö£¬ÓÉ5·½Ãæ×é³É£¬°üÀ¨£º
-´«²¥ÐÐÎª£¨Propagation behavior£©¡¢¸ôÀë¼¶±ð£¨Isolation level£©¡¢Ö»¶Á£¨Read-Only£©¡¢³¬Ê±£¨Timeout£©¡¢»Ø¹ö¹æÔò£¨Rollback Rules£©¡£
+åœ¨Springé‡Œï¼Œå£°æ˜Žå¼äº‹åŠ¡æ˜¯é€šäº‹åŠ¡å‚æ•°æ¥å®šä¹‰çš„ã€‚ä¸€ä¸ªäº‹åŠ¡å‚æ•°å°±æ˜¯å¯¹äº‹åŠ¡ç­–ç•¥åº”è¯¥å¦‚ä½•åº”ç”¨åˆ°æŸä¸ªæ–¹æ³•çš„ä¸€æ®µæè¿°ï¼Œç”±5æ–¹é¢ç»„æˆï¼ŒåŒ…æ‹¬ï¼š
+ä¼ æ’­è¡Œä¸ºï¼ˆPropagation behaviorï¼‰ã€éš”ç¦»çº§åˆ«ï¼ˆIsolation levelï¼‰ã€åªè¯»ï¼ˆRead-Onlyï¼‰ã€è¶…æ—¶ï¼ˆTimeoutï¼‰ã€å›žæ»šè§„åˆ™ï¼ˆRollback Rulesï¼‰ã€‚
 
-ËäÈ»SpringÌá¹©ÁËÈýÖÖÉùÃ÷ÊÂÎñµÄ»úÖÆ£¬µ«ËüÃÇ¶¼ÒÀ¿¿ÕâÎå¸ö²ÎÊýÀ´¿ØÖÆÈçºÎ¹ÜÀíÊÂÎñ²ßÂÔ¡£
+è™½ç„¶Springæä¾›äº†ä¸‰ç§å£°æ˜Žäº‹åŠ¡çš„æœºåˆ¶ï¼Œä½†å®ƒä»¬éƒ½ä¾é è¿™äº”ä¸ªå‚æ•°æ¥æŽ§åˆ¶å¦‚ä½•ç®¡ç†äº‹åŠ¡ç­–ç•¥ã€‚
 
-´«²¥ÐÐÎª¡¢¸ôÀë¼¶±ðÏê¼û´úÂëÊ¾Àý¡£ÆäÓàÈý¸ö²ÎÊý½âÊÍÈçÏÂ£º
-
-
-Ö»¶Á
-
-Èç¹ûÒ»¸öÊÂÎñÖ»¶Ôºó¶ËÊý¾Ý¿âÖ´ÐÐ¶Á²Ù×÷£¬ÄÇÃ´Êý¾Ý¿â¾Í¿ÉÒÔÀûÓÃÄÇ¸öÊÂÎñµÄÖ»¶ÁÌØÐÔ£¬²ÉÈ¡Ä³Ð©ÓÅ»¯´ëÊ©¡£
-Í¨¹ý°ÑÒ»¸öÊÂÎñÉùÃ÷ÎªÖ»¶Á£¬¿ÉÒÔ¸øºó¶ËÊý¾Ý¿âÒ»¸ö»ú»áÓ¦ÓÃÄÇÐ©ËüÈÏÎªºÏÊÊµÄÓÅ»¯´ëÊ©¡£
-
-ÓÉÓÚÖ»¶ÁµÄÓÅ»¯´ëÊ©ÊÇÔÚÒ»¸öÊÂÎñÆô¶¯Ê±ÓÉºó¶ËÊý¾Ý¿âÊµÊ©µÄ£¬Òò´ËÖ»ÓÐ¶ÔÓÚÄÇÐ©¾ßÓÐ¿ÉÄÜÆô¶¯Ò»¸öÐÂÊÂÎñµÄ´«²¥ÐÐÎª
-£¨PROPAGATION_REQUIRED¡¢PROPAGATION_REQUIRES_NEW¡¢PROPAGATION_NESTED£©µÄ·½·¨À´Ëµ£¬½«ÊÂÎñÉùÃ÷ÎªÖ»¶Á²ÅÓÐÒâÒå¡£
+ä¼ æ’­è¡Œä¸ºã€éš”ç¦»çº§åˆ«è¯¦è§ä»£ç ç¤ºä¾‹ã€‚å…¶ä½™ä¸‰ä¸ªå‚æ•°è§£é‡Šå¦‚ä¸‹ï¼š
 
 
-ÊÂÎñ³¬Ê±
+åªè¯»
 
-ÒòÎªÊÂÎñ¿ÉÄÜÉæ¼°¶Ôºó¶ËÊý¾Ý¿âµÄËø¶¨£¬ËùÒÔ³¤Ê±¼äÔËÐÐµÄÊÂÎñ»á²»±ØÒªµØÕ¼ÓÃÊý¾Ý¿â×ÊÔ´¡£¿ÉÒÔÉùÃ÷Ò»¸öÊÂÎñ£¬ÔÚÌØ¶¨ÃëÊýÖ®ºó×Ô¶¯»Ø¹ö£¬¶ø²»±ØµÈËü×Ô¼º½áÊø¡£
+å¦‚æžœä¸€ä¸ªäº‹åŠ¡åªå¯¹åŽç«¯æ•°æ®åº“æ‰§è¡Œè¯»æ“ä½œï¼Œé‚£ä¹ˆæ•°æ®åº“å°±å¯ä»¥åˆ©ç”¨é‚£ä¸ªäº‹åŠ¡çš„åªè¯»ç‰¹æ€§ï¼Œé‡‡å–æŸäº›ä¼˜åŒ–æŽªæ–½ã€‚
+é€šè¿‡æŠŠä¸€ä¸ªäº‹åŠ¡å£°æ˜Žä¸ºåªè¯»ï¼Œå¯ä»¥ç»™åŽç«¯æ•°æ®åº“ä¸€ä¸ªæœºä¼šåº”ç”¨é‚£äº›å®ƒè®¤ä¸ºåˆé€‚çš„ä¼˜åŒ–æŽªæ–½ã€‚
 
-ÒòÎª³¬Ê±Ê±ÖÓÔÚÒ»¸öÊÂÎñ¿ªÊ¼µÄÊ±ºòÆô¶¯£¬ËùÒÔÖ»ÓÐ¶ÔÓÚÄÇÐ©¾ßÓÐ¿ÉÄÜÆô¶¯Ò»¸öÐÂÊÂÎñµÄ´«²¥ÐÐÎª
-£¨PROPAGATION_REQUIRED¡¢PROPAGATION_REQUIRES_NEW¡¢PROPAGATION_NESTED£©µÄ·½·¨À´Ëµ£¬ÉùÃ÷ÊÂÎñ³¬Ê±²ÅÓÐÒâÒå¡£
+ç”±äºŽåªè¯»çš„ä¼˜åŒ–æŽªæ–½æ˜¯åœ¨ä¸€ä¸ªäº‹åŠ¡å¯åŠ¨æ—¶ç”±åŽç«¯æ•°æ®åº“å®žæ–½çš„ï¼Œå› æ­¤åªæœ‰å¯¹äºŽé‚£äº›å…·æœ‰å¯èƒ½å¯åŠ¨ä¸€ä¸ªæ–°äº‹åŠ¡çš„ä¼ æ’­è¡Œä¸º
+ï¼ˆPROPAGATION_REQUIREDã€PROPAGATION_REQUIRES_NEWã€PROPAGATION_NESTEDï¼‰çš„æ–¹æ³•æ¥è¯´ï¼Œå°†äº‹åŠ¡å£°æ˜Žä¸ºåªè¯»æ‰æœ‰æ„ä¹‰ã€‚
 
 
-»Ø¹ö¹æÔò
+äº‹åŠ¡è¶…æ—¶
 
-»Ø¹ö¹æÔò¶¨ÒåÄÄÐ©Òì³£ÒýÆð»Ø¹ö£¬ÄÄÐ©²»ÒýÆð¡£ÔÚÄ¬ÈÏÉèÖÃÏÂ£¬ÊÂÎñÖ»ÔÚ³öÏÖRuntimeExceptionÊ±»Ø¹ö£¬¶øÔÚ³öÏÖchecked exceptionÊ±²»»Ø¹ö£¨ÕâÒ»ÐÐÎªºÍEJBÖÐµÄ»Ø¹öÐÐÎªÊÇÒ»ÖÂµÄ£©¡£
+å› ä¸ºäº‹åŠ¡å¯èƒ½æ¶‰åŠå¯¹åŽç«¯æ•°æ®åº“çš„é”å®šï¼Œæ‰€ä»¥é•¿æ—¶é—´è¿è¡Œçš„äº‹åŠ¡ä¼šä¸å¿…è¦åœ°å ç”¨æ•°æ®åº“èµ„æºã€‚å¯ä»¥å£°æ˜Žä¸€ä¸ªäº‹åŠ¡ï¼Œåœ¨ç‰¹å®šç§’æ•°ä¹‹åŽè‡ªåŠ¨å›žæ»šï¼Œè€Œä¸å¿…ç­‰å®ƒè‡ªå·±ç»“æŸã€‚
 
-¿ÉÒÔÉùÃ÷Ò»¸öÊÂÎñÔÚ³öÏÖÌØ¶¨µÄchecked exceptionÊ±ÏñRuntimeExceptionÒ»Ñù»Ø¹ö¡£Í¬Ñù£¬¿ÉÒÔÉùÃ÷Ò»¸öÊÂÎñÔÚ³öÏÖÌØ¶¨µÄÒì³£Ê±²»»Ø¹ö£¬¼´Ê¹ÄÇÐ©Òì³£Ê±ÔËÐÐÊ±Òì³£¡£
+å› ä¸ºè¶…æ—¶æ—¶é’Ÿåœ¨ä¸€ä¸ªäº‹åŠ¡å¼€å§‹çš„æ—¶å€™å¯åŠ¨ï¼Œæ‰€ä»¥åªæœ‰å¯¹äºŽé‚£äº›å…·æœ‰å¯èƒ½å¯åŠ¨ä¸€ä¸ªæ–°äº‹åŠ¡çš„ä¼ æ’­è¡Œä¸º
+ï¼ˆPROPAGATION_REQUIREDã€PROPAGATION_REQUIRES_NEWã€PROPAGATION_NESTEDï¼‰çš„æ–¹æ³•æ¥è¯´ï¼Œå£°æ˜Žäº‹åŠ¡è¶…æ—¶æ‰æœ‰æ„ä¹‰ã€‚
+
+
+å›žæ»šè§„åˆ™
+
+å›žæ»šè§„åˆ™å®šä¹‰å“ªäº›å¼‚å¸¸å¼•èµ·å›žæ»šï¼Œå“ªäº›ä¸å¼•èµ·ã€‚åœ¨é»˜è®¤è®¾ç½®ä¸‹ï¼Œäº‹åŠ¡åªåœ¨å‡ºçŽ°RuntimeExceptionæ—¶å›žæ»šï¼Œè€Œåœ¨å‡ºçŽ°checked exceptionæ—¶ä¸å›žæ»šï¼ˆè¿™ä¸€è¡Œä¸ºå’ŒEJBä¸­çš„å›žæ»šè¡Œä¸ºæ˜¯ä¸€è‡´çš„ï¼‰ã€‚
+
+å¯ä»¥å£°æ˜Žä¸€ä¸ªäº‹åŠ¡åœ¨å‡ºçŽ°ç‰¹å®šçš„checked exceptionæ—¶åƒRuntimeExceptionä¸€æ ·å›žæ»šã€‚åŒæ ·ï¼Œå¯ä»¥å£°æ˜Žä¸€ä¸ªäº‹åŠ¡åœ¨å‡ºçŽ°ç‰¹å®šçš„å¼‚å¸¸æ—¶ä¸å›žæ»šï¼Œå³ä½¿é‚£äº›å¼‚å¸¸æ—¶è¿è¡Œæ—¶å¼‚å¸¸ã€‚

@@ -1,13 +1,13 @@
 
-��Spring���ΪĿ�귽��֯�������ǿ����ʱ��һ��˳�����£�
-�ڽ���Ŀ�귽��ʱ����֯��Around��ǿ��������֯��Before��ǿ���������˳�Ŀ�귽��ʱ����֯��Around��ǿ��������֯��AfterReturning��ǿ����������֯��After��ǿ������
+当Spring框架为目标方法织入各种增强处理时，一般顺序如下：
+在进入目标方法时，先织入Around增强处理，再织入Before增强处理；在退出目标方法时，先织入Around增强处理，再织入AfterReturning增强处理，最后才织入After增强处理。
 
-�ڽ������ӵ�ʱ��������ȼ�����ǿ����������֯�룻���˳����ӵ�ʱ��������ȼ�����ǿ���������֯�롣���ȼ�˳��Ϊ��Before<Around<AfterReturning<After��
+在进入连接点时，最高优先级的增强处理将被先织入；在退出连接点时，最高优先级的增强处理会最后被织入。优先级顺序为：Before<Around<AfterReturning<After。
 
-����ͬ�����������ͬ������ǿ������Ҫ��ͬһ�����ӵ㱻֯��ʱ��Spring���������˳����֯�����ǡ������Ҫָ����ǿ���������ȼ����������������ֽ��������
-1��������ʵ�� org.springframework.core.Ordered �ӿڣ�ֻ��ʵ��һ�� int getOrder()�������÷�������ֵԽС�����ȼ�Խ�ߡ�
-2��ֱ��ʹ��@Order ע��������һ�������࣬Ϊע��ָ��һ��int���͵�value���ԣ�ԽС���ȼ�Խ�ߡ�
+当不同切面的两个相同类型增强处理需要在同一个连接点被织入时，Spring会以随机的顺序来织入它们。如果需要指定增强处理的优先级，可以有如下两种解决方案：
+1，切面类实现 org.springframework.core.Ordered 接口，只需实现一个 int getOrder()方法，该方法返回值越小则优先级越高。
+2，直接使用@Order 注解来修饰一个切面类，为注解指定一个int类型的value属性，越小优先级越高。
 
-ͬһ�����������������ͬ���͵���ǿ������ͬһ���ӵ㱻֯��ʱ��SpringҲ���������˳����֯�����ǣ�û�а취�ƶ����ǵ�˳��
+同一个切面类里的两个相同类型的增强处理在同一连接点被织入时，Spring也会以随机的顺序来织入它们，没有办法制定它们的顺序。
 
-һ�仰��������ǿ������˳�򣬽��ȱȽ�����������������ȼ���Ȼ��Ƚ���ǿ�������͵����ȼ���
+一句话：决定增强处理的顺序，将先比较它们所属切面的优先级，然后比较增强处理类型的优先级。

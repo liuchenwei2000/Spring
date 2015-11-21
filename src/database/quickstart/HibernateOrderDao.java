@@ -6,19 +6,19 @@ package quickstart;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 /**
- * »ùÓÚHibernateÊµÏÖµÄDAO
+ * åŸºäºHibernateå®ç°çš„DAO
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ28ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ28æ—¥
  */
 public class HibernateOrderDao extends HibernateDaoSupport implements OrderDAO {
 
 	@Override
 	public String insert(Order order) {
-		// »ñÈ¡Êı¾İ·ÃÎÊÄ£°å
+		// è·å–æ•°æ®è®¿é—®æ¨¡æ¿
 		getHibernateTemplate().persist(order);
-		// »ñÈ¡·ÃÎÊµ×²ã³Ö¾ÃÆ½Ì¨µÄ¶ÔÏó
+		// è·å–è®¿é—®åº•å±‚æŒä¹…å¹³å°çš„å¯¹è±¡
 		// getSessionFactory();
 		return "";
 	}

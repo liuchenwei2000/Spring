@@ -6,9 +6,9 @@ package bean.lifecycle.init;
 /**
  * POJO
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ19ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ19æ—¥
  */
 public class Item {
 
@@ -16,7 +16,7 @@ public class Item {
 
 	public Item() {
 		super();
-		System.out.println("´´½¨Ò»¸öItemÊµÀý");
+		System.out.println("åˆ›å»ºä¸€ä¸ªItemå®žä¾‹");
 	}
 
 	public String getName() {

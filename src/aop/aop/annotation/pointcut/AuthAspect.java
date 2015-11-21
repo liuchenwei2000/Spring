@@ -9,26 +9,26 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 
 /**
- * ¶¨ÒåÇÐÈëµãÊ¾Àý
+ * å®šä¹‰åˆ‡å…¥ç‚¹ç¤ºä¾‹
  * <p>
- * ¶¨ÒåÇÐÈëµã£¬ÆäÊµÖÊ¾ÍÊÇÎªÒ»¸öÇÐÈëµã±í´ïÊ½ÆðÒ»¸öÃû³Æ£¬´Ó¶øÔÊÐíÔÚ¶à¸öÔöÇ¿´¦ÀíÖÐÖØÓÃ¸ÃÃû³Æ¡£
- * Spring AOPÖ»Ö§³ÖÒÔSpring BeanµÄ·½·¨Ö´ÐÐ´¦×÷ÎªÁ¬½Óµã£¬ËùÒÔ¿É°ÑÇÐÈëµã¿´³ÉËùÓÐÄÜºÍÇÐÈë±í´ïÊ½Æ¥ÅäµÄBean·½·¨¡£
+ * å®šä¹‰åˆ‡å…¥ç‚¹ï¼Œå…¶å®žè´¨å°±æ˜¯ä¸ºä¸€ä¸ªåˆ‡å…¥ç‚¹è¡¨è¾¾å¼èµ·ä¸€ä¸ªåç§°ï¼Œä»Žè€Œå…è®¸åœ¨å¤šä¸ªå¢žå¼ºå¤„ç†ä¸­é‡ç”¨è¯¥åç§°ã€‚
+ * Spring AOPåªæ”¯æŒä»¥Spring Beançš„æ–¹æ³•æ‰§è¡Œå¤„ä½œä¸ºè¿žæŽ¥ç‚¹ï¼Œæ‰€ä»¥å¯æŠŠåˆ‡å…¥ç‚¹çœ‹æˆæ‰€æœ‰èƒ½å’Œåˆ‡å…¥è¡¨è¾¾å¼åŒ¹é…çš„Beanæ–¹æ³•ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ26ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ26æ—¥
  */
 @Aspect
 public class AuthAspect {
 
 	/**
-	 * ÇÐÈëµãÇ©Ãû²ÉÓÃÒ»¸öÆÕÍ¨µÄ·½·¨¶¨Òå£¨·½·¨ÌåÍ¨³£Îª¿Õ£©À´Ìá¹©£¬ÇÒ·½·¨·µ»ØÖµ±ØÐëÊÇvoid£»ÇÐÈëµã±í´ïÊ½Ê¹ÓÃ @Pointcut ×¢½âÀ´±ê×¢¡£
+	 * åˆ‡å…¥ç‚¹ç­¾åé‡‡ç”¨ä¸€ä¸ªæ™®é€šçš„æ–¹æ³•å®šä¹‰ï¼ˆæ–¹æ³•ä½“é€šå¸¸ä¸ºç©ºï¼‰æ¥æä¾›ï¼Œä¸”æ–¹æ³•è¿”å›žå€¼å¿…é¡»æ˜¯voidï¼›åˆ‡å…¥ç‚¹è¡¨è¾¾å¼ä½¿ç”¨ @Pointcut æ³¨è§£æ¥æ ‡æ³¨ã€‚
 	 * <p>
-	 * ÇÐÈëµã¶¨Òå°üº¬Á½²¿·Ö£º
-	 * 1£¬ÇÐÈëµã±í´ïÊ½£ºÓÃÓÚÖ¸¶¨¸ÃÇÐÈëµãºÍÄÄÐ©·½·¨½øÐÐÆ¥Åä¡£
-	 * 2£¬°üº¬Ãû×ÖºÍÈÎÒâ²ÎÊýµÄ·½·¨Ç©Ãû£º½«×÷Îª¸ÃÇÐÈëµãµÄÃû³Æ¡£
+	 * åˆ‡å…¥ç‚¹å®šä¹‰åŒ…å«ä¸¤éƒ¨åˆ†ï¼š
+	 * 1ï¼Œåˆ‡å…¥ç‚¹è¡¨è¾¾å¼ï¼šç”¨äºŽæŒ‡å®šè¯¥åˆ‡å…¥ç‚¹å’Œå“ªäº›æ–¹æ³•è¿›è¡ŒåŒ¹é…ã€‚
+	 * 2ï¼ŒåŒ…å«åå­—å’Œä»»æ„å‚æ•°çš„æ–¹æ³•ç­¾åï¼šå°†ä½œä¸ºè¯¥åˆ‡å…¥ç‚¹çš„åç§°ã€‚
 	 * <p>
-	 * ±¾ÀýÆ¥ÅäËùÓÐÃûÎªaddXxxµÄ·½·¨£¨·½·¨²ÎÊýËæÒâ£©£¬ÇÐÈëµãÃû½Ð anyAddMethod¡£
+	 * æœ¬ä¾‹åŒ¹é…æ‰€æœ‰åä¸ºaddXxxçš„æ–¹æ³•ï¼ˆæ–¹æ³•å‚æ•°éšæ„ï¼‰ï¼Œåˆ‡å…¥ç‚¹åå« anyAddMethodã€‚
 	 */
 	@Pointcut(value="execution(* add*(..))")
 	private void anyAddMethod(){
@@ -36,19 +36,19 @@ public class AuthAspect {
 	}
 	
 	/**
-	 * ¶¨ÒåÁËÇÐÈëµãÖ®ºó£¬³ÌÐò¾Í¿ÉÒÔ¶à´ÎÖØ¸´Ê¹ÓÃ¸ÃÇÐÈëµãÁË£¬ÉõÖÁ¿ÉÒÔÔÚÆäËûÇÐÃæÀà¡¢ÆäËû°üµÄÇÐÃæÀàÀïÊ¹ÓÃ£¬
-	 * ÕâÈ¡¾öÓÚÇÐÈëµã¶¨Òå·½·¨µÄ·ÃÎÊ¿ØÖÆ·û¡£±¾ÀýµÄ anyAddMethod ÇÐÈëµãÊÇ private£¬ËùÒÔÖ»ÄÜÔÚ±¾ÇÐÃæÀàÄÚÊ¹ÓÃ¡£
+	 * å®šä¹‰äº†åˆ‡å…¥ç‚¹ä¹‹åŽï¼Œç¨‹åºå°±å¯ä»¥å¤šæ¬¡é‡å¤ä½¿ç”¨è¯¥åˆ‡å…¥ç‚¹äº†ï¼Œç”šè‡³å¯ä»¥åœ¨å…¶ä»–åˆ‡é¢ç±»ã€å…¶ä»–åŒ…çš„åˆ‡é¢ç±»é‡Œä½¿ç”¨ï¼Œ
+	 * è¿™å–å†³äºŽåˆ‡å…¥ç‚¹å®šä¹‰æ–¹æ³•çš„è®¿é—®æŽ§åˆ¶ç¬¦ã€‚æœ¬ä¾‹çš„ anyAddMethod åˆ‡å…¥ç‚¹æ˜¯ privateï¼Œæ‰€ä»¥åªèƒ½åœ¨æœ¬åˆ‡é¢ç±»å†…ä½¿ç”¨ã€‚
 	 */
 	@Before(value="anyAddMethod()")
 	public void enterMethod(){
-		System.out.println("ÈÏÖ¤Í¨¹ý....");
+		System.out.println("è®¤è¯é€šè¿‡....");
 	}
 	
 	/**
-	 * µ±Ê¹ÓÃÆäËûÇÐÃæÀàÖÐµÄÇÐÈëµãÊ±£¬Ó¦¸ÃÊ¹ÓÃÇÐÃæÀà×÷ÎªÇ°×ºÀ´ÏÞÖÆÇÐÈëµã¡£
+	 * å½“ä½¿ç”¨å…¶ä»–åˆ‡é¢ç±»ä¸­çš„åˆ‡å…¥ç‚¹æ—¶ï¼Œåº”è¯¥ä½¿ç”¨åˆ‡é¢ç±»ä½œä¸ºå‰ç¼€æ¥é™åˆ¶åˆ‡å…¥ç‚¹ã€‚
 	 */
 	@AfterReturning(value="SystemPointcut.anyMethod()", returning="returnObj")
 	public void leaveMethod(Object returnObj){
-		System.out.println("Àë¿ª·½·¨....");
+		System.out.println("ç¦»å¼€æ–¹æ³•....");
 	}
 }

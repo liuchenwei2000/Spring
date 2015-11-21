@@ -6,25 +6,25 @@ package bean.other;
 import org.springframework.beans.factory.BeanNameAware;
 
 /**
- * ÖªµÀ×Ô¼ºIDµÄBeanÊ¾Àı
+ * çŸ¥é“è‡ªå·±IDçš„Beanç¤ºä¾‹
  * <p>
- * Ò»°ãÇé¿öÏÂ£¬³ÌĞò×ÜÊÇÍ¨¹ıBean idÖ÷¶¯À´»ñÈ¡BeanÊµÀı¡£
- * µ«ÔÚÄ³Ğ©Çé¿öÏÂ£¬Bean×ÔÉíÓÖĞèÒª»ñÈ¡ÅäÖÃ¸ÃBeanÊ±Ö¸¶¨µÄidÊôĞÔ¡£
- * ´ËÊ±¿ÉÒÔÍ¨¹ıÊµÏÖBeanNameAware½Ó¿Ú£¬ÔÊĞíBeanÀà»ñÈ¡²¿ÊğËüÊ±µÄidÊôĞÔ¡£
+ * ä¸€èˆ¬æƒ…å†µä¸‹ï¼Œç¨‹åºæ€»æ˜¯é€šè¿‡Bean idä¸»åŠ¨æ¥è·å–Beanå®ä¾‹ã€‚
+ * ä½†åœ¨æŸäº›æƒ…å†µä¸‹ï¼ŒBeanè‡ªèº«åˆéœ€è¦è·å–é…ç½®è¯¥Beanæ—¶æŒ‡å®šçš„idå±æ€§ã€‚
+ * æ­¤æ—¶å¯ä»¥é€šè¿‡å®ç°BeanNameAwareæ¥å£ï¼Œå…è®¸Beanç±»è·å–éƒ¨ç½²å®ƒæ—¶çš„idå±æ€§ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ19ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ19æ—¥
  */
 public class BeanWhoKnowsID implements BeanNameAware {
 
 	private String id;
 
 	/**
-	 * ¸Ã·½·¨²»ÊÇÓÉ³ÌĞòÔ±À´µ÷ÓÃ£¬¶øÊÇÓÉSpringÈİÆ÷¸ºÔğµ÷ÓÃ£¬ÈİÆ÷»á°Ñ²¿Êğ¸ÃBeanµÄidÊôĞÔ×÷Îª²ÎÊı´«Èë¡£
+	 * è¯¥æ–¹æ³•ä¸æ˜¯ç”±ç¨‹åºå‘˜æ¥è°ƒç”¨ï¼Œè€Œæ˜¯ç”±Springå®¹å™¨è´Ÿè´£è°ƒç”¨ï¼Œå®¹å™¨ä¼šæŠŠéƒ¨ç½²è¯¥Beançš„idå±æ€§ä½œä¸ºå‚æ•°ä¼ å…¥ã€‚
 	 * <p>
-	 * SpringÈİÆ÷»áÔÚBean³õÊ¼»¯Íê³Éºó»Øµ÷¸Ã·½·¨¡ª¡ª¡ª¡ªÕâÀïµÄ³õÊ¼»¯Ö¸µÄÊÇBeanµÄ³õÊ¼»¯ĞĞÎª£º
-	 * °üÀ¨»Øµ÷InitializingBean½Ó¿ÚËùÊµÏÖµÄafterPropertiesSet·½·¨¡¢»Øµ÷BeanÅäÖÃÖĞinit-methodÊôĞÔËùÖ¸¶¨µÄ·½·¨¡£
+	 * Springå®¹å™¨ä¼šåœ¨Beanåˆå§‹åŒ–å®Œæˆåå›è°ƒè¯¥æ–¹æ³•â€”â€”â€”â€”è¿™é‡Œçš„åˆå§‹åŒ–æŒ‡çš„æ˜¯Beançš„åˆå§‹åŒ–è¡Œä¸ºï¼š
+	 * åŒ…æ‹¬å›è°ƒInitializingBeanæ¥å£æ‰€å®ç°çš„afterPropertiesSetæ–¹æ³•ã€å›è°ƒBeané…ç½®ä¸­init-methodå±æ€§æ‰€æŒ‡å®šçš„æ–¹æ³•ã€‚
 	 * 
 	 * @see org.springframework.beans.factory.BeanNameAware#setBeanName(java.lang.String)
 	 */

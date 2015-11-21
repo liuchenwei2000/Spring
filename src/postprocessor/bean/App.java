@@ -12,8 +12,8 @@ public class App {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// Èç¹û²ÉÓÃApplicationContext×÷ÎªSpringÈİÆ÷£¬ÔòÎŞĞèÊÖ¶¯×¢²áBeanºó´¦ÀíÆ÷£¬Ëü»á×Ô¶¯¼ì²âµ½ÈİÆ÷ÖĞµÄBeanºó´¦ÀíÆ÷¡£
-		// Èç¹ûÊ¹ÓÃBeanFactory×÷ÎªÈİÆ÷£¬¾ÍĞèÒªÊÖ¶¯×¢²áBeanºó´¦ÀíÆ÷¡£
+		// å¦‚æœé‡‡ç”¨ApplicationContextä½œä¸ºSpringå®¹å™¨ï¼Œåˆ™æ— éœ€æ‰‹åŠ¨æ³¨å†ŒBeanåå¤„ç†å™¨ï¼Œå®ƒä¼šè‡ªåŠ¨æ£€æµ‹åˆ°å®¹å™¨ä¸­çš„Beanåå¤„ç†å™¨ã€‚
+		// å¦‚æœä½¿ç”¨BeanFactoryä½œä¸ºå®¹å™¨ï¼Œå°±éœ€è¦æ‰‹åŠ¨æ³¨å†ŒBeanåå¤„ç†å™¨ã€‚
 		ApplicationContext context = new ClassPathXmlApplicationContext("postprocessor/bean/mybean.xml");
 		System.out.println(context.getBean("mybean"));
 

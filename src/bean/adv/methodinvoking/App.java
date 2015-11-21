@@ -7,11 +7,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * ×¢ÈëÆäËûBeanµÄ·½·¨·µ»ØÖµÊ¾Àı
+ * æ³¨å…¥å…¶ä»–Beançš„æ–¹æ³•è¿”å›å€¼ç¤ºä¾‹
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ20ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ20æ—¥
  */
 public class App {
 

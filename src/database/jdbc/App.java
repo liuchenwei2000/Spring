@@ -23,17 +23,17 @@ public class App {
 
 		EmployeeDao dao = (EmployeeDao) context.getBean("employeeDao");
 
-		System.out.println("±£´æÒ»¸ö¹ÍÔ±...");
+		System.out.println("ä¿å­˜ä¸€ä¸ªé›‡å‘˜...");
 		dao.save(new Employee("Tom", "tom1999@gmail.com", 20));
 		dao.save(new Employee("Ann_" + new Date(), "annn@gmail.com", 30));
 
-		System.out.println("¸üĞÂÒ»¸ö¹ÍÔ±...");
+		System.out.println("æ›´æ–°ä¸€ä¸ªé›‡å‘˜...");
 		dao.update(new Employee("Tom", "tom_1999@oracle.com", 20));
 
-		System.out.println("²éÑ¯Ò»¸ö¹ÍÔ±...");
+		System.out.println("æŸ¥è¯¢ä¸€ä¸ªé›‡å‘˜...");
 		System.out.println(dao.find("Tom"));
 
-		System.out.println("É¾³ıÒ»¸ö¹ÍÔ±...");
+		System.out.println("åˆ é™¤ä¸€ä¸ªé›‡å‘˜...");
 		dao.delete(new Employee("Tom", null, 0));
 
 		((ClassPathXmlApplicationContext) context).close();

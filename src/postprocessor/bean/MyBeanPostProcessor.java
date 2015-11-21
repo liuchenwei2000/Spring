@@ -7,25 +7,25 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
- * Beanºó´¦ÀíÆ÷Ê¾Àı
+ * Beanåå¤„ç†å™¨ç¤ºä¾‹
  * <p>
- * Beanºó´¦ÀíÆ÷ÊÇÒ»ÖÖÌØÊâµÄBean£¬Ëü²¢²»¶ÔÍâÌá¹©·şÎñ£¬ÉõÖÁÎŞĞèidÊôĞÔ¡£
- * ËüÖ÷Òª¸ºÔğ¶ÔÈİÆ÷ÖĞµÄÆäËûBeanÖ´ĞĞºó´¦Àí£¬ÀıÈçÎªÈİÆ÷ÖĞµÄÄ¿±êBeanÉú³É´úÀíµÈ¡£
+ * Beanåå¤„ç†å™¨æ˜¯ä¸€ç§ç‰¹æ®Šçš„Beanï¼Œå®ƒå¹¶ä¸å¯¹å¤–æä¾›æœåŠ¡ï¼Œç”šè‡³æ— éœ€idå±æ€§ã€‚
+ * å®ƒä¸»è¦è´Ÿè´£å¯¹å®¹å™¨ä¸­çš„å…¶ä»–Beanæ‰§è¡Œåå¤„ç†ï¼Œä¾‹å¦‚ä¸ºå®¹å™¨ä¸­çš„ç›®æ ‡Beanç”Ÿæˆä»£ç†ç­‰ã€‚
  * <p>
- * Beanºó´¦ÀíÆ÷»áÔÚBeanÊµÀı´´½¨³É¹¦Ö®ºó£¬¶ÔBeanÊµÀı½øĞĞ½øÒ»²½µÄÔöÇ¿´¦Àí¡£ËüÍ¨³£ÓÃÀ´¼ì²é±ê¼Ç½Ó¿Ú£¬»òÕß½«Bean°ü×°³ÉÒ»¸öProxy£¬
- * SpringµÄºÜ¶à¹¤¾ßÀà£¬¾ÍÊÇÍ¨¹ıBeanºó´¦ÀíÆ÷Íê³ÉµÄ£¬±ÈÈçBeanNameAutoProxyCreator¡¢DefaultAdvisorAutoProxyCreator¡£
+ * Beanåå¤„ç†å™¨ä¼šåœ¨Beanå®ä¾‹åˆ›å»ºæˆåŠŸä¹‹åï¼Œå¯¹Beanå®ä¾‹è¿›è¡Œè¿›ä¸€æ­¥çš„å¢å¼ºå¤„ç†ã€‚å®ƒé€šå¸¸ç”¨æ¥æ£€æŸ¥æ ‡è®°æ¥å£ï¼Œæˆ–è€…å°†BeanåŒ…è£…æˆä¸€ä¸ªProxyï¼Œ
+ * Springçš„å¾ˆå¤šå·¥å…·ç±»ï¼Œå°±æ˜¯é€šè¿‡Beanåå¤„ç†å™¨å®Œæˆçš„ï¼Œæ¯”å¦‚BeanNameAutoProxyCreatorã€DefaultAdvisorAutoProxyCreatorã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ20ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ20æ—¥
  */
-public class MyBeanPostProcessor implements BeanPostProcessor {// ĞèÒªÊµÏÖ BeanPostProcessor ½Ó¿Ú
+public class MyBeanPostProcessor implements BeanPostProcessor {// éœ€è¦å®ç° BeanPostProcessor æ¥å£
 
 	/**
-	 * Õâ¸ö·½·¨»áÔÚÄ¿±êBean³õÊ¼»¯Ö®Ç°±»µ÷ÓÃ¡£
+	 * è¿™ä¸ªæ–¹æ³•ä¼šåœ¨ç›®æ ‡Beanåˆå§‹åŒ–ä¹‹å‰è¢«è°ƒç”¨ã€‚
 	 * 
-	 * @param bean ´ı´¦ÀíµÄBeanÊµÀı
-	 * @param beanName ´ı´¦ÀíBeanÊµÀıµÄid
+	 * @param bean å¾…å¤„ç†çš„Beanå®ä¾‹
+	 * @param beanName å¾…å¤„ç†Beanå®ä¾‹çš„id
 	 * @return the bean instance to use, either the original or a wrapped one
 	 * 
 	 * @see org.springframework.beans.factory.config.BeanPostProcessor#postProcessBeforeInitialization(java.lang.Object, java.lang.String)
@@ -33,15 +33,15 @@ public class MyBeanPostProcessor implements BeanPostProcessor {// ĞèÒªÊµÏÖ BeanP
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName)
 			throws BeansException {
-		System.out.println("Ä¿±ê Bean ³õÊ¼»¯Ö®Ç°´¦Àí£ºid=" + beanName + " , " + bean );
+		System.out.println("ç›®æ ‡ Bean åˆå§‹åŒ–ä¹‹å‰å¤„ç†ï¼šid=" + beanName + " , " + bean );
 		return bean;
 	}
 
 	/**
-	 * Õâ¸ö·½·¨»áÔÚÄ¿±êBean³õÊ¼»¯Ö®ºó±»µ÷ÓÃ¡£
+	 * è¿™ä¸ªæ–¹æ³•ä¼šåœ¨ç›®æ ‡Beanåˆå§‹åŒ–ä¹‹åè¢«è°ƒç”¨ã€‚
 	 * 
-	 * @param bean ´ı´¦ÀíµÄBeanÊµÀı
-	 * @param beanName ´ı´¦ÀíBeanÊµÀıµÄid
+	 * @param bean å¾…å¤„ç†çš„Beanå®ä¾‹
+	 * @param beanName å¾…å¤„ç†Beanå®ä¾‹çš„id
 	 * @return the bean instance to use, either the original or a wrapped one
 	 * 
 	 * @see org.springframework.beans.factory.config.BeanPostProcessor#postProcessAfterInitialization(java.lang.Object, java.lang.String)
@@ -49,7 +49,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {// ĞèÒªÊµÏÖ BeanP
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName)
 			throws BeansException {
-		System.out.println("Ä¿±ê Bean ³õÊ¼»¯Ö®ºó´¦Àí£ºid=" + beanName + " , " + bean );
+		System.out.println("ç›®æ ‡ Bean åˆå§‹åŒ–ä¹‹åå¤„ç†ï¼šid=" + beanName + " , " + bean );
 		return bean;
 	}
 }

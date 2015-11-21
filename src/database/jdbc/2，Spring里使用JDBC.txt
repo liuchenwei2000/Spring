@@ -1,8 +1,8 @@
 
 
-��Ϊ�󲿷�JDBC���������ڴ������Ӻ���䡢�����쳣������������룬����Spring�ṩ��һ�׿����������Щ������롣
+因为大部分JDBC代码是用于创建连接和语句、进行异常处理的样板代码，所以Spring提供了一套框架来处理这些样板代码。
 
-Spring�����ݷ��ʵ�����������ص�ģ����֮�£�����JDBC��˵��������ģ���ࣺ
-JdbcTemplate��������JDBCģ�壬����JDBC�ͼ򵥵�����������ѯ�ṩ�����ݿ�ķ��ʡ�
-NameParameterJdbcTemplate���ܹ���ִ�в�ѯʱ��ֵ�󶨵�SQL�������������������ʹ������������
-SimpleJdbcTemplate������JDK5���ԣ������Զ�װ�䡢���ͺͿɱ�����б�����JDBCģ���ʹ�á�
+Spring把数据访问的样板代码隐藏到模板类之下，对于JDBC来说，有三个模板类：
+JdbcTemplate：基本的JDBC模板，利用JDBC和简单的索引参数查询提供对数据库的访问。
+NameParameterJdbcTemplate：能够在执行查询时把值绑定到SQL里的命名参数，而不是使用索引参数。
+SimpleJdbcTemplate：利用JDK5特性，比如自动装箱、泛型和可变参数列表来简化JDBC模板的使用。

@@ -6,11 +6,11 @@ package hibernate;
 /**
  * Person
  * <p>
- * POJO£¬¶ÔÓ¦Êı¾İ¿âµÄ person ±í¡£
+ * POJOï¼Œå¯¹åº”æ•°æ®åº“çš„ person è¡¨ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê12ÔÂ1ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´12æœˆ1æ—¥
  */
 public class Person {
 

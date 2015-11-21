@@ -10,18 +10,18 @@ import org.springframework.core.io.Resource;
 import resource.IOUtil;
 
 /**
- * ��Ҫ������Դ��Beanʾ��
+ * 需要访问资源的Bean示例
  * <p>
- * ��Ӧ�ó����е�Beanʵ����Ҫ������Դʱ������ʹ��Resourceʵ�����ApplicationContext��ȡ��Դ�⣬Spring������ֱ����������ע�����ﵽĿ�ġ�
- * ����������̬������Դ�ļ�λ�ã����轫��Դ�ļ�λ��д�ڴ����С�
+ * 当应用程序中的Bean实例需要访问资源时，除了使用Resource实现类或ApplicationContext获取资源外，Spring还可以直接利用依赖注入来达到目的。
+ * 这样允许动态配置资源文件位置，无需将资源文件位置写在代码中。
  * 
- * @author ����ΰ
+ * @author 刘晨伟
  * 
- * �������ڣ�2014��11��23��
+ * 创建日期：2014年11月23日
  */
 public class TestBean {
 
-	// ����ע�����Դ
+	// 依赖注入的资源
 	private Resource resource;
 
 	public Resource getResource() {

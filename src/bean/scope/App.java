@@ -15,9 +15,9 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("bean/scope/scope.xml");
 
 		System.out.println(context.getBean("default") == context.getBean("default"));
-		// singleton ×÷ÓÃÓòµÄBean£¬Ã¿´Î·µ»ØµÄ¶¼ÊÇÍ¬Ò»¸öÊµÀı
+		// singleton ä½œç”¨åŸŸçš„Beanï¼Œæ¯æ¬¡è¿”å›çš„éƒ½æ˜¯åŒä¸€ä¸ªå®ä¾‹
 		System.out.println(context.getBean("singleton") == context.getBean("singleton"));
-		// prototype ×÷ÓÃÓòµÄBean£¬Ã¿´Î·µ»ØµÄ¶¼ÊÇÈ«ĞÂÊµÀı
+		// prototype ä½œç”¨åŸŸçš„Beanï¼Œæ¯æ¬¡è¿”å›çš„éƒ½æ˜¯å…¨æ–°å®ä¾‹
 		System.out.println(context.getBean("prototype") == context.getBean("prototype"));
 		
 		((ClassPathXmlApplicationContext) context).close();

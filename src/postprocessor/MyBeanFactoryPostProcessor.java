@@ -8,25 +8,25 @@ import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
 /**
- * ÈİÆ÷ºó´¦ÀíÆ÷Ê¾Àı
+ * å®¹å™¨åå¤„ç†å™¨ç¤ºä¾‹
  * <p>
- * Beanºó´¦ÀíÆ÷¸ºÔğ´¦ÀíÈİÆ÷ÖĞµÄËùÓĞBeanÊµÀı£¬¶øÈİÆ÷ºó´¦ÀíÆ÷Ôò¸ºÔğ´¦ÀíÈİÆ÷±¾Éí¡£
- * ÈİÆ÷ºó´¦ÀíÆ÷Í¨³£ÓÃÓÚ¶ÔSpringÈİÆ÷½øĞĞ´¦Àí£¬²¢ÇÒ×ÜÊÇÔÚÈİÆ÷ÊµÀı»¯ÈÎºÎÆäËûµÄBeanÖ®Ç°¶ÁÈ¡ÅäÖÃÎÄ¼şµÄÔªÊı¾İ£¬²¢ÓĞ¿ÉÄÜĞŞ¸ÄÕâĞ©ÔªÊı¾İ¡£
+ * Beanåå¤„ç†å™¨è´Ÿè´£å¤„ç†å®¹å™¨ä¸­çš„æ‰€æœ‰Beanå®ä¾‹ï¼Œè€Œå®¹å™¨åå¤„ç†å™¨åˆ™è´Ÿè´£å¤„ç†å®¹å™¨æœ¬èº«ã€‚
+ * å®¹å™¨åå¤„ç†å™¨é€šå¸¸ç”¨äºå¯¹Springå®¹å™¨è¿›è¡Œå¤„ç†ï¼Œå¹¶ä¸”æ€»æ˜¯åœ¨å®¹å™¨å®ä¾‹åŒ–ä»»ä½•å…¶ä»–çš„Beanä¹‹å‰è¯»å–é…ç½®æ–‡ä»¶çš„å…ƒæ•°æ®ï¼Œå¹¶æœ‰å¯èƒ½ä¿®æ”¹è¿™äº›å…ƒæ•°æ®ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ21ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ21æ—¥
  */
 public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
 	/**
-	 * ÊµÏÖ¸Ã·½·¨¶ÔSpringÈİÆ÷½øĞĞ´¦Àí
+	 * å®ç°è¯¥æ–¹æ³•å¯¹Springå®¹å™¨è¿›è¡Œå¤„ç†
 	 * 
 	 * @see org.springframework.beans.factory.config.BeanFactoryPostProcessor#postProcessBeanFactory(org.springframework.beans.factory.config.ConfigurableListableBeanFactory)
 	 */
 	@Override
 	public void postProcessBeanFactory(
 			ConfigurableListableBeanFactory beanFactory) throws BeansException {
-		System.out.println("Spring ÈİÆ÷ÊÇ " + beanFactory);
+		System.out.println("Spring å®¹å™¨æ˜¯ " + beanFactory);
 	}
 }

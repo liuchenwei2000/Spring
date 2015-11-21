@@ -14,11 +14,11 @@ public class App {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println("¡¾byName¡¿");
+		System.out.println("ã€byNameã€‘");
 		run("bean/autowire/byName.xml");
-		System.out.println("¡¾byType¡¿");
+		System.out.println("ã€byTypeã€‘");
 		run("bean/autowire/byType.xml");
-		System.out.println("¡¾constructor¡¿");
+		System.out.println("ã€constructorã€‘");
 		run("bean/autowire/constructor.xml");
 	}
 

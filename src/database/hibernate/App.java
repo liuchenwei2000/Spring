@@ -18,18 +18,18 @@ public class App {
 
 		PersonDao dao = (PersonDao) context.getBean("personDao");
 
-		System.out.println("±£´æÒ»¸öÈË...");
+		System.out.println("ä¿å­˜ä¸€ä¸ªäºº...");
 		dao.save(new Person("Tom", "tom1999@gmail.com", 20));
 		dao.save(new Person("Ann_" + new Date(), "annn@gmail.com", 30));
 
-		System.out.println("¸üÐÂÒ»¸öÈË...");
+		System.out.println("æ›´æ–°ä¸€ä¸ªäºº...");
 		dao.update(new Person("Tom", "tom_1999@oracle.com", 20));
 
-		System.out.println("²éÑ¯Ò»¸öÈË...");
+		System.out.println("æŸ¥è¯¢ä¸€ä¸ªäºº...");
 		Person person = dao.find(1L);
 		System.out.println(person);
 
-		System.out.println("É¾³ýÒ»¸öÈË...");
+		System.out.println("åˆ é™¤ä¸€ä¸ªäºº...");
 		dao.delete(person);
 
 		((ClassPathXmlApplicationContext) context).close();

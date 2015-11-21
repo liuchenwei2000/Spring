@@ -4,15 +4,15 @@
 package bean.imports;
 
 /**
- * Ä£ÄâÒµÎñÂß¼­²ã
+ * æ¨¡æ‹Ÿä¸šåŠ¡é€»è¾‘å±‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2015Äê4ÔÂ9ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2015å¹´4æœˆ9æ—¥
  */
 public class BusinessLayer {
 
-	private DAO dao;// Ê¹ÓÃDAOÍê³É³Ö¾Ã»¯
+	private DAO dao;// ä½¿ç”¨DAOå®ŒæˆæŒä¹…åŒ–
 
 	public BusinessLayer() {
 		super();

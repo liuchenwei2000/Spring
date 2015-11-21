@@ -7,17 +7,17 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 
 /**
- * Êı¾İ·ÃÎÊµÄÄ£°å»¯
+ * æ•°æ®è®¿é—®çš„æ¨¡æ¿åŒ–
  * <p>
- * Ä£°å·½·¨¶¨Òå¹ı³ÌµÄ¼Ü¹¹¡£Spring°ÑÊı¾İ·ÃÎÊ¹ı³ÌÖĞ¹Ì¶¨Óë±ä»¯µÄ²¿·ÖÃ÷È·µØ»®·ÖÎªÁ½Àà£ºÄ£°åºÍ»Øµ÷¡£
- * Ä£°å¹ÜÀí¹ı³ÌÖĞµÄ¹Ì¶¨²¿·Ö£¨Èç¿ØÖÆÊÂÎñ¡¢¹ÜÀí×ÊÔ´ºÍÒì³£´¦Àí£©£¬¶ø»Øµ÷´¦Àí×Ô¶¨ÒåµÄÊı¾İ·ÃÎÊ´úÂë£¨Èç´´½¨Óï¾ä¡¢°ó¶¨²ÎÊıºÍ´¦Àí½á¹û£©¡£
+ * æ¨¡æ¿æ–¹æ³•å®šä¹‰è¿‡ç¨‹çš„æ¶æ„ã€‚SpringæŠŠæ•°æ®è®¿é—®è¿‡ç¨‹ä¸­å›ºå®šä¸å˜åŒ–çš„éƒ¨åˆ†æ˜ç¡®åœ°åˆ’åˆ†ä¸ºä¸¤ç±»ï¼šæ¨¡æ¿å’Œå›è°ƒã€‚
+ * æ¨¡æ¿ç®¡ç†è¿‡ç¨‹ä¸­çš„å›ºå®šéƒ¨åˆ†ï¼ˆå¦‚æ§åˆ¶äº‹åŠ¡ã€ç®¡ç†èµ„æºå’Œå¼‚å¸¸å¤„ç†ï¼‰ï¼Œè€Œå›è°ƒå¤„ç†è‡ªå®šä¹‰çš„æ•°æ®è®¿é—®ä»£ç ï¼ˆå¦‚åˆ›å»ºè¯­å¥ã€ç»‘å®šå‚æ•°å’Œå¤„ç†ç»“æœï¼‰ã€‚
  * <p>
- * Õë¶Ô²»Í¬µÄ³Ö¾Ã»¯¼¼Êõ£¬SpringÌá¹©ÁË¶à¸öÄ£°åÀà£¬°üÀ¨»ùÓÚJDBCµÄJdbcTemplate¡¢NameParameterJdbcTemplate¡¢SimpleJdbcTemplate£»
- * »ùÓÚHibernateµÄHibernateTemplate£»»ùÓÚiBatisµÄSqlMapClientTemplateºÍ»ùÓÚJPAµÄJpaTemplate¡£
+ * é’ˆå¯¹ä¸åŒçš„æŒä¹…åŒ–æŠ€æœ¯ï¼ŒSpringæä¾›äº†å¤šä¸ªæ¨¡æ¿ç±»ï¼ŒåŒ…æ‹¬åŸºäºJDBCçš„JdbcTemplateã€NameParameterJdbcTemplateã€SimpleJdbcTemplateï¼›
+ * åŸºäºHibernateçš„HibernateTemplateï¼›åŸºäºiBatisçš„SqlMapClientTemplateå’ŒåŸºäºJPAçš„JpaTemplateã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ28ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ28æ—¥
  */
 public class TemplateTest {
 	

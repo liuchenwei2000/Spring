@@ -7,19 +7,19 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 
 /**
- * ±¾ÀàÖ»¶¨ÒåÁËÒ»¸ö¹«¹²ÇĞÈëµã¡£
+ * æœ¬ç±»åªå®šä¹‰äº†ä¸€ä¸ªå…¬å…±åˆ‡å…¥ç‚¹ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ26ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ26æ—¥
  */
 @Aspect
 public class SystemPointcut {
 
 	/**
-	 * ·½·¨ÊÇpublicµÄ£¬ËùÒÔ±¾ÇĞÈëµã¿ÉÒÔ±»ÈÎºÎÇĞÃæÀàÊ¹ÓÃ¡£
+	 * æ–¹æ³•æ˜¯publicçš„ï¼Œæ‰€ä»¥æœ¬åˆ‡å…¥ç‚¹å¯ä»¥è¢«ä»»ä½•åˆ‡é¢ç±»ä½¿ç”¨ã€‚
 	 */
-	@Pointcut(value="execution(* *.*(..))")// Æ¥ÅäËùÓĞ·½·¨µÄÖ´ĞĞ×÷ÎªÇĞÈëµã¡£
+	@Pointcut(value="execution(* *.*(..))")// åŒ¹é…æ‰€æœ‰æ–¹æ³•çš„æ‰§è¡Œä½œä¸ºåˆ‡å…¥ç‚¹ã€‚
 	public void anyMethod(){
 		// do nothing
 	}

@@ -6,9 +6,9 @@ package bean.instance.factory;
 /**
  * POJO
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ17ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ17æ—¥
  */
 public class Dog implements IBeing {
 
@@ -28,6 +28,6 @@ public class Dog implements IBeing {
 
 	@Override
 	public void about() {
-		System.out.println("ÍôÍôÍô" + message);
+		System.out.println("æ±ªæ±ªæ±ª" + message);
 	}
 }

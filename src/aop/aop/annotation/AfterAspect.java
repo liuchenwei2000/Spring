@@ -7,25 +7,25 @@ import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 
 /**
- * @After ÇÐÃæÀàÊ¾Àý
+ * @After åˆ‡é¢ç±»ç¤ºä¾‹
  * <p>
- * @After ÔöÇ¿´¦ÀíÓë @AfterReturning ÔöÇ¿´¦ÀíÓÐµãÏàËÆ£¬µ«Ò²ÓÐÇø±ð£º
- * @AferReturning ÔöÇ¿´¦ÀíÖ»ÓÐÔÚÄ¿±ê·½·¨³É¹¦Íê³Éºó²Å»á±»Ö¯Èë¡£
- * @After ÔöÇ¿´¦Àí²»¹ÜÄ¿±ê·½·¨ÈçºÎ½áÊø£¨°üÀ¨³É¹¦Íê³ÉºÍÓöµ½Òì³£ÖÐÖ¹£©£¬Ëü¶¼»á±»Ö¯Èë¡£
- * Òò´Ë @After ÔöÇ¿´¦Àí±ØÐë×¼±¸´¦ÀíÕý³£·µ»ØºÍÒì³£·µ»ØÁ½ÖÖÇé¿ö£¬×÷ÓÃ·Ç³£ÀàËÆÓÚfinally¿éµÄ×÷ÓÃ£¬Í¨³£ÓÃÓÚÊÍ·Å×ÊÔ´¡£
+ * @After å¢žå¼ºå¤„ç†ä¸Ž @AfterReturning å¢žå¼ºå¤„ç†æœ‰ç‚¹ç›¸ä¼¼ï¼Œä½†ä¹Ÿæœ‰åŒºåˆ«ï¼š
+ * @AferReturning å¢žå¼ºå¤„ç†åªæœ‰åœ¨ç›®æ ‡æ–¹æ³•æˆåŠŸå®ŒæˆåŽæ‰ä¼šè¢«ç»‡å…¥ã€‚
+ * @After å¢žå¼ºå¤„ç†ä¸ç®¡ç›®æ ‡æ–¹æ³•å¦‚ä½•ç»“æŸï¼ˆåŒ…æ‹¬æˆåŠŸå®Œæˆå’Œé‡åˆ°å¼‚å¸¸ä¸­æ­¢ï¼‰ï¼Œå®ƒéƒ½ä¼šè¢«ç»‡å…¥ã€‚
+ * å› æ­¤ @After å¢žå¼ºå¤„ç†å¿…é¡»å‡†å¤‡å¤„ç†æ­£å¸¸è¿”å›žå’Œå¼‚å¸¸è¿”å›žä¸¤ç§æƒ…å†µï¼Œä½œç”¨éžå¸¸ç±»ä¼¼äºŽfinallyå—çš„ä½œç”¨ï¼Œé€šå¸¸ç”¨äºŽé‡Šæ”¾èµ„æºã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ24ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ24æ—¥
  */
 @Aspect
 public class AfterAspect {
 	
 	/**
-	 * @After Í¨³£ÐèÒªÖ¸¶¨valueÊôÐÔ£¬Ö¸¶¨ÇÐÈëµã¶ÔÓ¦µÄ±í´ïÊ½£¬¼È¿ÉÒÔÊÇÒ»¸öÒÑÓÐµÄÇÐÈëµã£¬Ò²¿ÉÖ±½Ó¶¨ÒåÇÐÈëµã±í´ïÊ½¡£
+	 * @After é€šå¸¸éœ€è¦æŒ‡å®švalueå±žæ€§ï¼ŒæŒ‡å®šåˆ‡å…¥ç‚¹å¯¹åº”çš„è¡¨è¾¾å¼ï¼Œæ—¢å¯ä»¥æ˜¯ä¸€ä¸ªå·²æœ‰çš„åˆ‡å…¥ç‚¹ï¼Œä¹Ÿå¯ç›´æŽ¥å®šä¹‰åˆ‡å…¥ç‚¹è¡¨è¾¾å¼ã€‚
 	 */
 	@After(value="execution(* *.call*(..))")
 	public void release() {
-		System.out.println("Àë¿ª·½·¨£¬ÊÍ·Å×ÊÔ´......");
+		System.out.println("ç¦»å¼€æ–¹æ³•ï¼Œé‡Šæ”¾èµ„æº......");
 	}
 }

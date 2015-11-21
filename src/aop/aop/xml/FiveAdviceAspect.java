@@ -6,38 +6,38 @@ package aop.xml;
 import org.aspectj.lang.ProceedingJoinPoint;
 
 /**
- * ÓµÓĞÎåÖÖ²»Í¬ÀàĞÍÔöÇ¿´¦ÀíµÄBeanÊ¾Àı
+ * æ‹¥æœ‰äº”ç§ä¸åŒç±»å‹å¢å¼ºå¤„ç†çš„Beanç¤ºä¾‹
  * <p>
- * ¼¸ºõÊÇ´¿¾»µÄPOJO£¬³ıÁËAroundÔöÇ¿´¦ÀíÒıÈëÁËProceedingJoinPoint¡£
+ * å‡ ä¹æ˜¯çº¯å‡€çš„POJOï¼Œé™¤äº†Aroundå¢å¼ºå¤„ç†å¼•å…¥äº†ProceedingJoinPointã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ26ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ26æ—¥
  */
 public class FiveAdviceAspect {
 
 	public void enterMethod(){
-		System.out.println("¿ªÊ¼½øÈë·½·¨");
+		System.out.println("å¼€å§‹è¿›å…¥æ–¹æ³•");
 	}
 	
 	public void release(String s) {
-		System.out.println("Àë¿ª·½·¨£¬ÊÍ·Å×ÊÔ´......");
+		System.out.println("ç¦»å¼€æ–¹æ³•ï¼Œé‡Šæ”¾èµ„æº......");
 	}
 	
-	public void leaveMethod(Object returnObj) {// ·½·¨²ÎÊıÃûÎª returnObj£¬ÓëXMLÖĞÅäÖÃµÄ returning ÊôĞÔÖµ¶ÔÓ¦
-		System.out.println("Àë¿ª·½·¨£¬·½·¨·µ»ØÖµÊÇ£º" + returnObj);
+	public void leaveMethod(Object returnObj) {// æ–¹æ³•å‚æ•°åä¸º returnObjï¼Œä¸XMLä¸­é…ç½®çš„ returning å±æ€§å€¼å¯¹åº”
+		System.out.println("ç¦»å¼€æ–¹æ³•ï¼Œæ–¹æ³•è¿”å›å€¼æ˜¯ï¼š" + returnObj);
 	}
 	
-	public void catchException(Object ex) {// ·½·¨²ÎÊıÃûÎª ex£¬ÓëXMLÖĞÅäÖÃµÄ throwing ÊôĞÔÖµ¶ÔÓ¦
-		System.out.println("²¶»ñÎ´´¦ÀíÒì³£¶ÔÏó£º" + ex);
+	public void catchException(Object ex) {// æ–¹æ³•å‚æ•°åä¸º exï¼Œä¸XMLä¸­é…ç½®çš„ throwing å±æ€§å€¼å¯¹åº”
+		System.out.println("æ•è·æœªå¤„ç†å¼‚å¸¸å¯¹è±¡ï¼š" + ex);
 	}
 	
 	public Object processTx(ProceedingJoinPoint joinPoint) throws Throwable {
-		System.out.println(".....ÊÂÎñ¿ªÊ¼......");
-		// µ÷ÓÃProceedingJoinPointµÄproceed()·½·¨Ê±£¬»¹¿ÉÒÔ´«ÈëÒ»¸öObject[]¶ÔÏó£¬¸ÃÊı×éÖĞµÄÖµ½«±»´«ÈëÄ¿±ê·½·¨×÷ÎªÖ´ĞĞ·½·¨µÄÊµ²Î¡£
-		// ´«ÈëµÄObject[]Êı×é³¤¶ÈÓëÄ¿±ê·½·¨ËùĞèÒª²ÎÊıµÄ¸öÊı²»ÏàµÈ£¬»òÕßÀàĞÍ²»Æ¥Åä£¬³ÌĞò¾Í»á³öÏÖÒì³£¡£
-		Object returnObj = joinPoint.proceed(new String[] { "¸Ä±äµÄ²ÎÊı" });// ¸Ä±äµ÷ÓÃÄ¿±ê·½·¨µÄ²ÎÊı
-		System.out.println(".....ÊÂÎñ½áÊø......");
-		return returnObj + "_ĞÂÔöµÄÄÚÈİ"; // ¸Ä±äÄ¿±ê·½·¨µÄ·µ»ØÖµ
+		System.out.println(".....äº‹åŠ¡å¼€å§‹......");
+		// è°ƒç”¨ProceedingJoinPointçš„proceed()æ–¹æ³•æ—¶ï¼Œè¿˜å¯ä»¥ä¼ å…¥ä¸€ä¸ªObject[]å¯¹è±¡ï¼Œè¯¥æ•°ç»„ä¸­çš„å€¼å°†è¢«ä¼ å…¥ç›®æ ‡æ–¹æ³•ä½œä¸ºæ‰§è¡Œæ–¹æ³•çš„å®å‚ã€‚
+		// ä¼ å…¥çš„Object[]æ•°ç»„é•¿åº¦ä¸ç›®æ ‡æ–¹æ³•æ‰€éœ€è¦å‚æ•°çš„ä¸ªæ•°ä¸ç›¸ç­‰ï¼Œæˆ–è€…ç±»å‹ä¸åŒ¹é…ï¼Œç¨‹åºå°±ä¼šå‡ºç°å¼‚å¸¸ã€‚
+		Object returnObj = joinPoint.proceed(new String[] { "æ”¹å˜çš„å‚æ•°" });// æ”¹å˜è°ƒç”¨ç›®æ ‡æ–¹æ³•çš„å‚æ•°
+		System.out.println(".....äº‹åŠ¡ç»“æŸ......");
+		return returnObj + "_æ–°å¢çš„å†…å®¹"; // æ”¹å˜ç›®æ ‡æ–¹æ³•çš„è¿”å›å€¼
 	}
 }

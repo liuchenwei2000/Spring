@@ -8,9 +8,9 @@ import org.springframework.beans.factory.InitializingBean;
 /**
  * POJO
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ20ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ20æ—¥
  */
 public class MyBean implements InitializingBean {
 
@@ -18,16 +18,16 @@ public class MyBean implements InitializingBean {
 
 	public MyBean() {
 		super();
-		System.out.println("´´½¨MyBeanÊµÀı");
+		System.out.println("åˆ›å»ºMyBeanå®ä¾‹");
 	}
 	
 	public void init(){
-		System.out.println("ÔÚinit()·½·¨Àï³õÊ¼»¯");
+		System.out.println("åœ¨init()æ–¹æ³•é‡Œåˆå§‹åŒ–");
 	}
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("ÔÚafterPropertiesSet()·½·¨Àï³õÊ¼»¯");
+		System.out.println("åœ¨afterPropertiesSet()æ–¹æ³•é‡Œåˆå§‹åŒ–");
 	}
 
 	public String getName() {

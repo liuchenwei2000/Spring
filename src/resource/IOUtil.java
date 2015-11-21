@@ -11,11 +11,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
- * IO¹¤¾ßÀà
+ * IOå·¥å…·ç±»
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ23ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ23æ—¥
  */
 public class IOUtil {
 

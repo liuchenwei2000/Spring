@@ -8,13 +8,13 @@ import org.springframework.beans.factory.DisposableBean;
 /**
  * POJO
  * <p>
- * Óë¶¨ÖÆ³õÊ¼»¯ĞĞÎªÏàËÆ£¬SpringÒ²Ìá¹©Á½ÖÖ·½·¨¶¨ÖÆBeanÊµÀıÏú»ÙÖ®Ç°µÄÌØ¶¨ĞĞÎª£¬ÕâÁ½ÖÖ·½Ê½ÈçÏÂ£º
- * 1£¬ÔÚÅäÖÃÎÄ¼şÖĞÊ¹ÓÃdestroy-methodÊôĞÔ¡£
- * 2£¬ÊµÏÖDisposableBean½Ó¿Ú¡£
+ * ä¸å®šåˆ¶åˆå§‹åŒ–è¡Œä¸ºç›¸ä¼¼ï¼ŒSpringä¹Ÿæä¾›ä¸¤ç§æ–¹æ³•å®šåˆ¶Beanå®ä¾‹é”€æ¯ä¹‹å‰çš„ç‰¹å®šè¡Œä¸ºï¼Œè¿™ä¸¤ç§æ–¹å¼å¦‚ä¸‹ï¼š
+ * 1ï¼Œåœ¨é…ç½®æ–‡ä»¶ä¸­ä½¿ç”¨destroy-methodå±æ€§ã€‚
+ * 2ï¼Œå®ç°DisposableBeanæ¥å£ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ19ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ19æ—¥
  */
 public class Order implements DisposableBean {
 
@@ -23,21 +23,21 @@ public class Order implements DisposableBean {
 
 	public Order() {
 		super();
-		System.out.println("´´½¨OrderÊµÀı");
+		System.out.println("åˆ›å»ºOrderå®ä¾‹");
 	}
 	
 	public void close(){
-		System.out.println("Ïú»ÙÖ®Ç°Ö´ĞĞclose()·½·¨");
+		System.out.println("é”€æ¯ä¹‹å‰æ‰§è¡Œclose()æ–¹æ³•");
 	}
 
 	/**
-	 * ÊµÀıÏú»ÙÇ°»áµ÷ÓÃ±¾·½·¨
+	 * å®ä¾‹é”€æ¯å‰ä¼šè°ƒç”¨æœ¬æ–¹æ³•
 	 * 
 	 * @see org.springframework.beans.factory.DisposableBean#destroy()
 	 */
 	@Override
 	public void destroy() throws Exception {
-		System.out.println("Ïú»ÙÖ®Ç°Ö´ĞĞdestroy()·½·¨");
+		System.out.println("é”€æ¯ä¹‹å‰æ‰§è¡Œdestroy()æ–¹æ³•");
 	}
 
 	public String getName() {
@@ -54,6 +54,6 @@ public class Order implements DisposableBean {
 
 	public void setItem(Item item) {
 		this.item = item;
-		System.out.println("ÎªOrderÊµÀı×¢ÈëÒ»¸öItemÊµÀı");
+		System.out.println("ä¸ºOrderå®ä¾‹æ³¨å…¥ä¸€ä¸ªItemå®ä¾‹");
 	}
 }

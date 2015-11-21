@@ -6,23 +6,23 @@ package quickstart;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 /**
- * ����JDBCʵ�ֵ�DAO
+ * 基于JDBC实现的DAO
  * <p>
- * Spring�ṩ�˶��DAO֧���࣬�ֱ��Ӧ��ÿ��ģ�塣
- * ���Լ̳���ЩDAO֧���࣬�����������Լ���DAO�࣬���ҵ���ģ����ֱ�ӻ�ȡ�ײ�����ݷ���ģ�塣
- * �����Ҫ���ʵײ�־�ƽ̨��ÿ��DAO֧���඼�ܹ������������ݿ����ͨ�����õ��ࡣ
+ * Spring提供了多个DAO支持类，分别对应于每个模板。
+ * 可以继承这些DAO支持类，派生出我们自己的DAO类，并且调用模板来直接获取底层的数据访问模板。
+ * 如果需要访问底层持久平台，每个DAO支持类都能够访问它与数据库进行通信所用的类。
  * 
- * @author ����ΰ
+ * @author 刘晨伟
  * 
- * �������ڣ�2014��11��28��
+ * 创建日期：2014年11月28日
  */
 public class JdbcOrderDao extends JdbcDaoSupport implements OrderDAO {
 
 	@Override
 	public String insert(Order order) {
-		// ��ȡ���ݷ���ģ��
+		// 获取数据访问模板
 		getJdbcTemplate().execute("insert ...");
-		// ��ȡ���ʵײ�־�ƽ̨�Ķ���
+		// 获取访问底层持久平台的对象
 		getConnection();
 		return "";
 	}

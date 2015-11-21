@@ -4,11 +4,11 @@
 package bean.other;
 
 /**
- * DAOÀàÊµÀýÒÀÀµÓÚDataSourceÀàÊµÀýµÄ³õÊ¼»¯£¬µ«²¢²»ÊÇÖ±½ÓÒÀÀµ¡£
+ * DAOç±»å®žä¾‹ä¾èµ–äºŽDataSourceç±»å®žä¾‹çš„åˆå§‹åŒ–ï¼Œä½†å¹¶ä¸æ˜¯ç›´æŽ¥ä¾èµ–ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ19ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ19æ—¥
  */
 public class DAO {
 

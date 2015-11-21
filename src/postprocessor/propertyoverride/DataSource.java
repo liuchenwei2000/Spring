@@ -6,9 +6,9 @@ package postprocessor.propertyoverride;
 /**
  * POJO
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ21ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ21æ—¥
  */
 public class DataSource {
 	

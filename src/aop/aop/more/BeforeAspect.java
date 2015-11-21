@@ -9,8 +9,8 @@ import org.aspectj.lang.annotation.Before;
 @Aspect
 public class BeforeAspect {
 	
-	@Before(value="execution(* *.*(..))")// Æ¥ÅäËùÓĞ·½·¨µÄÖ´ĞĞ×÷ÎªÇĞÈëµã¡£
+	@Before(value="execution(* *.*(..))")// åŒ¹é…æ‰€æœ‰æ–¹æ³•çš„æ‰§è¡Œä½œä¸ºåˆ‡å…¥ç‚¹ã€‚
 	public void enterMethod(){
-		System.out.println("¿ªÊ¼½øÈë·½·¨");
+		System.out.println("å¼€å§‹è¿›å…¥æ–¹æ³•");
 	}
 }

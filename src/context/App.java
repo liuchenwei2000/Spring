@@ -16,7 +16,7 @@ public class App {
 		
 		God bean = (God) context.getBean("God");
 		System.out.println(bean.getContext());
-		// ¿É¼û ApplicationContext ÊµÀıÊÇÍ¬Ò»¸ö
+		// å¯è§ ApplicationContext å®ä¾‹æ˜¯åŒä¸€ä¸ª
 		System.out.println(bean.getContext() == context);
 		
 		((ClassPathXmlApplicationContext) context).close();

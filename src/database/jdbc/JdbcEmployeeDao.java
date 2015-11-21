@@ -11,11 +11,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 /**
- * »ùÓÚJdbcTemplateµÄEmployeeDaoÊµÏÖ
+ * åŸºäºJdbcTemplateçš„EmployeeDaoå®ç°
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ30ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ30æ—¥
  */
 public class JdbcEmployeeDao implements EmployeeDao {
 
@@ -32,8 +32,8 @@ public class JdbcEmployeeDao implements EmployeeDao {
 	private static final String SQL_SAVE = "insert into employee(name,email,age) values(?,?,?)";
 	
 	public void save(Employee employee) {
-		// JdbcTemplate½«»ñÈ¡Á¬½Ó¡¢´´½¨Óï¾ä²¢Ö´ĞĞ²åÈëSQL¡£
-		// ¶ÔSQLExceptionµÄ´¦ÀíÒ²±»Òş²ØÁË£¬JdbcTemplate»á²¶»ñÈ«²¿SQLException£¬²¢½«Æä×ª»¯³ÉÌØ¶¨RuntimeExceptionÖØĞÂÅ×³ö¡£
+		// JdbcTemplateå°†è·å–è¿æ¥ã€åˆ›å»ºè¯­å¥å¹¶æ‰§è¡Œæ’å…¥SQLã€‚
+		// å¯¹SQLExceptionçš„å¤„ç†ä¹Ÿè¢«éšè—äº†ï¼ŒJdbcTemplateä¼šæ•è·å…¨éƒ¨SQLExceptionï¼Œå¹¶å°†å…¶è½¬åŒ–æˆç‰¹å®šRuntimeExceptioné‡æ–°æŠ›å‡ºã€‚
 		getJdbcTemplate().update(
 				SQL_SAVE,
 				new Object[] { employee.getName(), employee.getEmail(), employee.getAge() });
@@ -62,8 +62,8 @@ public class JdbcEmployeeDao implements EmployeeDao {
 				new Object[] { name }, new RowMapper<Employee>() {
 
 					/**
-					 * RowMapper¶ÔÏó¸ºÔğ´ÓResultSetÀïÌáÈ¡ÊıÖµ²¢¹¹ÔìÒ»¸öÓò¶ÔÏó£¨Domain Object£¬±¾ÀıÊÇEmployee£©¡£
-					 * ¶ÔÓÚ²éÑ¯·µ»ØµÄÃ¿Ò»ĞĞ£¬JdbcTemplate¶¼»áµ÷ÓÃRowMapperµÄmapRow()·½·¨¡£
+					 * RowMapperå¯¹è±¡è´Ÿè´£ä»ResultSeté‡Œæå–æ•°å€¼å¹¶æ„é€ ä¸€ä¸ªåŸŸå¯¹è±¡ï¼ˆDomain Objectï¼Œæœ¬ä¾‹æ˜¯Employeeï¼‰ã€‚
+					 * å¯¹äºæŸ¥è¯¢è¿”å›çš„æ¯ä¸€è¡Œï¼ŒJdbcTemplateéƒ½ä¼šè°ƒç”¨RowMapperçš„mapRow()æ–¹æ³•ã€‚
 					 * 
 					 * @see org.springframework.jdbc.core.RowMapper#mapRow(java.sql.ResultSet, int)
 					 */

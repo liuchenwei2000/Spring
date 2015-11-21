@@ -4,11 +4,11 @@
 package bean.abstracts;
 
 /**
- * ½Ó¿Ú
+ * æ¥å£
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ18ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ18æ—¥
  */
 public interface IConfigurable {
 

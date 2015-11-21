@@ -12,8 +12,8 @@ public class App {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// ½«ÈİÆ÷ºó´¦ÀíÆ÷×÷ÎªÆÕÍ¨Bean²¿ÊğÔÚÈİÆ÷ÖĞ£¬Èç¹ûÊ¹ÓÃApplicationContext×÷ÎªÈİÆ÷£¬ÈİÆ÷»á×Ô¶¯µ÷ÓÃBeanFactoryPostProcessorÀ´´¦ÀíSpringÈİÆ÷£»
-		// Èç¹ûÊ¹ÓÃBeanFactory×÷ÎªÈİÆ÷£¬Ôò±ØĞëÊÖ¶¯µ÷ÓÃBeanFactoryPostProcessorÀ´´¦ÀíSpringÈİÆ÷¡£
+		// å°†å®¹å™¨åå¤„ç†å™¨ä½œä¸ºæ™®é€šBeanéƒ¨ç½²åœ¨å®¹å™¨ä¸­ï¼Œå¦‚æœä½¿ç”¨ApplicationContextä½œä¸ºå®¹å™¨ï¼Œå®¹å™¨ä¼šè‡ªåŠ¨è°ƒç”¨BeanFactoryPostProcessoræ¥å¤„ç†Springå®¹å™¨ï¼›
+		// å¦‚æœä½¿ç”¨BeanFactoryä½œä¸ºå®¹å™¨ï¼Œåˆ™å¿…é¡»æ‰‹åŠ¨è°ƒç”¨BeanFactoryPostProcessoræ¥å¤„ç†Springå®¹å™¨ã€‚
 		ApplicationContext context = new ClassPathXmlApplicationContext("postprocessor/bean.xml");
 		System.out.println(context.getBean("car"));
 

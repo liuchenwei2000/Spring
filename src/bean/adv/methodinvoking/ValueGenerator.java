@@ -4,30 +4,30 @@
 package bean.adv.methodinvoking;
 
 /**
- * ¾ßÓĞ·µ»ØÖµ·½·¨µÄÀà
+ * å…·æœ‰è¿”å›å€¼æ–¹æ³•çš„ç±»
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ20ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ20æ—¥
  */
 public class ValueGenerator {
 
 	/**
-	 * ·µ»ØÖµµÄ¾²Ì¬·½·¨
+	 * è¿”å›å€¼çš„é™æ€æ–¹æ³•
 	 */
 	public static String genStaticString(){
 		return "static";
 	}
 	
 	/**
-	 * ·µ»ØÖµµÄ·Ç¾²Ì¬·½·¨
+	 * è¿”å›å€¼çš„éé™æ€æ–¹æ³•
 	 */
 	public String genString(){
 		return "non-static";
 	}
 	
 	/**
-	 * ·µ»ØÖµÇÒÓĞ²ÎÊıµÄ·Ç¾²Ì¬·½·¨
+	 * è¿”å›å€¼ä¸”æœ‰å‚æ•°çš„éé™æ€æ–¹æ³•
 	 */
 	public String genString(String param) {
 		return "non-static:" + param;

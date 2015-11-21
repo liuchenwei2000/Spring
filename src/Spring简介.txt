@@ -1,64 +1,64 @@
 
-Spring��һ����Դ��ܣ�����Ϊ�˽����ҵӦ�ÿ����ĸ����Զ������ġ���ܵ���Ҫ����֮һ������ֲ�ܹ����ֲ�ܹ�����ʹ����ѡ��ʹ����һ�������
-ͬʱΪ J2EE Ӧ�ó��򿪷��ṩ���ɵĿ�ܡ�Springʹ�û�����JavaBean�������ǰֻ������EJB��ɵ����顣Ȼ����Spring����;�������ڷ������˵Ŀ�����
-�Ӽ��ԡ��ɲ����Ժ�����ϵĽǶȶ��ԣ��κ�JavaӦ�ö����Դ�Spring�����档Spring�ĺ����ǿ��Ʒ�ת��IoC�����������棨AOP����
-����˵��Spring��һ���ֲ��JavaSE/EE full-stack��һվʽ����������Դ��ܡ�
+Spring是一个开源框架，它是为了解决企业应用开发的复杂性而创建的。框架的主要优势之一就是其分层架构，分层架构允许使用者选择使用哪一个组件，
+同时为 J2EE 应用程序开发提供集成的框架。Spring使用基本的JavaBean来完成以前只可能由EJB完成的事情。然而，Spring的用途不仅限于服务器端的开发。
+从简单性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。Spring的核心是控制反转（IoC）和面向切面（AOP）。
+简单来说，Spring是一个分层的JavaSE/EE full-stack（一站式）轻量级开源框架。
 
 
-����
+轻量
 
-�Ӵ�С�뿪�����������Spring���������ġ�������Spring��ܿ�����һ����Сֻ��1MB���JAR�ļ��﷢��������Spring����Ĵ�������Ҳ��΢������ġ�
-���⣬Spring�Ƿ�����ʽ�ģ����͵أ�SpringӦ���еĶ���������Spring���ض��ࡣ
-
-
-���Ʒ�ת
-
-Springͨ��һ�ֳ������Ʒ�ת��IoC���ļ����ٽ��˵���ϡ���Ӧ����IoC��һ���������������������ͨ�������ķ�ʽ���ݽ�������������������Լ��������߲�����������
-������ΪIoC��JNDI�෴�����������Ƕ���������в������������������ڶ����ʼ��ʱ���ȶ���������������������ݸ�����
+从大小与开销两方面而言Spring都是轻量的。完整的Spring框架可以在一个大小只有1MB多的JAR文件里发布，并且Spring所需的处理开销也是微不足道的。
+此外，Spring是非侵入式的：典型地，Spring应用中的对象不依赖于Spring的特定类。
 
 
-��������
+控制反转
 
-Spring�ṩ�����������̵ķḻ֧�֣�����ͨ������Ӧ�õ�ҵ���߼���ϵͳ������������ƣ�auditing��������transaction�������������ھ��ԵĿ�����
-Ӧ�ö���ֻʵ������Ӧ�����ġ����������ҵ���߼������������˶��ѡ����ǲ���������������ʶ��������ϵͳ����ע�㣬������־������֧�֡�
-
-
-����
-
-Spring����������Ӧ�ö�������ú��������ڣ����������������һ����������������ÿ��bean��α�����������������һ��������ԭ�ͣ�prototype����
-bean���Դ���һ��������ʵ������ÿ����Ҫʱ������һ���µ�ʵ�����������Լ�����������໥�����ġ�
-Ȼ����Spring��Ӧ�ñ���ͬ�ڴ�ͳ����������EJB���������Ǿ������Ӵ��뱿�صģ�����ʹ�á�
+Spring通过一种称作控制反转（IoC）的技术促进了低耦合。当应用了IoC，一个对象依赖的其它对象会通过被动的方式传递进来，而不是这个对象自己创建或者查找依赖对象。
+可以认为IoC与JNDI相反————不是对象从容器中查找依赖，而是容器在对象初始化时不等对象请求就主动将依赖传递给它。
 
 
-���
+面向切面
 
-Spring���Խ��򵥵�������á���ϳ�Ϊ���ӵ�Ӧ�á���Spring�У�Ӧ�ö�������ʽ����ϣ����͵�����һ��XML�ļ��
-SpringҲ�ṩ�˺ܶ�������ܣ�����������־û���ܼ��ɵȵȣ�����Ӧ���߼��Ŀ����������㡣
-
-
-ʹ��Spring�ĺô�
+Spring提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务（例如审计（auditing）和事务（transaction）管理）进行内聚性的开发。
+应用对象只实现它们应该做的————完成业务逻辑————仅此而已。它们并不负责（甚至是意识）其它的系统级关注点，例如日志或事务支持。
 
 
-1.�������򻯿���
-ͨ��Spring�ṩ��IoC���������Խ�����֮���������ϵ����Spring���п��ƣ�����Ӳ��������ɵĹ��ȳ�����ϡ�
-����Spring���û�������Ϊ��ʵ��ģʽ�ࡢ�����ļ���������Щ�ܵײ�������д���룬���Ը�רע���ϲ��Ӧ�á�
+容器
 
-2.AOP��̵�֧��
-ͨ��Spring�ṩ��AOP���ܣ����������������ı�̣����಻�����ô�ͳOOPʵ�ֵĹ��ܿ���ͨ��AOP����Ӧ����
+Spring包含并管理应用对象的配置和生命周期，在这个意义上它是一种容器，可以配置每个bean如何被创建————基于一个可配置原型（prototype），
+bean可以创建一个单独的实例或者每次需要时都生成一个新的实例————以及它们是如何相互关联的。
+然而，Spring不应该被混同于传统的重量级的EJB容器，它们经常是庞大与笨重的，难以使用。
 
-3.����ʽ�����֧��
-��Spring�У����ǿ��Դӵ������Ƶ�������������н��ѳ�����ͨ������ʽ��ʽ���ؽ�������Ĺ�������߿���Ч�ʺ�������
 
-4.�������Ĳ���
-�����÷����������ı�̷�ʽ���м������еĲ��Թ�������Spring����Բ����ǰ���Ĳ������������ֿ��������顣
-���磺Spring��Junit4֧�֣�����ͨ��ע�ⷽ��Ĳ���Spring����
+框架
 
-5.���㼯�ɸ���������
-Spring���ų��������Ŀ�Դ��ܣ��෴��Spring���Խ��͸��ֿ�ܵ�ʹ���Ѷȣ�Spring�ṩ�˶Ը��������ܣ���Struts��Hibernate��Hessian��Quartz���ȵ�ֱ��֧�֡�
+Spring可以将简单的组件配置、组合成为复杂的应用。在Spring中，应用对象被声明式地组合，典型地是在一个XML文件里。
+Spring也提供了很多基础功能（事务管理、持久化框架集成等等），将应用逻辑的开发留给了你。
 
-6.����Java EE API��ʹ���Ѷ�
-Spring�Ժܶ����õ�Java EE API����JDBC��JavaMail��Զ�̵��õȣ��ṩ��һ�������ķ�װ�㣬ͨ��Spring�ļ��׷�װ����ЩJava EE API��ʹ���Ѷȴ�Ϊ���͡�
 
-7.Java Դ���Ǿ���ѧϰ����
-Spring��Դ����ƾ���ṹ���������Ķ��ã����������Ŵ�ʦ��Java���ģʽ��������Լ���Java�����ĸ������衣Spring���Դ��������Java���������ʵ��������
-������ڶ�ʱ����Ѹ������Լ���Java����ˮƽ��Ӧ�ÿ���ˮƽ��ѧϰ���о�SpringԴ�뽫��ʹ���յ����벻����Ч����
+使用Spring的好处
+
+
+1.方便解耦，简化开发
+通过Spring提供的IoC容器，可以将对象之间的依赖关系交由Spring进行控制，避免硬编码所造成的过度程序耦合。
+有了Spring，用户不必再为单实例模式类、属性文件解析等这些很底层的需求编写代码，可以更专注于上层的应用。
+
+2.AOP编程的支持
+通过Spring提供的AOP功能，方便进行面向切面的编程，许多不容易用传统OOP实现的功能可以通过AOP轻松应付。
+
+3.声明式事务的支持
+在Spring中，我们可以从单调烦闷的事务管理代码中解脱出来，通过声明式方式灵活地进行事务的管理，提高开发效率和质量。
+
+4.方便程序的测试
+可以用非容器依赖的编程方式进行几乎所有的测试工作，在Spring里，测试不再是昂贵的操作，而是随手可做的事情。
+例如：Spring对Junit4支持，可以通过注解方便的测试Spring程序。
+
+5.方便集成各种优秀框架
+Spring不排斥各种优秀的开源框架，相反，Spring可以降低各种框架的使用难度，Spring提供了对各种优秀框架（如Struts、Hibernate、Hessian、Quartz）等的直接支持。
+
+6.降低Java EE API的使用难度
+Spring对很多难用的Java EE API（如JDBC，JavaMail，远程调用等）提供了一个薄薄的封装层，通过Spring的简易封装，这些Java EE API的使用难度大为降低。
+
+7.Java 源码是经典学习范例
+Spring的源码设计精妙、结构清晰、匠心独用，处处体现着大师对Java设计模式灵活运用以及对Java技术的高深造诣。Spring框架源码无疑是Java技术的最佳实践范例。
+如果想在短时间内迅速提高自己的Java技术水平和应用开发水平，学习和研究Spring源码将会使你收到意想不到的效果。

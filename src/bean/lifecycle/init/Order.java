@@ -8,13 +8,13 @@ import org.springframework.beans.factory.InitializingBean;
 /**
  * POJO
  * <p>
- * SpringÌá¹©Á½ÖÖ·½Ê½ÔÚBeanµÄÈ«²¿ÊôĞÔ×¢ÈëÍê³ÉºóÖ´ĞĞÌØ¶¨ĞĞÎª£º
- * 1£¬ÔÚÅäÖÃÎÄ¼şÖĞÊ¹ÓÃinit-methodÊôĞÔ¡£
- * 2£¬ÊµÏÖInitializaingBean½Ó¿Ú¡£
+ * Springæä¾›ä¸¤ç§æ–¹å¼åœ¨Beançš„å…¨éƒ¨å±æ€§æ³¨å…¥å®Œæˆåæ‰§è¡Œç‰¹å®šè¡Œä¸ºï¼š
+ * 1ï¼Œåœ¨é…ç½®æ–‡ä»¶ä¸­ä½¿ç”¨init-methodå±æ€§ã€‚
+ * 2ï¼Œå®ç°InitializaingBeanæ¥å£ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ19ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ19æ—¥
  */
 public class Order implements InitializingBean {
 
@@ -23,21 +23,21 @@ public class Order implements InitializingBean {
 
 	public Order() {
 		super();
-		System.out.println("´´½¨OrderÊµÀı");
+		System.out.println("åˆ›å»ºOrderå®ä¾‹");
 	}
 	
 	public void init(){
-		System.out.println("ÔÚinit()·½·¨Àï³õÊ¼»¯");
+		System.out.println("åœ¨init()æ–¹æ³•é‡Œåˆå§‹åŒ–");
 	}
 
 	/**
-	 * SpringÈİÆ÷ÔÚÎª¸ÃBean×¢ÈëÒÀÀµ¹ØÏµÖ®ºó£¬½ÓÏÂÀ´»áµ÷ÓÃ¸ÃBeanËùÊµÏÖµÄafterPropertiesSet·½·¨¡£
+	 * Springå®¹å™¨åœ¨ä¸ºè¯¥Beanæ³¨å…¥ä¾èµ–å…³ç³»ä¹‹åï¼Œæ¥ä¸‹æ¥ä¼šè°ƒç”¨è¯¥Beanæ‰€å®ç°çš„afterPropertiesSetæ–¹æ³•ã€‚
 	 * 
 	 * @see org.springframework.beans.factory.InitializingBean#afterPropertiesSet()
 	 */
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("ÔÚafterPropertiesSet()·½·¨Àï³õÊ¼»¯");
+		System.out.println("åœ¨afterPropertiesSet()æ–¹æ³•é‡Œåˆå§‹åŒ–");
 	}
 
 	public String getName() {
@@ -54,6 +54,6 @@ public class Order implements InitializingBean {
 
 	public void setItem(Item item) {
 		this.item = item;
-		System.out.println("ÎªOrderÊµÀı×¢ÈëÒ»¸öItemÊµÀı");
+		System.out.println("ä¸ºOrderå®ä¾‹æ³¨å…¥ä¸€ä¸ªItemå®ä¾‹");
 	}
 }

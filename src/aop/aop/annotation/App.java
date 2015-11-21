@@ -48,7 +48,7 @@ public class App {
 		
 		bean.eat("noodles", new Date());
 		
-		bean.register("Tom", 11, 'ÄÐ');
+		bean.register("Tom", 11, 'ç”·');
 		
 		((ClassPathXmlApplicationContext) context).close();
 	}

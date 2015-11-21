@@ -4,16 +4,16 @@
 package bean.instance.factory2;
 
 /**
- * ´´½¨IPersonÊµÀıµÄÊµÀı¹¤³§
+ * åˆ›å»ºIPersonå®ä¾‹çš„å®ä¾‹å·¥å‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ17ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ17æ—¥
  */
 public class PersonFactory {
 
 	/**
-	 * ´´½¨ÊµÀı£º¸ù¾İ²ÎÊı´´½¨¶ÔÓ¦µÄIPersonÊµÀı
+	 * åˆ›å»ºå®ä¾‹ï¼šæ ¹æ®å‚æ•°åˆ›å»ºå¯¹åº”çš„IPersonå®ä¾‹
 	 */
 	public IPerson create(String type) {
 		if ("usa".equals(type.toLowerCase())) {

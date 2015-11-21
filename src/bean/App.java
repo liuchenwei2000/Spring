@@ -14,7 +14,7 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("bean/cars.xml");
 		
-		// Í¨¹ı Bean id¡¢name¡¢alias ¶¼¿ÉÒÔ»ñÈ¡ Bean ÊµÀı
+		// é€šè¿‡ Bean idã€nameã€alias éƒ½å¯ä»¥è·å– Bean å®ä¾‹
 		System.out.println("car=" + context.getBean("car"));
 		System.out.println("mycar=" + context.getBean("mycar"));
 		System.out.println("mydear=" + context.getBean("mydear"));

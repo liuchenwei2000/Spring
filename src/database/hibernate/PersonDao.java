@@ -6,11 +6,11 @@ package hibernate;
 /**
  * PersonDao
  * <p>
- * Ìá¹©»ù±¾µÄCRUD²Ù×÷¡£
+ * æä¾›åŸºæœ¬çš„CRUDæ“ä½œã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê12ÔÂ1ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´12æœˆ1æ—¥
  */
 public interface PersonDao {
 

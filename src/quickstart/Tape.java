@@ -4,11 +4,11 @@
 package quickstart;
 
 /**
- * ½Ó¿ÚÊµÏÖ£¬POJO
+ * æ¥å£å®ç°ï¼ŒPOJO
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê10ÔÂ26ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´10æœˆ26æ—¥
  */
 public class Tape implements ITape {
 

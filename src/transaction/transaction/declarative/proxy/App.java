@@ -6,13 +6,13 @@ package transaction.declarative.proxy;
 import transaction.TestUtil;
 
 /**
- * ´«Í³¹Å¾ÉµÄÉùÃ÷Ê½ÊÂÎñÊµÏÖ·½Ê½Ê¾Àı
+ * ä¼ ç»Ÿå¤æ—§çš„å£°æ˜å¼äº‹åŠ¡å®ç°æ–¹å¼ç¤ºä¾‹
  * <p>
- * Spring2.0Ö®Ç°µÄ×ö·¨£¬Ê¹ÓÃTransactionProxyFactoryBean¡£
+ * Spring2.0ä¹‹å‰çš„åšæ³•ï¼Œä½¿ç”¨TransactionProxyFactoryBeanã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê12ÔÂ5ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´12æœˆ5æ—¥
  */
 public class App {
 

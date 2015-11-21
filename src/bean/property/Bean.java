@@ -13,25 +13,25 @@ import bean.Car;
 /**
  * POJO
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ16ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ16æ—¥
  */
 public class Bean {
 
-	// ÆÕÍ¨Êı×éÊôĞÔ
+	// æ™®é€šæ•°ç»„å±æ€§
 	private String[] array;
-	// ÆÕÍ¨ListÊôĞÔ
+	// æ™®é€šListå±æ€§
 	private List<String> list;
-	// ¸´ºÏ¶ÔÏóListÊôĞÔ
+	// å¤åˆå¯¹è±¡Listå±æ€§
 	private List<Car> cars;
-	// ÆÕÍ¨SetÊôĞÔ
+	// æ™®é€šSetå±æ€§
 	private Set<String> set;
-	// ÆÕÍ¨MapÊôĞÔ
+	// æ™®é€šMapå±æ€§
 	private Map<String, String> map;
-	// ¸´ºÏ¶ÔÏóMapÊôĞÔ
+	// å¤åˆå¯¹è±¡Mapå±æ€§
 	private Map<String, Car> carMap;
-	// ÆÕÍ¨PropertiesÊôĞÔ
+	// æ™®é€šPropertieså±æ€§
 	private Properties properties;
 
 	public String[] getArray() {

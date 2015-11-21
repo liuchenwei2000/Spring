@@ -18,13 +18,13 @@ public class App {
 		
 		Bean bean = (Bean) context.getBean("bean");
 
-		System.out.println("array£º" + Arrays.toString(bean.getArray()));
-		System.out.println("list£º" + bean.getList());
-		System.out.println("list_cars£º" + bean.getCars());
-		System.out.println("set£º" + bean.getSet());
-		System.out.println("map£º" + bean.getMap());
-		System.out.println("map_cars£º" + bean.getCarMap());
-		System.out.println("prop£º" + bean.getProperties());
+		System.out.println("arrayï¼š" + Arrays.toString(bean.getArray()));
+		System.out.println("listï¼š" + bean.getList());
+		System.out.println("list_carsï¼š" + bean.getCars());
+		System.out.println("setï¼š" + bean.getSet());
+		System.out.println("mapï¼š" + bean.getMap());
+		System.out.println("map_carsï¼š" + bean.getCarMap());
+		System.out.println("propï¼š" + bean.getProperties());
 
 		((ClassPathXmlApplicationContext) context).close();
 	}

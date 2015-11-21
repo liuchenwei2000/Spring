@@ -6,18 +6,18 @@ package context.event;
 import org.springframework.context.ApplicationListener;
 
 /**
- * ÉÏÏÂÎÄ¼àÌıÆ÷
+ * ä¸Šä¸‹æ–‡ç›‘å¬å™¨
  * <p>
- * ApplicationListener£º¼àÌıÆ÷£¬¿ÉÓÉÈİÆ÷ÖĞµÄÈÎºÎ¼àÌıÆ÷Beanµ£ÈÎ¡£
+ * ApplicationListenerï¼šç›‘å¬å™¨ï¼Œå¯ç”±å®¹å™¨ä¸­çš„ä»»ä½•ç›‘å¬å™¨Beanæ‹…ä»»ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ13ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ13æ—¥
  */
 public class MyListener implements ApplicationListener<MyEvent> {
 
 	/**
-	 * Ã¿µ±ÈİÆ÷ÄÚ·¢ÉúÈÎºÎÊÂ¼ş£¬´Ë·½·¨¶¼½«±»´¥·¢¡£
+	 * æ¯å½“å®¹å™¨å†…å‘ç”Ÿä»»ä½•äº‹ä»¶ï¼Œæ­¤æ–¹æ³•éƒ½å°†è¢«è§¦å‘ã€‚
 	 * 
 	 * @see org.springframework.context.ApplicationListener#onApplicationEvent(org.springframework.context.ApplicationEvent)
 	 */

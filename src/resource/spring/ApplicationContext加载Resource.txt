@@ -1,9 +1,9 @@
 
-µ±³ÌĞò´´½¨ApplicationContextÊµÀıÊ±£¬Í¨³£Ò²ÊÇÒÔResourceµÄ·½Ê½À´·ÃÎÊÅäÖÃÎÄ¼şµÄ£¬ËùÒÔApplicationContextÍêÈ«Ö§³Ö
-ClassPathResource¡¢FileSystemResource¡¢ServletContextResourceµÈ×ÊÔ´·ÃÎÊ·½Ê½¡£
+å½“ç¨‹åºåˆ›å»ºApplicationContextå®ä¾‹æ—¶ï¼Œé€šå¸¸ä¹Ÿæ˜¯ä»¥Resourceçš„æ–¹å¼æ¥è®¿é—®é…ç½®æ–‡ä»¶çš„ï¼Œæ‰€ä»¥ApplicationContextå®Œå…¨æ”¯æŒ
+ClassPathResourceã€FileSystemResourceã€ServletContextResourceç­‰èµ„æºè®¿é—®æ–¹å¼ã€‚
 
-ApplicationContextÊµÏÖÀà¿ÉÒÔÖ¸¶¨·ÃÎÊ²ßÂÔ£¬¾ßÌåÈçÏÂ£º
+ApplicationContextå®ç°ç±»å¯ä»¥æŒ‡å®šè®¿é—®ç­–ç•¥ï¼Œå…·ä½“å¦‚ä¸‹ï¼š
 
-ClassPathXmlApplicationContext£º¶ÔÓ¦Ê¹ÓÃClassPathResource½øĞĞ×ÊÔ´·ÃÎÊ¡£
-FileSystemApplicationContext£º¶ÔÓ¦Ê¹ÓÃFileSystemResource½øĞĞ×ÊÔ´·ÃÎÊ¡£
-XmlWebApplicationContext£º¶ÔÓ¦Ê¹ÓÃServletContextResource½øĞĞ×ÊÔ´·ÃÎÊ¡£
+ClassPathXmlApplicationContextï¼šå¯¹åº”ä½¿ç”¨ClassPathResourceè¿›è¡Œèµ„æºè®¿é—®ã€‚
+FileSystemApplicationContextï¼šå¯¹åº”ä½¿ç”¨FileSystemResourceè¿›è¡Œèµ„æºè®¿é—®ã€‚
+XmlWebApplicationContextï¼šå¯¹åº”ä½¿ç”¨ServletContextResourceè¿›è¡Œèµ„æºè®¿é—®ã€‚

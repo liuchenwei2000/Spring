@@ -7,16 +7,16 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Ö÷³ÌĞòÔËĞĞÀà
+ * ä¸»ç¨‹åºè¿è¡Œç±»
  * <p>
- * SpringÈİÆ÷ÊÇÉú³ÉBeanÊµÀıµÄ¹¤³§£¬¸ºÔğ´´½¨BeanÊµÀı£¬²¢¹ÜÀíÆäÉúÃüÖÜÆÚ¡£
- * BeanÊÇSpring¹ÜÀíµÄ»ù±¾µ¥Î»£¬ÔÚ»ùÓÚSpringµÄJavaEEÓ¦ÓÃÖĞ£¬ËùÓĞµÄ×é¼ş¶¼±»µ±³ÉBean´¦Àí£¬
- * °üÀ¨Êı¾İÔ´¡¢HibernateµÄSessionFactory¡¢ÊÂÎñ¹ÜÀíÆ÷µÈ¡£
- * ÕâÀïµÄBeanÊÇ¹ãÒåµÄ¸ÅÄî£¬¿ÉÒÔÊÇPOJO¶ø²»½ö½öÊÇ±ê×¼µÄJavaBean¡£
+ * Springå®¹å™¨æ˜¯ç”ŸæˆBeanå®ä¾‹çš„å·¥å‚ï¼Œè´Ÿè´£åˆ›å»ºBeanå®ä¾‹ï¼Œå¹¶ç®¡ç†å…¶ç”Ÿå‘½å‘¨æœŸã€‚
+ * Beanæ˜¯Springç®¡ç†çš„åŸºæœ¬å•ä½ï¼Œåœ¨åŸºäºSpringçš„JavaEEåº”ç”¨ä¸­ï¼Œæ‰€æœ‰çš„ç»„ä»¶éƒ½è¢«å½“æˆBeanå¤„ç†ï¼Œ
+ * åŒ…æ‹¬æ•°æ®æºã€Hibernateçš„SessionFactoryã€äº‹åŠ¡ç®¡ç†å™¨ç­‰ã€‚
+ * è¿™é‡Œçš„Beanæ˜¯å¹¿ä¹‰çš„æ¦‚å¿µï¼Œå¯ä»¥æ˜¯POJOè€Œä¸ä»…ä»…æ˜¯æ ‡å‡†çš„JavaBeanã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê10ÔÂ26ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´10æœˆ26æ—¥
  */
 public class App {
 
@@ -29,7 +29,7 @@ public class App {
 	}
 
 	private static void runAsNormal() {
-		System.out.println("¡¾runAsNormal¡¿");
+		System.out.println("ã€runAsNormalã€‘");
 		
 		Walkman walkman = new Walkman("sony");
 		walkman.setTape(new Tape());
@@ -37,21 +37,21 @@ public class App {
 	}
 
 	private static void runUsingSpring() {
-		System.out.println("¡¾runUsingSpring¡¿");
+		System.out.println("ã€runUsingSpringã€‘");
 		
 		/*
-		 * SpringÈİÆ÷×î»ù±¾µÄ½Ó¿ÚÊÇBeanFactory£¬¸ºÔğÅäÖÃ¡¢´´½¨¡¢¹ÜÀíBean¡£
-		 * µ÷ÓÃÕßÖ»ĞèÊ¹ÓÃgetBean·½·¨¼´¿É»ñµÃÖ¸¶¨BeanµÄÊµÀı£¬ÎŞĞè¹ØĞÄBeanµÄÊµÀı»¯¹ı³Ì¡£
-		 * ËüµÄ×Ó½Ó¿ÚApplicationContext±»³ÆÎªSpringÉÏÏÂÎÄ£¬¶ÔÓÚ´ó²¿·ÖÓ¦ÓÃ¶øÑÔ£¬Ê¹ÓÃËü×÷ÎªSpringÈİÆ÷¸ü·½±ã¡£
+		 * Springå®¹å™¨æœ€åŸºæœ¬çš„æ¥å£æ˜¯BeanFactoryï¼Œè´Ÿè´£é…ç½®ã€åˆ›å»ºã€ç®¡ç†Beanã€‚
+		 * è°ƒç”¨è€…åªéœ€ä½¿ç”¨getBeanæ–¹æ³•å³å¯è·å¾—æŒ‡å®šBeançš„å®ä¾‹ï¼Œæ— éœ€å…³å¿ƒBeançš„å®ä¾‹åŒ–è¿‡ç¨‹ã€‚
+		 * å®ƒçš„å­æ¥å£ApplicationContextè¢«ç§°ä¸ºSpringä¸Šä¸‹æ–‡ï¼Œå¯¹äºå¤§éƒ¨åˆ†åº”ç”¨è€Œè¨€ï¼Œä½¿ç”¨å®ƒä½œä¸ºSpringå®¹å™¨æ›´æ–¹ä¾¿ã€‚
 		 * 
-		 * ApplicationContextµÄ³£ÓÃÊµÏÖÀàÓĞ£º
-		 * FileSystemXmlApplicationContext£ºÒÔ»ùÓÚÎÄ¼şÏµÍ³µÄXMLÅäÖÃÎÄ¼ş´´½¨ApplicationContextÊµÀı¡£
-		 * ClassPathXmlApplicationContext£ºÒÔclasspath£¨ÀàÂ·¾¶£©ÏÂµÄXMLÅäÖÃÎÄ¼ş´´½¨ApplicationContextÊµÀı¡£
-		 * AnnotationConfigApplicationContext¡¢XmlWebApplicationContext¡¢ AnnotationConfigWebApplicationContext¡£
+		 * ApplicationContextçš„å¸¸ç”¨å®ç°ç±»æœ‰ï¼š
+		 * FileSystemXmlApplicationContextï¼šä»¥åŸºäºæ–‡ä»¶ç³»ç»Ÿçš„XMLé…ç½®æ–‡ä»¶åˆ›å»ºApplicationContextå®ä¾‹ã€‚
+		 * ClassPathXmlApplicationContextï¼šä»¥classpathï¼ˆç±»è·¯å¾„ï¼‰ä¸‹çš„XMLé…ç½®æ–‡ä»¶åˆ›å»ºApplicationContextå®ä¾‹ã€‚
+		 * AnnotationConfigApplicationContextã€XmlWebApplicationContextã€ AnnotationConfigWebApplicationContextã€‚
 		 */
 		ApplicationContext context = new ClassPathXmlApplicationContext("quickstart/beans.xml");
-		// Walkman ÊµÀıµÄÊôĞÔÖµ²¢²»ÊÇ³ÌĞòÖ÷¶¯ÉèÖÃµÄ£¬¶øÊÇÓÉSpringÈİÆ÷À´¸ºÔğ×¢ÈëµÄ¡£
-		// Í¨¹ı Bean id À´»ñÈ¡¶ÔÓ¦µÄÊµÀı
+		// Walkman å®ä¾‹çš„å±æ€§å€¼å¹¶ä¸æ˜¯ç¨‹åºä¸»åŠ¨è®¾ç½®çš„ï¼Œè€Œæ˜¯ç”±Springå®¹å™¨æ¥è´Ÿè´£æ³¨å…¥çš„ã€‚
+		// é€šè¿‡ Bean id æ¥è·å–å¯¹åº”çš„å®ä¾‹
 		Walkman walkman = (Walkman) context.getBean("walkman");
 		walkman.start();
 

@@ -6,14 +6,14 @@ package resource;
 import org.springframework.core.io.ClassPathResource;
 
 /**
- * ClassPathResourceÊ¾Àý
+ * ClassPathResourceç¤ºä¾‹
  * <p>
- * ClassPathResourceÓÃÀ´·ÃÎÊÀà¼ÓÔØÂ·¾¶ÏÂµÄ×ÊÔ´£¬ÆäÖ÷ÒªÓÅÊÆÊÇ·½±ã·ÃÎÊÀà¼ÓÔØÂ·¾¶ÀïµÄ×ÊÔ´£¬
- * ÓÈÆä¶ÔÓÚWebÓ¦ÓÃ£¬ClassPathResource¿É×Ô¶¯ËÑË÷Î»ÓÚWEB-INF/classesÏÂµÄ×ÊÔ´ÎÄ¼þ£¬ÎÞÐèÊ¹ÓÃ¾ø¶ÔÂ·¾¶·ÃÎÊ¡£
+ * ClassPathResourceç”¨æ¥è®¿é—®ç±»åŠ è½½è·¯å¾„ä¸‹çš„èµ„æºï¼Œå…¶ä¸»è¦ä¼˜åŠ¿æ˜¯æ–¹ä¾¿è®¿é—®ç±»åŠ è½½è·¯å¾„é‡Œçš„èµ„æºï¼Œ
+ * å°¤å…¶å¯¹äºŽWebåº”ç”¨ï¼ŒClassPathResourceå¯è‡ªåŠ¨æœç´¢ä½äºŽWEB-INF/classesä¸‹çš„èµ„æºæ–‡ä»¶ï¼Œæ— éœ€ä½¿ç”¨ç»å¯¹è·¯å¾„è®¿é—®ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ23ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ23æ—¥
  */
 public class ClassPathResourceTest {
 

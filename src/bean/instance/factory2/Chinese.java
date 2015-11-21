@@ -6,9 +6,9 @@ package bean.instance.factory2;
 /**
  * POJO
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ17ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ17æ—¥
  */
 public class Chinese implements IPerson {
 
@@ -33,6 +33,6 @@ public class Chinese implements IPerson {
 
 	@Override
 	public void sayHello() {
-		System.out.println(name + "£ºÄãºÃ£¡");
+		System.out.println(name + "ï¼šä½ å¥½ï¼");
 	}
 }

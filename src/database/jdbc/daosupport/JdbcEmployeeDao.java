@@ -14,18 +14,18 @@ import jdbc.Employee;
 import jdbc.EmployeeDao;
 
 /**
- * ¼Ì³ĞJdbcDaoSupportµÄEmployeeDaoÊµÏÖ
+ * ç»§æ‰¿JdbcDaoSupportçš„EmployeeDaoå®ç°
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ30ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ30æ—¥
  */
 public class JdbcEmployeeDao extends JdbcDaoSupport implements EmployeeDao {
 
 	private static final String SQL_SAVE = "insert into employee(name,email,age) values(?,?,?)";
 	
 	public void save(Employee employee) {
-		// Ö±½ÓÍ¨¹ı¸¸ÀàµÄgetJdbcTemplate()»ñÈ¡JdbcTemplateÊµÀı
+		// ç›´æ¥é€šè¿‡çˆ¶ç±»çš„getJdbcTemplate()è·å–JdbcTemplateå®ä¾‹
 		getJdbcTemplate().update(
 				SQL_SAVE,
 				new Object[] { employee.getName(), employee.getEmail(), employee.getAge() });

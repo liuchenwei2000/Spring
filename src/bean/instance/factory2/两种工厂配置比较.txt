@@ -1,9 +1,9 @@
 
-¾²Ì¬¹¤³§·½·¨ºÍÊµÀý¹¤³§·½·¨´´½¨BeanµÄÇø±ðÈçÏÂ£º
-1£¬ÊµÀý¹¤³§·½·¨´´½¨Bean±ØÐë½«ÊµÀý¹¤³§ÅäÖÃ³ÉBeanÊµÀý£»¶ø¾²Ì¬¹¤³§·½·¨´´½¨BeanÔòÎÞÐèÅäÖÃ¹¤³§Bean¡£
-2£¬ÊµÀý¹¤³§·½·¨´´½¨Bean±ØÐëÊ¹ÓÃfactory-beanÊôÐÔÈ·¶¨¹¤³§Bean£»¶ø¾²Ì¬¹¤³§·½·¨´´½¨BeanÔòÊ¹ÓÃclass·½·¨È·¶¨¾²Ì¬¹¤³§Àà¡£
+é™æ€å·¥åŽ‚æ–¹æ³•å’Œå®žä¾‹å·¥åŽ‚æ–¹æ³•åˆ›å»ºBeançš„åŒºåˆ«å¦‚ä¸‹ï¼š
+1ï¼Œå®žä¾‹å·¥åŽ‚æ–¹æ³•åˆ›å»ºBeanå¿…é¡»å°†å®žä¾‹å·¥åŽ‚é…ç½®æˆBeanå®žä¾‹ï¼›è€Œé™æ€å·¥åŽ‚æ–¹æ³•åˆ›å»ºBeanåˆ™æ— éœ€é…ç½®å·¥åŽ‚Beanã€‚
+2ï¼Œå®žä¾‹å·¥åŽ‚æ–¹æ³•åˆ›å»ºBeanå¿…é¡»ä½¿ç”¨factory-beanå±žæ€§ç¡®å®šå·¥åŽ‚Beanï¼›è€Œé™æ€å·¥åŽ‚æ–¹æ³•åˆ›å»ºBeanåˆ™ä½¿ç”¨classæ–¹æ³•ç¡®å®šé™æ€å·¥åŽ‚ç±»ã€‚
 
-ÏàÍ¬Ö®´¦ÈçÏÂ£º
-1£¬¶¼ÐèÒªÊ¹ÓÃfactory-methodÊôÐÔÖ¸¶¨²úÉúBeanÊµÀýµÄ¹¤³§·½·¨¡£
-2£¬¹¤³§·½·¨Èç¹ûÐèÒª²ÎÊý£¬¶¼Ê¹ÓÃ<constructor-arg>ÔªËØÖ¸¶¨²ÎÊýÖµ¡£
-3£¬ÆäËûÒÀÀµ×¢ÈëÊôÐÔ£¬¶¼ÊÇÓÃ<property>ÔªËØÈ·¶¨²ÎÊýÖµ¡£
+ç›¸åŒä¹‹å¤„å¦‚ä¸‹ï¼š
+1ï¼Œéƒ½éœ€è¦ä½¿ç”¨factory-methodå±žæ€§æŒ‡å®šäº§ç”ŸBeanå®žä¾‹çš„å·¥åŽ‚æ–¹æ³•ã€‚
+2ï¼Œå·¥åŽ‚æ–¹æ³•å¦‚æžœéœ€è¦å‚æ•°ï¼Œéƒ½ä½¿ç”¨<constructor-arg>å…ƒç´ æŒ‡å®šå‚æ•°å€¼ã€‚
+3ï¼Œå…¶ä»–ä¾èµ–æ³¨å…¥å±žæ€§ï¼Œéƒ½æ˜¯ç”¨<property>å…ƒç´ ç¡®å®šå‚æ•°å€¼ã€‚

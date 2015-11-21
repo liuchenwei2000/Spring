@@ -6,21 +6,21 @@ package bean.property.eidtor;
 import java.beans.PropertyEditorSupport;
 
 /**
- * PhoneNumber ÀàĞÍÊôĞÔ±à¼­Æ÷Ö§³ÖÀà
+ * PhoneNumber ç±»å‹å±æ€§ç¼–è¾‘å™¨æ”¯æŒç±»
  * <p>
- * ×Ô¶¨ÒåÊôĞÔ±à¼­Æ÷Èô·ÅÔÚ¸úËüÖ§³ÖµÄBeanÍ¬Ò»¸öpackageÏÂ£¬ÇÒÀàÃûÊÇXxxBeanEditorÕâÖÖĞÎÊ½µÄ»°£¬
- * ½«ÎŞĞèÏòSpringÈİÆ÷×¢²á£¬ÈİÆ÷»á×Ô¶¯¼ÓÔØÊ¶±ğ¡£
+ * è‡ªå®šä¹‰å±æ€§ç¼–è¾‘å™¨è‹¥æ”¾åœ¨è·Ÿå®ƒæ”¯æŒçš„BeanåŒä¸€ä¸ªpackageä¸‹ï¼Œä¸”ç±»åæ˜¯XxxBeanEditorè¿™ç§å½¢å¼çš„è¯ï¼Œ
+ * å°†æ— éœ€å‘Springå®¹å™¨æ³¨å†Œï¼Œå®¹å™¨ä¼šè‡ªåŠ¨åŠ è½½è¯†åˆ«ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê10ÔÂ29ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´10æœˆ29æ—¥
  */
-// Spring ´ó²¿·ÖÄ¬ÈÏÊôĞÔ±à¼­Æ÷¶¼Ö±½ÓÀ©Õ¹ÓÚ java.beans.PropertyEditorSupport Àà
-// ÓÃ»§Ò²¿ÉÒÔÍ¨¹ıÀ©Õ¹PropertyEditorSupportÊµÏÖ×Ô¼ºµÄÊôĞÔ±à¼­Æ÷¡£
+// Spring å¤§éƒ¨åˆ†é»˜è®¤å±æ€§ç¼–è¾‘å™¨éƒ½ç›´æ¥æ‰©å±•äº java.beans.PropertyEditorSupport ç±»
+// ç”¨æˆ·ä¹Ÿå¯ä»¥é€šè¿‡æ‰©å±•PropertyEditorSupportå®ç°è‡ªå·±çš„å±æ€§ç¼–è¾‘å™¨ã€‚
 public class PhoneNumberEditor extends PropertyEditorSupport {
 
 	/**
-	 * ½öĞèÒª½«ÅäÖÃÎÄ¼şÖĞ×ÖÃæÖµ×ª»»ÎªÊôĞÔÀàĞÍµÄ¶ÔÏó¼´¿É£¬Òò´ËÖ»ĞèÒªÊµÏÖ±¾·½·¨¡£
+	 * ä»…éœ€è¦å°†é…ç½®æ–‡ä»¶ä¸­å­—é¢å€¼è½¬æ¢ä¸ºå±æ€§ç±»å‹çš„å¯¹è±¡å³å¯ï¼Œå› æ­¤åªéœ€è¦å®ç°æœ¬æ–¹æ³•ã€‚
 	 * 
 	 * @see java.beans.PropertyEditorSupport#setAsText(java.lang.String)
 	 */

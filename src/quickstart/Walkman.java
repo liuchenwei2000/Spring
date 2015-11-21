@@ -4,13 +4,13 @@
 package quickstart;
 
 /**
- * ¸´ºÏ¶ÔÏó£¬POJO
+ * å¤åˆå¯¹è±¡ï¼ŒPOJO
  * <p>
- * SpringÈÝÆ÷¿ÉÒÔ¹ÜÀíÈÎÒâµÄPOJO£¬²¢²»Ç¿ÖÆÒªÇó±»¹ÜÀí×é¼þÊÇ±ê×¼JavaBean¡£
+ * Springå®¹å™¨å¯ä»¥ç®¡ç†ä»»æ„çš„POJOï¼Œå¹¶ä¸å¼ºåˆ¶è¦æ±‚è¢«ç®¡ç†ç»„ä»¶æ˜¯æ ‡å‡†JavaBeanã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê10ÔÂ26ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´10æœˆ26æ—¥
  */
 public class Walkman {
 

@@ -16,11 +16,11 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("bean/factorybean/factorybean.xml");
 		
-		// Í¨¹ıgetBean()·½·¨À´»ñÈ¡ÊµÀıÊ±£¬ÈİÆ÷·µ»ØµÄÊÇ¸ÃFactoryBeanµÄ²úÆ·¶ø²»ÊÇFactoryBean±¾Éí¡£
+		// é€šè¿‡getBean()æ–¹æ³•æ¥è·å–å®ä¾‹æ—¶ï¼Œå®¹å™¨è¿”å›çš„æ˜¯è¯¥FactoryBeançš„äº§å“è€Œä¸æ˜¯FactoryBeanæœ¬èº«ã€‚
 		IPerson person = (IPerson) context.getBean("person");
 		person.sayHello();
 		
-		// Èç¹ûĞèÒª»ñÈ¡FactoryBean±¾Éí£¬ÔòÓ¦¸ÃÔÚbean idÇ°¼ÓÉÏ &
+		// å¦‚æœéœ€è¦è·å–FactoryBeanæœ¬èº«ï¼Œåˆ™åº”è¯¥åœ¨bean idå‰åŠ ä¸Š &
 		PersonFactoryBean factory = (PersonFactoryBean) context.getBean("&person");
 		System.out.println(factory.getClass());
 		

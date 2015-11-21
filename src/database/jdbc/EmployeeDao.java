@@ -6,11 +6,11 @@ package jdbc;
 /**
  * EmployeeDao
  * <p>
- * Ìá¹©»ù±¾µÄCRUD²Ù×÷¡£
+ * æä¾›åŸºæœ¬çš„CRUDæ“ä½œã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ30ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ30æ—¥
  */
 public interface EmployeeDao {
 

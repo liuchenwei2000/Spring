@@ -1,10 +1,10 @@
 
-Spring�ṩ��һ�����ݷ��ʿ�ܣ������˶������ݷ��ʼ�����������ͨ��ֱ�ӵ�JDBC��iBatis��Hibernate��Spring���ܹ��������ݳ־ô����е��鷳�����ᴦ���ײ����ݷ��ʹ�����
+Spring提供了一组数据访问框架，集成了多种数据访问技术。无论是通过直接的JDBC、iBatis或Hibernate，Spring都能够消除数据持久代码中的麻烦，它会处理底层数据访问工作。
 
 
-Spring���ݷ��ʵ��쳣��ϵ
+Spring数据访问的异常体系
 
-һ���棬JDBC���쳣��ϵ̫��ͨ�ˣ�����������һ����ϵ������һ���棬Hibernate���쳣��ϵ����˽�еġ�
-Spring JDBC�ṩ�����ݷ����쳣��ϵ�ܹ����������������⡣��JDBC��ȣ�Spring�ṩ�˶�����ݷ����쳣���ֱ����������쳣�����⣻
-����û�����κ��ض��־÷�ʽ�����������ζ�ſ�������Spring���׳�һ�µ��쳣���������ؿ���ʹ�õĳ־û�������
-Spring���쳣��Դ��DataAccessException������ȫ����RuntimeException��
+一方面，JDBC的异常体系太普通了，根本不算是一个体系，而另一方面，Hibernate的异常体系又是私有的。
+Spring JDBC提供的数据访问异常体系能够解决这两方面的问题。与JDBC相比，Spring提供了多个数据访问异常，分别描述触发异常的问题；
+而又没有与任何特定持久方式相关联，这意味着可以依靠Spring来抛出一致的异常集，而不必考虑使用的持久化技术。
+Spring的异常都源自DataAccessException，它们全都是RuntimeException。

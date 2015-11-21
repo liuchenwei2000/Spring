@@ -1,27 +1,27 @@
 
-Spring�Ѹ������͵��ļ�������������ͳ��Ϊ��Դ����JDK��׼API���Դ����ͨ����java.net.URL���ļ�IO����ɡ�
-Spring�Ľ���Java��Դ���ʵĲ��ԣ���Ϊ��Դ�����ṩ��һ��Resource�ӿڣ��ýӿ��ṩ�˸�ǿ����Դ����������Spring�����������ʹ����Resource�����ʵײ���Դ��
+Spring把各种类型的文件、二进制流等统称为资源。在JDK标准API里，资源访问通常由java.net.URL和文件IO来完成。
+Spring改进了Java资源访问的策略，它为资源访问提供了一个Resource接口，该接口提供了更强的资源访问能力，Spring框架自身大量使用了Resource来访问底层资源。
 
-Resource�ӿڱ���û���ṩ�����κεײ���Դ��ʵ���߼�����Բ�ͬ�ĵײ���Դ��Spring�����ṩ��ͬ��Resourceʵ���࣬��ͬ��ʵ���ฺ��ͬ����Դ�����߼���
+Resource接口本身没有提供放任任何底层资源的实现逻辑，针对不同的底层资源，Spring将会提供不同的Resource实现类，不同的实现类负责不同的资源访问逻辑。
 
-Spring���õ�Resourceʵ�������£�
+Spring内置的Resource实现类如下：
 
-UrlResource������������Դ��ʵ���ࡣ
+UrlResource：访问网络资源的实现类。
 
-ClassPathResource��������·������Դ��ʵ���ࡣ
+ClassPathResource：访问类路径里资源的实现类。
 
-FileSystemResource�������ļ�ϵͳ����Դ��ʵ���ࡣ
+FileSystemResource：访问文件系统里资源的实现类。
 
-ServletContextResource�����������ServletContext·�����ʵ���ࡣ
-ServletContextResource��������Web Context���·���µ���Դ���乹��������һ��������Դλ�õ��ַ�������������Դλ���������WebӦ�ø�·����λ�á�
-ʹ��ServletContextResource���ʵ���Դ��Ҳ��ͨ���ļ�IO���ʻ�URL���ʡ�
-ͨ��java.io.File����Ҫ����Դ����ѹ���������ڱ����ļ�ϵͳ�У���ʹ��ServletContextResource���з���ʱ�����������Դ�Ƿ񱻽�ѹ��������
-����ֱ�Ӵ����JAR�ļ��У��ܿ�ͨ��Servlet�������ʡ�
+ServletContextResource：访问相对于ServletContext路径里的实现类。
+ServletContextResource类来访问Web Context相对路径下的资源，其构造器接受一个代表资源位置的字符串参数，该资源位置是相对于Web应用根路径的位置。
+使用ServletContextResource访问的资源，也可通过文件IO访问或URL访问。
+通过java.io.File访问要求资源被解压缩，而且在本地文件系统中；但使用ServletContextResource进行访问时则无须关心资源是否被解压缩出来，
+或者直接存放在JAR文件中，总可通过Servlet容器访问。
 
-InputStreamResource��������������Դ��ʵ���ࡣ
-InputStreamResource�������ʶ�������������Դ��ֻ�е�û�к��ʵ�Resourceʵ��ʱ���ſ���ʹ�ø��ࣨ��������ݿ��ж�ȡһ��Blob���󣩡�
+InputStreamResource：访问输入流资源的实现类。
+InputStreamResource用来访问二进制输入流资源，只有当没有合适的Resource实现时，才考虑使用该类（比如从数据库中读取一个Blob对象）。
 
-ByteArrayResource�������ֽ�������Դ��ʵ���ࡣ
+ByteArrayResource：访问字节数组资源的实现类。
 
 
-Resource��������Spring����Ŀ��ʹ�ã�Ҳ��ֱ����Ϊ��Դ���ʵĹ�����ʹ�á�
+Resource不仅可在Spring的项目中使用，也可直接作为资源访问的工具类使用。

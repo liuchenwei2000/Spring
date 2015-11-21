@@ -7,14 +7,14 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * ÈİÆ÷ÊÂ¼ş¼àÌıÆ÷Ê¾Àı
+ * å®¹å™¨äº‹ä»¶ç›‘å¬å™¨ç¤ºä¾‹
  * <p>
- * Í¨¹ıApplicationEventÀàºÍApplicationListener½Ó¿Ú£¬¿ÉÒÔÊµÏÖApplicationContextµÄÊÂ¼ş´¦Àí¡£
- * Èç¹ûÈİÆ÷ÖĞÓĞÒ»¸öApplicationListener Bean£¬Ã¿µ±ApplicationContext·¢²¼ApplicationEventÊ±£¬ApplicationListener½«×Ô¶¯±»Í¨Öª¡£
+ * é€šè¿‡ApplicationEventç±»å’ŒApplicationListeneræ¥å£ï¼Œå¯ä»¥å®ç°ApplicationContextçš„äº‹ä»¶å¤„ç†ã€‚
+ * å¦‚æœå®¹å™¨ä¸­æœ‰ä¸€ä¸ªApplicationListener Beanï¼Œæ¯å½“ApplicationContextå‘å¸ƒApplicationEventæ—¶ï¼ŒApplicationListenerå°†è‡ªåŠ¨è¢«é€šçŸ¥ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ13ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ13æ—¥
  */
 public class App {
 
@@ -25,7 +25,7 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("context/event/listener.xml");
 		
 		System.out.println("After context loading......");
-		// ÊÂ¼şÔ´ÊÇApplicationContext£¬ÊÂ¼ş±ØĞëÓÉJava³ÌĞòÏÔÊ½´¥·¢¡£
+		// äº‹ä»¶æºæ˜¯ApplicationContextï¼Œäº‹ä»¶å¿…é¡»ç”±Javaç¨‹åºæ˜¾å¼è§¦å‘ã€‚
 		context.publishEvent(new MyEvent("my event", "Hello world."));
 		
 		((ClassPathXmlApplicationContext) context).close();

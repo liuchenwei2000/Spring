@@ -6,11 +6,11 @@ package bean.property.composite;
 import bean.Car;
 
 /**
- * ¸´ºÏBean
+ * å¤åˆBean
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ17ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ17æ—¥
  */
 public class Person {
 

@@ -6,9 +6,9 @@ package bean.scope.more;
 /**
  * POJO
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ19ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ19æ—¥
  */
 public class Worker {
 
@@ -23,6 +23,6 @@ public class Worker {
 	}
 	
 	public void produce(){
-		System.out.println("I am making toy£º" + getToy());
+		System.out.println("I am making toyï¼š" + getToy());
 	}
 }

@@ -17,23 +17,23 @@ import transaction.Book;
 import transaction.BookDao;
 
 /**
- * Ê¹ÓÃ×¢½âÊµÏÖÉùÃ÷Ê½ÊÂÎñ¿ØÖÆµÄBookDaoÊµÏÖ
+ * ä½¿ç”¨æ³¨è§£å®ç°å£°æ˜å¼äº‹åŠ¡æ§åˆ¶çš„BookDaoå®ç°
  * <p>
- * ×¢½âÔÊĞíÄãÔÚ´úÂëÖĞ£¬¶ø²»ÊÇÍâ²¿ÅäÖÃÎÄ¼şÖĞÖ±½Ó¶¨ÒåÔªÊı¾İ£¬·Ç³£ÊÊÓÚÉùÃ÷ÊÂÎñ¡£
+ * æ³¨è§£å…è®¸ä½ åœ¨ä»£ç ä¸­ï¼Œè€Œä¸æ˜¯å¤–éƒ¨é…ç½®æ–‡ä»¶ä¸­ç›´æ¥å®šä¹‰å…ƒæ•°æ®ï¼Œéå¸¸é€‚äºå£°æ˜äº‹åŠ¡ã€‚
  * <p>
- * @Transactional ×¢½âÒ²¿ÉÒÔ±»Ó¦ÓÃµ½Ò»¸ö½Ó¿Ú£¨»ò½Ó¿Ú·½·¨£©ÉÏ£¬Ö¸Ã÷¸Ã½Ó¿ÚµÄËùÓĞÊµÏÖ¶¼Ó¦¸Ã±»ÊÂÎñ»¯¡£
+ * @Transactional æ³¨è§£ä¹Ÿå¯ä»¥è¢«åº”ç”¨åˆ°ä¸€ä¸ªæ¥å£ï¼ˆæˆ–æ¥å£æ–¹æ³•ï¼‰ä¸Šï¼ŒæŒ‡æ˜è¯¥æ¥å£çš„æ‰€æœ‰å®ç°éƒ½åº”è¯¥è¢«äº‹åŠ¡åŒ–ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê12ÔÂ5ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´12æœˆ5æ—¥
  */
-// Àà²ã´ÎµÄ×¢½â
+// ç±»å±‚æ¬¡çš„æ³¨è§£
 @Transactional
 public class AnnotationBookDaoImpl extends JdbcDaoSupport implements BookDao {
 
 	private static final String SQL_SAVE = "insert into book(isbn,name,author) values(?,?,?)";
 	
-	// ·½·¨²ã´ÎµÄ×¢½â£¬Í¬Ê±ÉèÖÃÊÂÎñ²ÎÊı
+	// æ–¹æ³•å±‚æ¬¡çš„æ³¨è§£ï¼ŒåŒæ—¶è®¾ç½®äº‹åŠ¡å‚æ•°
 	@Transactional(propagation=Propagation.REQUIRED)
 	public void save(final Book book) {
 		boolean existed = find(book.getName()) != null;
@@ -42,9 +42,9 @@ public class AnnotationBookDaoImpl extends JdbcDaoSupport implements BookDao {
 				.update(SQL_SAVE,
 						new Object[] { book.getIsbn(), book.getName(),
 								book.getAuthor() });
-		// ¹ÊÒâ½«ÏÂÃæµÄÖØ¸´Ğ£ÑéÖÃÓÚ±£´æ¶¯×÷Ö®ºó£¬ÒÔ²âÊÔ»Ø¹ö¹¦ÄÜ
+		// æ•…æ„å°†ä¸‹é¢çš„é‡å¤æ ¡éªŒç½®äºä¿å­˜åŠ¨ä½œä¹‹åï¼Œä»¥æµ‹è¯•å›æ»šåŠŸèƒ½
 		if (existed) {
-			throw new RuntimeException(book.getName() + " ÒÑ´æÔÚ.");
+			throw new RuntimeException(book.getName() + " å·²å­˜åœ¨.");
 		}
 	}
 	

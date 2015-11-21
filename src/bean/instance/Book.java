@@ -6,9 +6,9 @@ package bean.instance;
 /**
  * POJO
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ13ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ13æ—¥
  */
 public class Book {
 
@@ -16,7 +16,7 @@ public class Book {
 
 	public Book() {
 		super();
-		System.out.println("´´½¨Ò»¸öBookÊµÀý");
+		System.out.println("åˆ›å»ºä¸€ä¸ªBookå®žä¾‹");
 	}
 
 	public String getName() {

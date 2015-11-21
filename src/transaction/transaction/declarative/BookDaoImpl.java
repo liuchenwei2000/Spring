@@ -14,11 +14,11 @@ import transaction.Book;
 import transaction.BookDao;
 
 /**
- * Ã»ÓĞÊÂÎñ¿ØÖÆµÄBookDaoÊµÏÖ
+ * æ²¡æœ‰äº‹åŠ¡æ§åˆ¶çš„BookDaoå®ç°
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê12ÔÂ5ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´12æœˆ5æ—¥
  */
 public class BookDaoImpl extends JdbcDaoSupport implements BookDao {
 
@@ -31,9 +31,9 @@ public class BookDaoImpl extends JdbcDaoSupport implements BookDao {
 				.update(SQL_SAVE,
 						new Object[] { book.getIsbn(), book.getName(),
 								book.getAuthor() });
-		// ¹ÊÒâ½«ÏÂÃæµÄÖØ¸´Ğ£ÑéÖÃÓÚ±£´æ¶¯×÷Ö®ºó£¬ÒÔ²âÊÔ»Ø¹ö¹¦ÄÜ
+		// æ•…æ„å°†ä¸‹é¢çš„é‡å¤æ ¡éªŒç½®äºä¿å­˜åŠ¨ä½œä¹‹åï¼Œä»¥æµ‹è¯•å›æ»šåŠŸèƒ½
 		if (existed) {
-			throw new RuntimeException(book.getName() + " ÒÑ´æÔÚ.");
+			throw new RuntimeException(book.getName() + " å·²å­˜åœ¨.");
 		}
 	}
 	

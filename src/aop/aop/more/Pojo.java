@@ -6,20 +6,20 @@ package aop.more;
 /**
  * POJO
  * <p>
- * Spring AOPÔÚÍ¬Ò»¸öÀàÀï×ÔÉí·½·¨Ïà»¥µ÷ÓÃÊ±ÎÞ·¨À¹½Ø¡£
+ * Spring AOPåœ¨åŒä¸€ä¸ªç±»é‡Œè‡ªèº«æ–¹æ³•ç›¸äº’è°ƒç”¨æ—¶æ— æ³•æ‹¦æˆªã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2015Äê4ÔÂ10ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2015å¹´4æœˆ10æ—¥
  */
 public class Pojo {
 
 	/**
-	 * ¸Ã·½·¨ÄÚ²¿»áµ÷ÓÃÁíÒ»¸ö·½·¨£¬Õâ³ÆÎª×Ôµ÷ÓÃ£¨self-invocation£©¡£
+	 * è¯¥æ–¹æ³•å†…éƒ¨ä¼šè°ƒç”¨å¦ä¸€ä¸ªæ–¹æ³•ï¼Œè¿™ç§°ä¸ºè‡ªè°ƒç”¨ï¼ˆself-invocationï¼‰ã€‚
 	 */
 	public void foo(){
 		System.out.println("in foo()");
-		// ×Ôµ÷ÓÃµÄ·½·¨²»»á±»ÇÐÃæÖ¯Èë£¬±ÈÈçÏÂÃæ¶Ô bar() ·½·¨µÄµ÷ÓÃ¾Í²»»á±» before ÔöÇ¿¡£
+		// è‡ªè°ƒç”¨çš„æ–¹æ³•ä¸ä¼šè¢«åˆ‡é¢ç»‡å…¥ï¼Œæ¯”å¦‚ä¸‹é¢å¯¹ bar() æ–¹æ³•çš„è°ƒç”¨å°±ä¸ä¼šè¢« before å¢žå¼ºã€‚
 		this.bar();
 	}
 	

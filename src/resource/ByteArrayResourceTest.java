@@ -6,13 +6,13 @@ package resource;
 import org.springframework.core.io.ByteArrayResource;
 
 /**
- * ByteArrayResourceÊ¾Àı
+ * ByteArrayResourceç¤ºä¾‹
  * <p>
- * ByteArrayResourceÀàÓÃÀ´¶ÁÈ¡×Ö½ÚÊı×é×ÊÔ´¡£
+ * ByteArrayResourceç±»ç”¨æ¥è¯»å–å­—èŠ‚æ•°ç»„èµ„æºã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ23ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ23æ—¥
  */
 public class ByteArrayResourceTest {
 

@@ -9,20 +9,20 @@ import hibernate.PersonDao;
 import org.hibernate.SessionFactory;
 
 /**
- * Ê¹ÓÃSessionFactoryµÄPersonDao
+ * ä½¿ç”¨SessionFactoryçš„PersonDao
  * <p>
- * HibernateTemplateµÄ¹¦ÄÜÖ®Ò»ÊÇ¹ÜÀíHibernate»á»°£¬°üÀ¨´ò¿ªºÍ¹Ø±Õ»á»°£¬ÒÔ¼°È·±£Ã¿¸öÊÂÎñÒ»¸ö»á»°¡£
- * HibernateTemplateµÄÈ±µãÊÇ¾ßÓĞÒ»¶¨µÄÇÖÈëĞÔ£¬Ê¹ÓÃËüµÄ´úÂë±»ñîºÏµ½Spring APIÖĞ¡£
- * Hibernate3ÒıÈëµÄSessionFactory¿ÉÒÔ¹ÜÀíÃ¿¸öÊÂÎñÒ»¸ö»á»°£¬Ò²¾Í²»ĞèÒªHibernateTemplate£¬²¢ÄÜ¹»±ÜÃâSpring APIµÄ´úÂëÈëÇÖ¡£
- * ÕâÖÖ·½Ê½µÄÈ±µãÊÇ£¬ËüÃÇÅ×³öHibernateÌØÓĞµÄÒì³££¬¶ø²»ÊÇÏñSpring³Ö¾ÃÒì³£ÌåÏµÄÇÑùÓëORMÎŞ¹ØµÄÒì³£¡£
+ * HibernateTemplateçš„åŠŸèƒ½ä¹‹ä¸€æ˜¯ç®¡ç†Hibernateä¼šè¯ï¼ŒåŒ…æ‹¬æ‰“å¼€å’Œå…³é—­ä¼šè¯ï¼Œä»¥åŠç¡®ä¿æ¯ä¸ªäº‹åŠ¡ä¸€ä¸ªä¼šè¯ã€‚
+ * HibernateTemplateçš„ç¼ºç‚¹æ˜¯å…·æœ‰ä¸€å®šçš„ä¾µå…¥æ€§ï¼Œä½¿ç”¨å®ƒçš„ä»£ç è¢«è€¦åˆåˆ°Spring APIä¸­ã€‚
+ * Hibernate3å¼•å…¥çš„SessionFactoryå¯ä»¥ç®¡ç†æ¯ä¸ªäº‹åŠ¡ä¸€ä¸ªä¼šè¯ï¼Œä¹Ÿå°±ä¸éœ€è¦HibernateTemplateï¼Œå¹¶èƒ½å¤Ÿé¿å…Spring APIçš„ä»£ç å…¥ä¾µã€‚
+ * è¿™ç§æ–¹å¼çš„ç¼ºç‚¹æ˜¯ï¼Œå®ƒä»¬æŠ›å‡ºHibernateç‰¹æœ‰çš„å¼‚å¸¸ï¼Œè€Œä¸æ˜¯åƒSpringæŒä¹…å¼‚å¸¸ä½“ç³»é‚£æ ·ä¸ORMæ— å…³çš„å¼‚å¸¸ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê12ÔÂ2ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´12æœˆ2æ—¥
  */
 public class HibernatePersonDao implements PersonDao {
 
-	// Ö±½ÓÊ¹ÓÃSessionFactory
+	// ç›´æ¥ä½¿ç”¨SessionFactory
 	private SessionFactory sessionFactory;
 	
 	public SessionFactory getSessionFactory() {
@@ -35,7 +35,7 @@ public class HibernatePersonDao implements PersonDao {
 
 	@Override
 	public void save(Person person) {
-		// Í¨¹ıSessionFactory»ñµÃ»á»°¶ÔÏó
+		// é€šè¿‡SessionFactoryè·å¾—ä¼šè¯å¯¹è±¡
 		getSessionFactory().getCurrentSession().saveOrUpdate(person);
 	}
 

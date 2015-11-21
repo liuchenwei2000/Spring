@@ -6,13 +6,13 @@ package context.event;
 import org.springframework.context.ApplicationEvent;
 
 /**
- * ÉÏÏÂÎÄÊÂ¼ş
+ * ä¸Šä¸‹æ–‡äº‹ä»¶
  * <p>
- * ApplicationEvent£ºÈİÆ÷ÊÂ¼ş£¬±ØĞëÓÉApplicationContext·¢²¼¡£
+ * ApplicationEventï¼šå®¹å™¨äº‹ä»¶ï¼Œå¿…é¡»ç”±ApplicationContextå‘å¸ƒã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ13ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ13æ—¥
  */
 public class MyEvent extends ApplicationEvent {
 

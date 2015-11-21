@@ -6,18 +6,18 @@ package aop.annotation.pointcut;
 /**
  * POJO
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ24ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ24æ—¥
  */
 public class MockDAO {
 
 	public void addString(String string){
-		System.out.println("ĞÂÔöÒ»¸ö×Ö·û´®£º" + string);
+		System.out.println("æ–°å¢ä¸€ä¸ªå­—ç¬¦ä¸²ï¼š" + string);
 	}
 	
 	public void addInteger(Integer integer){
-		System.out.println("ĞÂÔöÒ»¸öÕûÊı£º" + integer);
+		System.out.println("æ–°å¢ä¸€ä¸ªæ•´æ•°ï¼š" + integer);
 	}
 	
 	public void close(){
@@ -25,6 +25,6 @@ public class MockDAO {
 	}
 
 	private void realClose() {
-		System.out.println("¹Ø±ÕÁ¬½Ó");
+		System.out.println("å…³é—­è¿æ¥");
 	}
 }

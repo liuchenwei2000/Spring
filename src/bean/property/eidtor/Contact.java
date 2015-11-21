@@ -4,11 +4,11 @@
 package bean.property.eidtor;
 
 /**
- * ÁªÏµÈË
+ * è”ç³»äºº
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê10ÔÂ29ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´10æœˆ29æ—¥
  */
 public class Contact {
 

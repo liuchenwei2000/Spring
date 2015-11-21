@@ -4,15 +4,15 @@
 package quickstart;
 
 /**
- * ¶©µ¥²Ù×÷DAOÊ¾Àý
+ * è®¢å•æ“ä½œDAOç¤ºä¾‹
  * <p>
- * Ä£Äâ»ù±¾µÄCRUD²Ù×÷¡£
+ * æ¨¡æ‹ŸåŸºæœ¬çš„CRUDæ“ä½œã€‚
  * <p>
- * DAOµÄ×÷ÓÃÔÚÓÚÌá¹©Ò»ÖÖÊÖ¶ÎÀ´¶ÁÈ¡ºÍÐ´ÈëÊý¾Ý¿â£¬ËüÓ¦¸ÃÍ¨¹ý½Ó¿ÚµÄÐÎÊ½À´Ìá¹©ÕâÖÖ¹¦ÄÜ£¬ÈÃ³ÌÐòµÄÆäËû²¿·ÖÄÜ¹»·ÃÎÊËüÃÇ¡£
+ * DAOçš„ä½œç”¨åœ¨äºŽæä¾›ä¸€ç§æ‰‹æ®µæ¥è¯»å–å’Œå†™å…¥æ•°æ®åº“ï¼Œå®ƒåº”è¯¥é€šè¿‡æŽ¥å£çš„å½¢å¼æ¥æä¾›è¿™ç§åŠŸèƒ½ï¼Œè®©ç¨‹åºçš„å…¶ä»–éƒ¨åˆ†èƒ½å¤Ÿè®¿é—®å®ƒä»¬ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ28ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ28æ—¥
  */
 public interface OrderDAO {
 

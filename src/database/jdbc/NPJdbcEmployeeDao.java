@@ -13,16 +13,16 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 /**
- * »ùÓÚNamedParameterJdbcTemplateµÄEmployeeDaoÊµÏÖ
+ * åŸºäºNamedParameterJdbcTemplateçš„EmployeeDaoå®ç°
  * <p>
- * JdbcTemplateÊ¹ÓÃÁËË÷Òı²ÎÊı£¬ÔÚ°Ñ²ÎÊı´«µİ¸øupdate()·½·¨Ê±£¬±ØĞë×¢Òâ²ÎÊıÖµµÄ´ÎĞò¡£
- * Èç¹ûÔÚĞŞ¸ÄSQLÊ±²»µÃ²»¸Ä±ä²ÎÊıµÄ´ÎĞò£¬ÄÇÃ´ÖµµÄ´ÎĞòÒ²±ØĞëËæÖ®¸Ä±ä¡£
- * ÎªÁË±ÜÃâÕâÖÖÇé¿ö£¬¿ÉÒÔÊ¹ÓÃÃüÃû²ÎÊı£¬¸øSQLÀïµÄÃ¿¸ö²ÎÊı¸³ÓèÒ»¸öÃû³Æ£¬ÕâÑù²ÎÊıµÄ´ÎĞò¾ÍÃ»±ØÒª±£³ÖÒ»ÖÂÁË¡£
- * NamedParameterJdbcTemplatÖ§³ÖÃüÃû²ÎÊı¡£
+ * JdbcTemplateä½¿ç”¨äº†ç´¢å¼•å‚æ•°ï¼Œåœ¨æŠŠå‚æ•°ä¼ é€’ç»™update()æ–¹æ³•æ—¶ï¼Œå¿…é¡»æ³¨æ„å‚æ•°å€¼çš„æ¬¡åºã€‚
+ * å¦‚æœåœ¨ä¿®æ”¹SQLæ—¶ä¸å¾—ä¸æ”¹å˜å‚æ•°çš„æ¬¡åºï¼Œé‚£ä¹ˆå€¼çš„æ¬¡åºä¹Ÿå¿…é¡»éšä¹‹æ”¹å˜ã€‚
+ * ä¸ºäº†é¿å…è¿™ç§æƒ…å†µï¼Œå¯ä»¥ä½¿ç”¨å‘½åå‚æ•°ï¼Œç»™SQLé‡Œçš„æ¯ä¸ªå‚æ•°èµ‹äºˆä¸€ä¸ªåç§°ï¼Œè¿™æ ·å‚æ•°çš„æ¬¡åºå°±æ²¡å¿…è¦ä¿æŒä¸€è‡´äº†ã€‚
+ * NamedParameterJdbcTemplatæ”¯æŒå‘½åå‚æ•°ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ30ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ30æ—¥
  */
 public class NPJdbcEmployeeDao implements EmployeeDao {
 
@@ -36,11 +36,11 @@ public class NPJdbcEmployeeDao implements EmployeeDao {
 		this.npJdbcTemplate = npJdbcTemplate;
 	}
 
-	// Ê¹ÓÃ :name µÄ·½Ê½×÷ÎªÃüÃû²ÎÊı
+	// ä½¿ç”¨ :name çš„æ–¹å¼ä½œä¸ºå‘½åå‚æ•°
 	private static final String SQL_SAVE = "insert into employee(name,email,age) values(:name,:email,:age)";
 	
 	public void save(Employee employee) {
-		// ¹¹Ôì Map °ó¶¨¸÷¸ö²ÎÊıÖµ
+		// æ„é€  Map ç»‘å®šå„ä¸ªå‚æ•°å€¼
 		Map<String,Object> parameters = new HashMap<String,Object>();
 		parameters.put("name", employee.getName());
 		parameters.put("email", employee.getEmail());

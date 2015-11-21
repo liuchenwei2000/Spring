@@ -12,17 +12,17 @@ import org.springframework.core.io.Resource;
 import resource.IOUtil;
 
 /**
- * ÔÚSpringÖĞ·ÃÎÊ×ÊÔ´Ê¾Àı
+ * åœ¨Springä¸­è®¿é—®èµ„æºç¤ºä¾‹
  * <p>
- * µ±SpringÓ¦ÓÃĞèÒª½øĞĞ×ÊÔ´·ÃÎÊÊ±£¬Êµ¼ÊÉÏ²¢²»ĞèÒªÖ±½ÓÊ¹ÓÃResourceÊµÏÖÀà£¬¶øÊÇµ÷ÓÃResourceLoaderÊµÀıµÄgetResource()·½·¨À´»ñµÃ×ÊÔ´¡£
- * ResourceLoader½«»á¸ºÔğÑ¡ÔñResourceµÄÊµÏÖÀà£¬Ò²¾ÍÊÇÈ·¶¨¾ßÌåµÄ×ÊÔ´·ÃÎÊ²ßÂÔ£¬´Ó¶ø½«Ó¦ÓÃ³ÌĞòÓë¾ßÌåµÄ×ÊÔ´·ÃÎÊ²ßÂÔ·ÖÀë¿ªÀ´¡£
+ * å½“Springåº”ç”¨éœ€è¦è¿›è¡Œèµ„æºè®¿é—®æ—¶ï¼Œå®é™…ä¸Šå¹¶ä¸éœ€è¦ç›´æ¥ä½¿ç”¨Resourceå®ç°ç±»ï¼Œè€Œæ˜¯è°ƒç”¨ResourceLoaderå®ä¾‹çš„getResource()æ–¹æ³•æ¥è·å¾—èµ„æºã€‚
+ * ResourceLoaderå°†ä¼šè´Ÿè´£é€‰æ‹©Resourceçš„å®ç°ç±»ï¼Œä¹Ÿå°±æ˜¯ç¡®å®šå…·ä½“çš„èµ„æºè®¿é—®ç­–ç•¥ï¼Œä»è€Œå°†åº”ç”¨ç¨‹åºä¸å…·ä½“çš„èµ„æºè®¿é—®ç­–ç•¥åˆ†ç¦»å¼€æ¥ã€‚
  * <p>
- * ¶øApplicationContext¾ÍÊÇResourceLoader½Ó¿ÚµÄÊµÏÖÀà£¬µ±Í¨¹ıApplicationContextÊµÀı»ñÈ¡ResourceÊµÀıÊ±£¬
- * Ä¬ÈÏ²ÉÓÃÓëApplicationContextÏàÍ¬µÄ×ÊÔ´·ÃÎÊ²ßÂÔ¡£
+ * è€ŒApplicationContextå°±æ˜¯ResourceLoaderæ¥å£çš„å®ç°ç±»ï¼Œå½“é€šè¿‡ApplicationContextå®ä¾‹è·å–Resourceå®ä¾‹æ—¶ï¼Œ
+ * é»˜è®¤é‡‡ç”¨ä¸ApplicationContextç›¸åŒçš„èµ„æºè®¿é—®ç­–ç•¥ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ23ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ23æ—¥
  */
 public class ResourceTest {
 
@@ -30,9 +30,9 @@ public class ResourceTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// ApplicationContextÊµÀıÊÇÍ¨¹ı ClassPathResource¼ÓÔØµÄ
+		// ApplicationContextå®ä¾‹æ˜¯é€šè¿‡ ClassPathResourceåŠ è½½çš„
 		ApplicationContext context = new ClassPathXmlApplicationContext("bean/cars.xml");
-		// ÕâÀï»ñÈ¡ResourceÊ±Ä¬ÈÏ²ÉÓÃÓëApplicationContextÊµÀıÏàÍ¬µÄ×ÊÔ´·ÃÎÊ²ßÂÔ¡£
+		// è¿™é‡Œè·å–Resourceæ—¶é»˜è®¤é‡‡ç”¨ä¸ApplicationContextå®ä¾‹ç›¸åŒçš„èµ„æºè®¿é—®ç­–ç•¥ã€‚
 		Resource res = context.getResource("resource/books.xml");
 		System.out.println(res.getFilename());
 		System.out.println(res.getDescription());
@@ -43,12 +43,12 @@ public class ResourceTest {
 		}
 		
 		/*
-		 * Ê¹ÓÃApplicationContext·ÃÎÊ×ÊÔ´Ê±£¬Ò²¿ÉÒÔ²»Ê¹ÓÃÆäÄ¬ÈÏµÄ×ÊÔ´·ÃÎÊ²ßÂÔ£¬¶øÊÇÇ¿ÖÆÊ¹ÓÃÖ¸¶¨µÄResourceÊµÏÖÀà£¬Õâ¿ÉÒÔÍ¨¹ı²»Í¬Ç°×ºÀ´Ö¸¶¨¡£
+		 * ä½¿ç”¨ApplicationContextè®¿é—®èµ„æºæ—¶ï¼Œä¹Ÿå¯ä»¥ä¸ä½¿ç”¨å…¶é»˜è®¤çš„èµ„æºè®¿é—®ç­–ç•¥ï¼Œè€Œæ˜¯å¼ºåˆ¶ä½¿ç”¨æŒ‡å®šçš„Resourceå®ç°ç±»ï¼Œè¿™å¯ä»¥é€šè¿‡ä¸åŒå‰ç¼€æ¥æŒ‡å®šã€‚
 		 * 
-		 * classpath£ºÇ¿ÖÆÊ¹ÓÃClassPathResource·ÃÎÊ×ÊÔ´¡£
-		 * file£ºÇ¿ÖÆÊ¹ÓÃUrlResource·ÃÎÊ±¾µØÎÄ¼şÏµÍ³×ÊÔ´¡£
-		 * http£ºÇ¿ÖÆÊ¹ÓÃUrlResource·ÃÎÊ»ùÓÚHTTPµÄÍøÂç×ÊÔ´¡£
-		 * ÎŞÇ°×º£ºÊ¹ÓÃApplicationContextÄ¬ÈÏµÄResourceÊµÏÖÀà·ÃÎÊ×ÊÔ´¡£
+		 * classpathï¼šå¼ºåˆ¶ä½¿ç”¨ClassPathResourceè®¿é—®èµ„æºã€‚
+		 * fileï¼šå¼ºåˆ¶ä½¿ç”¨UrlResourceè®¿é—®æœ¬åœ°æ–‡ä»¶ç³»ç»Ÿèµ„æºã€‚
+		 * httpï¼šå¼ºåˆ¶ä½¿ç”¨UrlResourceè®¿é—®åŸºäºHTTPçš„ç½‘ç»œèµ„æºã€‚
+		 * æ— å‰ç¼€ï¼šä½¿ç”¨ApplicationContexté»˜è®¤çš„Resourceå®ç°ç±»è®¿é—®èµ„æºã€‚
 		 */
 		
 		res = context.getResource("file:resources/books.xml");

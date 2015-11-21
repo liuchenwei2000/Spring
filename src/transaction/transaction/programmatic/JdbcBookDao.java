@@ -17,15 +17,15 @@ import transaction.Book;
 import transaction.BookDao;
 
 /**
- * ÓĞÊÂÎñ¿ØÖÆµÄBookDaoÊµÏÖ
+ * æœ‰äº‹åŠ¡æ§åˆ¶çš„BookDaoå®ç°
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2014Äê11ÔÂ30ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2014å¹´11æœˆ30æ—¥
  */
 public class JdbcBookDao extends JdbcDaoSupport implements BookDao {
 
-	// ÀûÓÃSpringµÄTransactionTemplateÎª³ÌĞòÌí¼ÓÊÂÎñ¹ÜÀíÄÜÁ¦¡£
+	// åˆ©ç”¨Springçš„TransactionTemplateä¸ºç¨‹åºæ·»åŠ äº‹åŠ¡ç®¡ç†èƒ½åŠ›ã€‚
 	private TransactionTemplate transactionTemplate;
 
 	public TransactionTemplate getTransactionTemplate() {
@@ -42,7 +42,7 @@ public class JdbcBookDao extends JdbcDaoSupport implements BookDao {
 		getTransactionTemplate().execute(new TransactionCallback<Book>() {
 
 			/**
-			 * ¸Ã·½·¨±íÊ¾Ò»¸öÊÂÎñ£¬Èç¹û·½·¨³É¹¦·µ»Ø£¬ÄÇÃ´Õâ¸öÊÂÎñ±ã½«±»Ìá½»¡£
+			 * è¯¥æ–¹æ³•è¡¨ç¤ºä¸€ä¸ªäº‹åŠ¡ï¼Œå¦‚æœæ–¹æ³•æˆåŠŸè¿”å›ï¼Œé‚£ä¹ˆè¿™ä¸ªäº‹åŠ¡ä¾¿å°†è¢«æäº¤ã€‚
 			 * 
 			 * @see org.springframework.transaction.support.TransactionCallback#doInTransaction(org.springframework.transaction.TransactionStatus)
 			 */
@@ -53,13 +53,13 @@ public class JdbcBookDao extends JdbcDaoSupport implements BookDao {
 					
 					getJdbcTemplate().update(SQL_SAVE,
 							new Object[] { book.getIsbn(), book.getName(), book.getAuthor() });
-					// ¹ÊÒâ½«ÏÂÃæµÄÖØ¸´Ğ£ÑéÖÃÓÚ±£´æ¶¯×÷Ö®ºó£¬ÒÔ²âÊÔ»Ø¹ö¹¦ÄÜ
+					// æ•…æ„å°†ä¸‹é¢çš„é‡å¤æ ¡éªŒç½®äºä¿å­˜åŠ¨ä½œä¹‹åï¼Œä»¥æµ‹è¯•å›æ»šåŠŸèƒ½
 					if (existed) {
-						throw new RuntimeException(book.getName() + " ÒÑ´æÔÚ.");
+						throw new RuntimeException(book.getName() + " å·²å­˜åœ¨.");
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
-					status.setRollbackOnly();// ³öÏÖÒì³£Ê±»Ø¹ö
+					status.setRollbackOnly();// å‡ºç°å¼‚å¸¸æ—¶å›æ»š
 				}
 				return null;
 			}
