@@ -6,7 +6,7 @@
       <packaging>pom</packaging>
 	  
       <modules>
-        <module>Basic</module>
+        <module>IoC</module>
         <module>AOP</module>
         <module>Database</module>
 		<module>Transaction</module>
