@@ -4,38 +4,38 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/java/quickstart/beans.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/instance/read.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/postprocessor/bean.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/instance/factory/factory.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/postprocessor/bean/mybean.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/postprocessor/placeholder/datasource.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/instance/factory2/factory.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/postprocessor/propertyoverride/datasource.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/property/collectionProperty.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/property/values.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/property/eidtor/contacts.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/cars.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/property/composite/person.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/abstracts/absbean.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/adv/propertypath/propertypath.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/lifecycle/init/order.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/lifecycle/destroy/order.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/adv/methodinvoking/methodinvoking.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/adv/fieldretrieving/fieldretrieving.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/factorybean/factorybean.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/context/aware.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/resource/spring/testbean.xml</file>
           <file>file://$MODULE_DIR$/src/main/java/bean/scope/scope.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/context/event/listener.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/abstracts/absbean.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/context/aware.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/postprocessor/bean.xml</file>
           <file>file://$MODULE_DIR$/src/main/java/bean/other/beans.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/scope/more/lookup.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/imports/dao.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/quickstart/beans.xml</file>
           <file>file://$MODULE_DIR$/src/main/java/bean/imports/business.xml</file>
           <file>file://$MODULE_DIR$/src/main/java/bean/imports/business2.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/autowire/byType.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/bean/autowire/constructor.xml</file>
           <file>file://$MODULE_DIR$/src/main/java/bean/autowire/byName.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/autowire/byType.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/cars.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/property/collectionProperty.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/autowire/constructor.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/property/eidtor/contacts.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/imports/dao.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/postprocessor/propertyoverride/datasource.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/postprocessor/placeholder/datasource.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/instance/factory2/factory.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/instance/factory/factory.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/factorybean/factorybean.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/adv/fieldretrieving/fieldretrieving.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/context/event/listener.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/scope/more/lookup.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/adv/methodinvoking/methodinvoking.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/postprocessor/bean/mybean.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/lifecycle/init/order.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/lifecycle/destroy/order.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/property/composite/person.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/adv/propertypath/propertypath.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/instance/read.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/resource/spring/testbean.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/bean/property/values.xml</file>
         </fileset>
       </configuration>
     </facet>
