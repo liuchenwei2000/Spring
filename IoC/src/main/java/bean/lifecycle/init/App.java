@@ -15,7 +15,5 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("bean/lifecycle/init/order.xml");
 		
 		context.getBean("order");
-		
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

@@ -22,7 +22,5 @@ public class App {
 
 		IConfigurable child3 = (IConfigurable) context.getBean("child3");
 		System.out.println("child3=" + child3.getContent());
-
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

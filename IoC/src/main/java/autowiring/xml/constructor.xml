@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+               
+	<!-- 如果使用构造函数注入来配置 Bean，可以放弃 <constructor-arg> 元素，让 Spring 从容器的 Bean 中自动选择与构造函数参数同类型的 Bean。 -->
+	<bean id="walkman" class="bean.Walkman" autowire="constructor">
+		<constructor-arg name="name" value="Sony" />
+		<!-- bean.Walkman 的构造函数有一个 bean.ITape 类型的参数 -->
+	</bean>
+	
+	<!-- 类型为 bean.ITape 的 Bean -->
+	<bean id="tape" class="bean.Tape" />
+</beans>         

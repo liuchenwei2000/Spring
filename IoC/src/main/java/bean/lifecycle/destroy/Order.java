@@ -8,9 +8,9 @@ import org.springframework.beans.factory.DisposableBean;
 /**
  * POJO
  * <p>
- * 与定制初始化行为相似，Spring也提供两种方法定制Bean实例销毁之前的特定行为，这两种方式如下：
- * 1，在配置文件中使用destroy-method属性。
- * 2，实现DisposableBean接口。
+ * 与定制初始化行为相似，Spring也 提供两种方法定制 Bean 实例销毁之前的特定行为，这两种方式如下：
+ * 1，在配置文件中使用 destroy-method 属性。
+ * 2，实现 DisposableBean 接口。
  * 
  * @author 刘晨伟
  * 

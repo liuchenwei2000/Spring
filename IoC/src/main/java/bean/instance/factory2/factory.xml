@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd ">
 	
-	<!-- 实例工厂Bean -->
+	<!-- 实例工厂 Bean -->
 	<bean id="personFactory" class="bean.instance.factory2.PersonFactory" />
 	
 	<!--  
-	采用实例工厂方法创建Bean的<bean>元素时需要指定如下两个属性：
-	factory-bean：属性值为工厂Bean的id。
+	采用实例工厂方法创建 Bean 的 <bean> 元素时需要指定如下两个属性：
+	factory-bean：属性值为工厂 Bean 的 id。
 	factory-method：属性值为实例工厂的工厂方法。
 	-->
 	<bean id="american" factory-bean="personFactory" factory-method="create">
 		<!-- 与静态工厂方法相似，如果需要在调用工厂方法时传入参数，则使用下面的方式。 -->
 		<constructor-arg name="type" value="usa" />
-		<!-- property配置普通依赖注入属性。 -->
+		<!-- property 配置普通依赖注入属性。 -->
     	<property name="message" value="nice to meet you." />
     </bean>
     

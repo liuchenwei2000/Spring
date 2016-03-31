@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+使用 Spring 的命名空间 p 装配属性
+
+xmlns:p="http://www.springframework.org/schema/p"
+
+选择 <property> 还是命名空间 p 取决于你，它们是等价的。命名空间 p 主要优点是简洁。
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	<!--
+	使用 p: 作为 <bean> 元素所有属性的前缀来装配 Bean 的属性。
+	-->
+	<bean id="car" class="bean.alias.Car" p:name="BMW"/>
+
+	<!--
+	-ref 后缀作为一个标识来告知 Spring 应该装配一个引用而不是字面值。
+	-->
+	<bean id="walkman" class="bean.Walkman" p:tape-ref="atape">
+		<constructor-arg name="name" value="Sony"/>
+	</bean>
+
+	<bean id="atape" class="bean.Tape"/>
+</beans>

@@ -9,7 +9,7 @@
 	<!-- 配置容器后处理器，可以无须指定id属性。 -->
 	<bean class="postprocessor.MyBeanFactoryPostProcessor" />
 	
-	<bean id="car" class="bean.Car">
+	<bean id="car" class="bean.alias.Car">
     	<property name="name" value="car" />
     </bean>
 </beans>         

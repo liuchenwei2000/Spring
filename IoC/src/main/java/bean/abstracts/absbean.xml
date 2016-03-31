@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
-	有一批Bean的大量配置信息完全相同，只有少量配置不同，如何来简化这种配置？Spring提供了Bean继承来应对这个问题。
-	可以先为这些Bean配置一个Bean模板————将这些Bean中相同的配置信息配置成Bean模板，因为Spring容器无需创建Bean模板的实例，
-	所以通常将这个Bean模板配置成抽象Bean。有了Bean模板之后，将实际的Bean实例配置成该Bean模板的子Bean即可。
+有一批 Bean 的大量配置信息完全相同，只有少量配置不同，如何来简化这种配置？Spring 提供了 Bean 继承来应对这个问题。
+可以先为这些 Bean 配置一个 Bean 模板————将这些 Bean 中相同的配置信息配置成 Bean 模板，因为 Spring 容器无需创建 Bean 模板的实例，
+所以通常将这个 Bean 模板配置成抽象 Bean。有了 Bean 模板之后，将实际的 Bean 实例配置成该 Bean 模板的子 Bean 即可。
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 	<!-- 
-	抽象Bean，就是指定abstract属性为true的Bean。抽象Bean不能被实例化，Spring容器不会创建抽象Bean的实例。
-	抽象Bean的价值在于其通常作为父Bean被继承。当某个Bean将作为其他Bean的模板使用时，该Bean通常不需要实例化。
-	为了阻止Bean模板被预初始化，可使用 abstract="true" 将该模板Bean设置为抽象Bean。
+	抽象 Bean，就是指定 abstract 属性为 true 的 Bean。抽象 Bean 不能被实例化，Spring 容器不会创建抽象 Bean 的实例。
+	抽象 Bean 的价值在于其通常作为父 Bean 被继承。当某个 Bean 将作为其他 Bean 的模板使用时，该 Bean 通常不需要实例化。
+	为了阻止 Bean 模板被预初始化，可使用 abstract="true" 将该模板 Bean 设置为抽象 Bean。
 	-->
 	<bean id="father" class="bean.abstracts.Televison" abstract="true">
 		<property name="name" value="TV" />
 	</bean>
 	
 	<!--  
-	子Bean定义可以从父Bean继承实现类、构造器参数、属性值等信息。此外，子Bean配置可以增加新的配置信息，并可指定新的配置信息覆盖父Bean的定义。
-	子Bean无法从父Bean继承如下属性：depends-on、autowire、singleton、scope、lazy-init，这些属性将总是从子Bean定义中获得，或采用默认值。
+	子 Bean 定义可以从父 Bean 继承实现类、构造器参数、属性值等信息。此外，子 Bean 配置可以增加新的配置信息，并可指定新的配置信息覆盖父 Bean 的定义。
+	子 Bean 无法从父 Bean 继承如下属性：depends-on、autowire、singleton、scope、lazy-init，这些属性将总是从子 Bean 定义中获得，或采用默认值。
 	-->
 	<!-- 
-	通过<bean>元素的parent属性即可指定该Bean是一个子Bean，parent属性指定该Bean所继承的父Bean的id。 
-	如果父Bean定义中有class属性，则子Bean定义中可省略class属性，子Bean将采用与父Bean相同的实现类。
+	通过 <bean> 元素的 parent 属性即可指定该 Bean 是一个子 Bean，parent 属性指定该 Bean 所继承的父 Bean 的id。
+	如果父 Bean 定义中有 class 属性，则子 Bean 定义中可省略 class 属性，子 Bean 将采用与父 Bean 相同的实现类。
 	-->
 	<bean id="child1" parent="father" />
 	
-	<!-- 子Bean完全可以使用其他class类，并配置自己的属性值。 -->
+	<!-- 子 Bean 完全可以使用其他 class 类，并配置自己的属性值。 -->
 	<bean id="child2" parent="father" class="bean.abstracts.Computer" >
 		<property name="name" value="PC" />
 	</bean>
 	
 	<!-- 
-	抽象Bean因为无需实例化，因此可以没有class属性。 
-	抽象Bean不能实例化，所以不能通过getBean()显式地获取实例，也不能将抽象Bean注入成其他Bean的属性。
+	抽象 Bean 因为无需实例化，因此可以没有 class 属性。
+	抽象 Bean 不能实例化，所以不能通过 getBean() 显式地获取实例，也不能将抽象 Bean 注入成其他 Bean 的属性。
 	-->
 	<bean id="base" abstract="true">
 		<property name="content" value="this is content." />

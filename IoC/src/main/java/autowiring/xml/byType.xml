@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+               
+	<!-- 如果属性类型匹配某个 Bean 的类型，则该 Bean 被注入到属性中；否则不会注入。如果找到多个 Bean，则抛出异常。-->
+	<bean id="walkman" class="bean.Walkman" autowire="byType">
+		<constructor-arg name="name" value="Sony" />
+		<!-- bean.Walkman 类中的 tape 属性是 bean.ITape 类型，容器会自动寻找 bean.ITape 类型的 Bean。 -->
+	</bean>
+	
+	<!-- bean.ITape 的 Bean -->
+	<bean id="tape" class="bean.Tape" />
+</beans>         

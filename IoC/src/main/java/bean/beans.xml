@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+创建应用组件之间协作的行为通常称为装配（wiring），Spring 有多种装配 Bean 的方式，采用 XML 配置通常是最常见的装配方式。
+
+从 Spring 3.0 开始，Spring 容器提供了两种装配 Bean 的方式。
+传统上，Spring 使用一个或多个 XML 文件作为配置文件，而 Spring 3.0 还同时提供了基于 Java 注解的配置方式。
+-->
+
+<!--
+根元素是 beans，可以接受 0 个或多个 bean 元素，每个 bean 元素配置一个 bean 实例。
+
+Spring 的核心框架自带了10个命名空间，通过这些命名空间可以配置 Spring 容器。
+
+aop：为声明切面以及将 @AspectJ 注解的类代理为 Spring 切面提供了配置元素。
+beans：支持声明 Bean 和装配 Bean，是 Spring 最核心也是最原始的命名空间。
+context：为配置 Spring 应用上下文提供了配置元素，包括自动检测和自动装配、注入非 Spring 直接管理的对象。
+jee：提供了与 JavaEE API 的集成，例如 JNDI。
+jms：为声明消息驱动的 POJO 提供了配置元素。
+lang：支持配置由 Groovy 等脚本实现的 Bean。
+mvc：启用 Spring MVC 的能力，例如面向注解的控制器、拦截器等。
+oxm：支持 Spring 的对象到 XML 映射配置。
+tx：提供声明式事务配置。
+util：提供各种各样的工具类元素，包括把集合配置为 Bean、支持属性占位符元素等。
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+               
+	<!-- 
+	id：指定 Bean 的惟一标识，程序通过 id 属性值来访问该 Bean 实例。
+	class：指定 Bean 的实现类，此处不可再用接口，必须使用实现类，Spring容器会使用XML解析器读取该属性值，并利用反射来创建该实现类的实例。
+	-->
+	<bean id="walkman" class="bean.Walkman">
+		<!-- 使用构造器注入 -->
+		<constructor-arg name="name" value="Sony" />
+		<!--
+		使用属性注入
+
+		Spring 会自动接管每个 <bean> 定义里的 <property> 元素定义：
+		首先调用无参数（本例使用了参数）的构造器创建默认的 Bean 实例后，调用对应的 setter 方法为程序注入属性值。
+		<property> 定义的属性值将不再由该 Bean 来主动设置、管理，而是接收 Spring 的注入。
+		-->
+		<property name="tape" ref="atape" />
+	</bean>
+	
+	<bean id="walkman2" class="bean.Walkman">
+		<constructor-arg name="name" value="Sony" />
+		<!-- 使用构造器注入对象引用：构造注入可以在构造器中决定依赖关系的注入顺序，优先依赖的优先注入。 -->
+		<constructor-arg name="tape" ref="atape" />
+	</bean>
+	
+	<bean id="atape" class="bean.Tape" />
+</beans>         

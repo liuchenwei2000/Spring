@@ -8,9 +8,9 @@ import org.springframework.beans.factory.InitializingBean;
 /**
  * POJO
  * <p>
- * Spring提供两种方式在Bean的全部属性注入完成后执行特定行为：
- * 1，在配置文件中使用init-method属性。
- * 2，实现InitializaingBean接口。
+ * Spring 提供两种方式在 Bean 的全部属性注入完成后执行特定行为：
+ * 1，在配置文件中使用 init-method 属性。
+ * 2，实现 InitializaingBean 接口。
  * 
  * @author 刘晨伟
  * 

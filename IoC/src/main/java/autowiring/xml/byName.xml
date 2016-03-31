@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+               
+	<!-- 如果属性名匹配某个 Bean 的id，则该 Bean 被注入到属性中；否则不会注入。-->
+	<bean id="walkman" class="bean.Walkman" autowire="byName">
+		<constructor-arg name="name" value="Sony" />
+		<!--
+		byName 自动装配遵循一项约定：为属性自动装配 ID 与该属性的名字相同的 Bean。
+		bean.Walkman 类中有 setTape 方法，属性名为 tape，容器会自动寻找 id 为 tape 的Bean。
+		-->
+	</bean>
+	
+	<!-- id 为 tape 的 Bean -->
+	<bean id="tape" class="bean.Tape" />
+</beans>         

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 	
 	<!--  
-	使用构造器创建Bean实例是最常见的情况，如果采用设值注入的方式，要求该类提供无参构造器。
-	class元素是必须的，class属性值就是Bean实例的实现类。
-	Spring容器将使用默认构造器来创建Bean实例，该实例所有的属性都会执行默认初始化。
-	接下来，Spring容器会根据配置文件决定依赖关系，先实例化被依赖的Bean实例，然后为Bean注入依赖关系。
-	最后将一个完整的Bean实例返回给程序，该Bean实例的所有属性，已经由Spring容器完成了初始化。
+	使用构造器创建 Bean 实例是最常见的情况，如果采用设值注入的方式，要求该类提供无参构造器。
+
+	class 元素是必须的，class 属性值就是 Bean 实例的实现类。
+
+	Spring 容器将使用默认构造器来创建 Bean 实例，该实例所有的属性都会执行默认初始化。
+	接下来，Spring 容器会根据配置文件决定依赖关系，先实例化被依赖的 Bean 实例，然后为 Bean 注入依赖关系。
+	最后将一个完整的 Bean 实例返回给程序，该 Bean 实例的所有属性，已经由 Spring 容器完成了初始化。
 	-->
 	
 	<bean id="reader" class="bean.instance.Reader">

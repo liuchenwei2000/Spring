@@ -1,7 +1,7 @@
 /**
  * 
  */
-package bean;
+package bean.alias;
 
 /**
  * POJO

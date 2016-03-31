@@ -1,9 +1,9 @@
 
-静态工厂方法和实例工厂方法创建Bean的区别如下：
-1，实例工厂方法创建Bean必须将实例工厂配置成Bean实例；而静态工厂方法创建Bean则无需配置工厂Bean。
-2，实例工厂方法创建Bean必须使用factory-bean属性确定工厂Bean；而静态工厂方法创建Bean则使用class方法确定静态工厂类。
+静态工厂方法和实例工厂方法创建 Bean 的区别如下：
+1，实例工厂方法创建 Bean 必须将实例工厂配置成 Bean 实例；而静态工厂方法创建 Bean 则无需配置工厂 Bean。
+2，实例工厂方法创建 Bean 必须使用 factory-bean 属性确定工厂 Bean；而静态工厂方法创建Bean则使用 class 方法确定静态工厂类。
 
 相同之处如下：
-1，都需要使用factory-method属性指定产生Bean实例的工厂方法。
-2，工厂方法如果需要参数，都使用<constructor-arg>元素指定参数值。
-3，其他依赖注入属性，都是用<property>元素确定参数值。
+1，都需要使用 factory-method 属性指定产生 Bean 实例的工厂方法。
+2，工厂方法如果需要参数，都使用 <constructor-arg> 元素指定参数值。
+3，其他依赖注入属性，都是用 <property> 元素确定参数值。

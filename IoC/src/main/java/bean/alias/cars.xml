@@ -4,13 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
                http://www.springframework.org/schema/beans/spring-beans-4.0.xsd ">
                
-	<!-- 如果需要为Bean实例指定多个别名，可以在name属性中使用逗号或空格来分隔多个别名，然后可以通过任一别名即可访问该Bean实例。 -->
-	<bean id="car" name="mycar,mydear,horse" class="bean.Car">
+	<!-- 如果需要为 Bean 实例指定多个别名，可以在 name 属性中使用逗号或空格来分隔多个别名，然后可以通过任一别名即可访问该Bean实例。 -->
+	<bean id="car" name="mycar,mydear,horse" class="bean.alias.Car">
 		<property name="name" value="Benz" />
 	</bean>
 	<!--  
-	也可以使用<alias>元素来指定Bean的别名：
-	name 属性指定一个Bean实例的标识名，表明将为该Bean实例指定别名。
+	也可以使用 <alias> 元素来指定 Bean 的别名：
+	name 属性指定一个 Bean 实例的标识名，表明将为该 Bean 实例指定别名。
 	alias 属性指定一个别名。
 	-->
 	<alias name="mycar" alias="car1"/>

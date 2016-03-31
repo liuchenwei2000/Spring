@@ -1,7 +1,7 @@
 /**
  * 
  */
-package quickstart;
+package bean;
 
 /**
  * 接口实现，POJO

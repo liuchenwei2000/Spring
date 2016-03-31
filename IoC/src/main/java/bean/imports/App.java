@@ -22,14 +22,10 @@ public class App {
 		business.setDao(dao);// 手动为 BusinessLayer 设置 DAO 对象
 		business.doOperation();
 		
-		((ClassPathXmlApplicationContext) context).close();
-		
 		// 通过在XML配置文件中使用 import 的方式组合配置信息
 		context = new ClassPathXmlApplicationContext("bean/imports/business2.xml");
 
 		business = (BusinessLayer) context.getBean("business");
 		business.doOperation();
-		
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

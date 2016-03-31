@@ -19,7 +19,5 @@ public class App {
 		
 		IPerson ch = (IPerson) context.getBean("chinese");
 		ch.sayHello();
-		
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

@@ -1,56 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-如果Bean的属性是个集合，则可以使用<list>、<set>、<map>、<props>元素分别来设置类型为List、Set、Map、Properties的集合属性值。
+如果 Bean 的属性是个集合，则可以使用 <list>、<set>、<map>、<props> 元素来设置。
+
+<list>：装配 list 类型的值，允许重复。
+<set>：装配 set 类型的指，不允许重复。
+<map>：装配 map 类型的值，名称和值可以是任意类型。
+<props>：装配 properties 类型的值，名称和值必须都是 String
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd
-               ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
                
 	<bean id="bean" class="bean.property.Bean">
-		<!-- 为数组属性配置属性值，和List属性是一样的 -->
+		<!--
+		当装配类型为数组或者 Collection 任意实现的属性时，<list> 和 <set> 元素都可以使用。
+		不论 Bean 的属性在类定义中是什么实际的集合类型，都可以使用 <list> 和 <set> 元素进行装配。
+		-->
+		<!-- 为数组属性配置属性值 -->
 		<property name="array">
 			<!--  
-			当使用<list>等集合元素配置属性时，还需要手动配置集合项。
-			由于集合项又可以是基本类型值、引用容器中其他Bean、嵌套Bean或集合属性等，
-			所以<list>等集合元素可以接受value、ref、bean、集合元素作为其子元素。
+			当使用 <list> 等集合元素配置属性时，还需要手动配置集合项。
+			由于集合项又可以是基本类型值、引用容器中其他 Bean、嵌套 Bean 或集合属性等，
+			所以 <list> 等集合元素可以接受 value、ref、bean、集合元素作为其子元素。
 			-->
 			<list>
-				<!-- 每个value、ref、bean都配置成一个元素。 -->
+				<!-- 每个 value、ref、bean 都配置成一个元素。 -->
 				<value>array1</value>
 				<value>array2</value>
 				<value>array3</value>
 			</list>
 		</property>
 		
-		<!-- 为List属性配置属性值 -->
+		<!-- 为 List 属性配置属性值 -->
 		<property name="list">
 			<list>
-				<!-- 每个value、ref、bean都配置成一个元素。 -->
+				<!-- 每个 value、ref、bean 都配置成一个元素。 -->
 				<value>list1</value>
 				<value>list2</value>
 				<value>list3</value>
 			</list>
 		</property>
 		
-		<!-- 为复合对象List属性配置属性值 -->
+		<!-- 为复合对象 List 属性配置属性值 -->
 		<property name="cars">
 			<list>
 				<!-- 每个value、ref、bean都配置成一个元素。 -->
-				<bean class="bean.Car">
+				<bean class="bean.alias.Car">
 					<property name="name" value="nest car1" />
 				</bean>
 				<ref bean="car" />
-				<bean class="bean.Car">
+				<bean class="bean.alias.Car">
 					<property name="name" value="nest car2" />
 				</bean>
 			</list>
 		</property>
 		
-		<!-- 为Set属性配置属性值 -->
+		<!-- 为 Set 属性配置属性值 -->
 		<property name="set">
 			<set>
 				<!-- 每个value、ref、bean都配置成一个元素。 -->
@@ -60,38 +66,38 @@
 			</set>
 		</property>
 		
-		<!-- 为Map属性配置属性值 -->
+		<!-- 为 Map 属性配置属性值 -->
 		<property name="map">
 			<!--  
-			因为Map中的每个元素由key-value两部分组成，所以需要使用<entry>来配置一个Map元素，它支持如下4个属性：
+			因为 Map 中的每个元素由 key-value 两部分组成，所以需要使用 <entry> 来配置一个 Map 元素，它支持如下4个属性：
 			
-			key：如果Map的key是基本类型值或字符串，则使用该属性。
-			key-ref：如果Map的key是容器中另一个Bean实例，则使用该属性指定Bean的id。
-			value：如果Map的value是基本类型值或字符串，则使用该属性。
-			value-ref：如果Map的value是容器中另一个Bean实例，则使用该属性指定Bean的id。
+			key：如果 Map 的 key 是基本类型值或字符串，则使用该属性。
+			key-ref：如果 Map 的 key 是容器中另一个 Bean 实例，则使用该属性指定 Bean 的 id。
+			value：如果 Map 的 value 是基本类型值或字符串，则使用该属性。
+			value-ref：如果 Map 的 value 是容器中另一个 Bean 实例，则使用该属性指定 Bean 的 id。
 			-->
 			<map>
-				<!-- 每个entry配置一个key-value对。 -->
+				<!-- 每个 entry 配置一个 key-value 对。 -->
 				<entry key="key1" value="value1"/>
 				<entry key="key2" value="value2"/>
 				<entry key="key3" value="value3"/>
 			</map>
 		</property>
 		
-		<!-- 为复合对象Map属性配置属性值 -->
+		<!-- 为复合对象 Map 属性配置属性值 -->
 		<property name="carMap">
 			<map>
-				<!-- 每个entry配置一个key-value对。 -->
+				<!-- 每个 entry 配置一个 key-value 对。 -->
 				<entry key="car1" value-ref="car"/>
 				<entry key="car2" value-ref="V"/>
 				<entry key="car3" value-ref="horse"/>
 			</map>
 		</property>
 		
-		<!-- 为Properties属性配置属性值 -->
+		<!-- 为 Properties 属性配置属性值 -->
 		<property name="properties">
 			<props>
-				<!-- 每个prop元素配置一个属性项，其中key指定属性名。 -->
+				<!-- 每个 prop 元素配置一个属性项，其中 key 指定属性名。 -->
 				<prop key="prop1">pvalue1</prop>
 				<prop key="prop2">pvalue2</prop>
 				<prop key="prop3">pvalue3</prop>
@@ -99,15 +105,15 @@
 		</property>
 	</bean>
 	
-	<bean id="car" class="bean.Car">
+	<bean id="car" class="bean.alias.Car">
 		<property name="name" value="vic" />
 	</bean>
 	
-	<bean id="V" class="bean.Car">
+	<bean id="V" class="bean.alias.Car">
 		<property name="name" value="V" />
 	</bean>
 	
-	<bean id="horse" class="bean.Car">
+	<bean id="horse" class="bean.alias.Car">
 		<property name="name" value="horse" />
 	</bean>
 </beans>         

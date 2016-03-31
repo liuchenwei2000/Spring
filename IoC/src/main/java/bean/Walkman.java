@@ -1,7 +1,7 @@
 /**
  * 
  */
-package quickstart;
+package bean;
 
 /**
  * 复合对象，POJO

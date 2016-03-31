@@ -1,0 +1,14 @@
+
+Spring 提供了几种技巧，可以帮助减少 XML 的配置数量：
+
+自动装配（autowiring）
+
+有助于减少甚至消除配置 <property> 元素和 <constructor-arg> 元素，让 Spring 自动识别如何装配 Bean 的依赖关系。
+
+自动装配（autowiring）
+
+比自动装配更进一步，让 Spring 能够自动识别哪些类需要被配置成 Spring Bean，从而减少对 <bean> 元素的使用。
+
+
+当自动装配和自动检测一起使用时，可以显著减少 Spring 的 XML 配置数量。
+通常只需要配置少量的几行 XML 代码，而无需知道在 Spring 的应用上下文中究竟有多少 Bean。

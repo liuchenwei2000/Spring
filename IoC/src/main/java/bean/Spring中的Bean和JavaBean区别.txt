@@ -1,8 +1,8 @@
 
-传统JavaBean和Spring中Bean存在如下区别：
+传统 JavaBean 和 Spring 中 Bean 存在如下区别：
 1，用处不同
-传统JavaBean更多作为值对象传递参数（DTO）；Spring的Bean用处几乎无所不包，任何应用组件都被称为Bean。
+传统 JavaBean 更多作为值对象传递参数（DTO）；Spring 的 Bean 用处几乎无所不包，任何应用组件都被称为 Bean。
 2，写法不同
-传统JavaBean作为值对象，要求每个属性都提供getter和setter方法；但Spring的Bean只需为接受设值注入的属性提供setter方法。
+传统 JavaBean 作为值对象，要求每个属性都提供 getter 和 setter 方法；但 Spring 的 Bean 只需为接受设值注入的属性提供 setter 方法。
 3，生命周期不同
-传统JavaBean作为值对象在各层间传递，不接受任何容器管理其生命周期；Spring中的Bean由Spring容器管理其生命周期。
+传统 JavaBean 作为值对象在各层间传递，不接受任何容器管理其生命周期；Spring 中的 Bean 由 Spring 容器管理其生命周期。

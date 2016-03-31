@@ -1,12 +1,12 @@
 /**
  * 
  */
-package bean.autowire;
+package autowiring.xml;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import quickstart.Walkman;
+import bean.Walkman;
 
 public class App {
 
@@ -15,18 +15,16 @@ public class App {
 	 */
 	public static void main(String[] args) {
 		System.out.println("【byName】");
-		run("bean/autowire/byName.xml");
+		run("autowiring/xml/byName.xml");
 		System.out.println("【byType】");
-		run("bean/autowire/byType.xml");
+		run("autowiring/xml/byType.xml");
 		System.out.println("【constructor】");
-		run("bean/autowire/constructor.xml");
+		run("autowiring/xml/constructor.xml");
 	}
 
 	private static void run(String xmlFilePath) {
 		ApplicationContext context = new ClassPathXmlApplicationContext(xmlFilePath);
 		Walkman walkman = (Walkman) context.getBean("walkman");
 		walkman.start();
-
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

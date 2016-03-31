@@ -19,7 +19,5 @@ public class App {
 		
 		IBeing cat = (IBeing) context.getBean("cat");
 		cat.about();
-		
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

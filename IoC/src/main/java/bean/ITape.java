@@ -1,7 +1,7 @@
 /**
  * 
  */
-package quickstart;
+package bean;
 
 /**
  * 简单接口

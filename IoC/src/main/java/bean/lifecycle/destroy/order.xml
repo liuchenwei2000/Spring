@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 	
 	<!-- 
-	使用 destroy-method 属性指定某个方法应在Bean销毁之前自动执行。 
-	Spring容器会自动检测Bean实例是否实现了特定生命周期接口，并由此决定是否需要执行生命周期方法。 
+	使用 destroy-method 属性指定某个方法应在 Bean 销毁之前自动执行。
+	Spring 容器会自动检测 Bean 实例是否实现了特定生命周期接口，并由此决定是否需要执行生命周期方法。
 	-->
 	<bean id="order" class="bean.lifecycle.destroy.Order" destroy-method="close">
     	<property name="name" value="An order" />

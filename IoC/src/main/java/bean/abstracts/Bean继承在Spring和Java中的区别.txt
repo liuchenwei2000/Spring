@@ -1,5 +1,5 @@
 
-Spring中的Bean继承与Java中Bean的继承有如下区别：
-1，Spring中的子Bean和父Bean可以是不同类型，但Java中的继承则保证子类是一种特殊的父类。
-2，Spring中Bean的继承是实例之间的关系，因此主要表现为参数值的延续；而Java中的继承是类之间的关系，主要表现为方法、属性的延续。
-3，Spring中子Bean不可作为父Bean使用，不具备多态性；Java中的子类实例完全可当成父类实例使用。
+Spring 中的 Bean 继承与 Java 中 Bean 的继承有如下区别：
+1，Spring 中的子 Bean 和父 Bean 可以是不同类型，但 Java 中的继承则保证子类是一种特殊的父类。
+2，Spring 中 Bean 的继承是实例之间的关系，因此主要表现为参数值的延续；而Java中的继承是类之间的关系，主要表现为方法、属性的延续。
+3，Spring 中子 Bean 不可作为父 Bean 使用，不具备多态性；Java 中的子类实例完全可当成父类实例使用。

@@ -31,7 +31,7 @@ public class ResourceTest {
 	 */
 	public static void main(String[] args) {
 		// ApplicationContext实例是通过 ClassPathResource加载的
-		ApplicationContext context = new ClassPathXmlApplicationContext("bean/cars.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("bean/alias/cars.xml");
 		// 这里获取Resource时默认采用与ApplicationContext实例相同的资源访问策略。
 		Resource res = context.getResource("resource/books.xml");
 		System.out.println(res.getFilename());

@@ -21,7 +21,5 @@ public class App {
 		Worker worker2 = (Worker) context.getBean("worker2");
 		worker2.produce();
 		worker2.produce();
-		
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

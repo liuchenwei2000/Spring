@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
                
 	<bean id="person" class="bean.property.composite.Person">
 		<constructor-arg name="name" value="vic" />
 		<constructor-arg name="car">
-			<bean class="bean.Car" />
+			<bean class="bean.alias.Car" />
 		</constructor-arg>
 		<!-- 
-		为Bean的属性指定值时，可以使用组合属性名的方式。
-		除了最后一个属性外，只要其他属性值不为null，组合属性名就是合法的。
-		如下: 
+		为 Bean 的属性指定值时，可以使用组合属性名的方式。
+		除了最后一个属性外，只要其他属性值不为 null，组合属性名就是合法的。
 		-->
 		<property name="car.name" value="my horse" />
 	</bean>

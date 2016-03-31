@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd ">
 	
 	<!--  
-	使用静态工厂方法创建Bean实例时，class属性必须指定静态工厂类。此外，还需要使用factory-method属性来指定静态工厂方法名。
-	Spring将调用静态工厂方法（可能包含一组参数）来获取一个Bean实例，一旦获得了指定Bean实例，Spring后面的处理步骤与采用普通方法创建Bean实例完全一样。
+	使用静态工厂方法创建 Bean 实例时，class 属性必须指定静态工厂类。
+	此外，还需要使用 factory-method 属性来指定静态工厂方法名。
+	Spring 将调用静态工厂方法（可能包含一组参数）来获取一个 Bean 实例，
+	一旦获得了指定 Bean 实例，Spring 后面的处理步骤与采用普通方法创建 Bean 实例完全一样。
 	需要注意的是，factory-method 指定的工厂方法必须是静态的。
 	-->
 	<bean id="dog" class="bean.instance.factory.BeingFactory" factory-method="create">
 		<!-- 如果静态工厂方法需要参数，则使用 constructor-arg 传入 。 -->
 		<constructor-arg name="type" value="dog" />
-		<!-- property配置普通依赖注入属性。 -->
+		<!-- property 配置普通依赖注入属性。 -->
     	<property name="message" value="I'm a dog" />
     </bean>
     
     <!--  
-    Spring使用静态工厂方法来创建Bean实例时，会先解析配置文件，通过反射调用工厂类的静态工厂方法，将其返回值作为Bean实例。
-	在这个过程中，Spring不再负责创建Bean实例，Bean实例是由用户提供的工厂类负责创建的。
-	当工厂方法创建了Bean实例后，Spring依然可以管理该Bean实例的依赖关系和生命周期。
+    Spring 使用静态工厂方法来创建 Bean 实例时，会先解析配置文件，通过反射调用工厂类的静态工厂方法，将其返回值作为 Bean 实例。
+	在这个过程中，Spring 不再负责创建 Bean 实例，Bean 实例是由用户提供的工厂类负责创建的。
+	当工厂方法创建了 Bean 实例后，Spring 依然可以管理该 Bean 实例的依赖关系和生命周期。
     -->
     <bean id="cat" class="bean.instance.factory.BeingFactory" factory-method="create">
 		<constructor-arg name="type" value="cat" />

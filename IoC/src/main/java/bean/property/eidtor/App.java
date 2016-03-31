@@ -17,8 +17,6 @@ public class App {
 		Contact contact = (Contact) context.getBean("vic");
 		System.out.println(contact.getPhoneNumber().getAreacode());
 		System.out.println(contact.getPhoneNumber().getPhoneno());
-		
-		((ClassPathXmlApplicationContext) context).close();
 	}
 
 }

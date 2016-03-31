@@ -16,7 +16,5 @@ public class App {
 		
 		Person person = (Person) context.getBean("person");
 		System.out.println(person.getCar().getName());
-
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

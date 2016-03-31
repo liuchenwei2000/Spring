@@ -3,7 +3,7 @@
  */
 package bean.property.composite;
 
-import bean.Car;
+import bean.alias.Car;
 
 /**
  * 复合Bean

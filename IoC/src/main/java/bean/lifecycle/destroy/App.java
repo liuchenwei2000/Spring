@@ -15,7 +15,7 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("bean/lifecycle/destroy/order.xml");
 		
 		context.getBean("order");
-		
+
 		((ClassPathXmlApplicationContext) context).close();
 	}
 }

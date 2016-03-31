@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 	
 	<!-- 
-	init-method 属性指定某个方法应在Bean全部依赖关系设置结束后自动执行。
-	使用这种方法不需将代码与Spring的接口耦合在一起，代码污染小。
+	init-method 属性指定某个方法应在 Bean 全部依赖关系设置结束后自动执行。
+	使用这种方法不需将代码与 Spring 的接口耦合在一起，代码污染小。
 	
-	对于实现接口的Bean，无需使用init-method属性来指定初始化方法，配置该Bean实例与配置普通Bean实例完全一样，
-	Spring容器会自动检测Bean实例是否实现了特定生命周期接口，并由此决定是否需要执行生命周期方法。 
+	对于实现接口的 Bean，无需使用 init-method 属性来指定初始化方法，配置该 Bean 实例与配置普通 Bean 实例完全一样，
+	Spring 容器会自动检测 Bean 实例是否实现了特定生命周期接口，并由此决定是否需要执行生命周期方法。
 	
-	本例既使用了init-method的方式又使用了实现InitializingBean接口的方式。
-	当这两种方式都使用时，容器会先调用 afterPropertiesSet 方法，然后调用init-method属性所指定的方法进行初始化。
+	本例既使用了 init-method 的方式又使用了实现 InitializingBean 接口的方式。
+	当这两种方式都使用时，容器会先调用 afterPropertiesSet 方法，然后调用 init-method 属性所指定的方法进行初始化。
 	-->
 	<bean id="order" class="bean.lifecycle.init.Order" init-method="init">
     	<property name="name" value="An order" />
