@@ -1,0 +1,13 @@
+
+从 Spring 2.5 开始，支持使用注解自动装配 Bean 的属性。使用注解自动装配与在 XML 中使用 autowire 属性自动装配并没有太大差别，
+但是注解允许更细粒度的自动装配，可以选择性地标注某一个属性来对其应用自动装配。
+
+Spring 容器默认禁用注解装配，最简单的启用方式是使用 Spring 的 context 命名空间配置中的 <context:annotation-config>。
+
+Spring 3 支持三种不同的用于自动装配地注解：
+Spring 自带的 @Autowired 注解、JSR-330 的 @Inject 注解、JSR-250 的 @Resource 注解。
+
+Spring 的 @Autowired 注解是减少 XML 配置的一种方式，但是使用它的类会引入对 Spring 的特定依赖（即便是一个注解）。
+幸运的是，Spring 还提供了标准的 Java 注解来替代 @Autowired，这就是 @Inject 注解。
+与 @Autowired 不同的是，@Inject 没有 required 属性。因此，@Inject 所标注的依赖关系必须存在，否则会抛出异常。
+与 @Qualifier 对应的是 @Named 注解。
