@@ -6,9 +6,9 @@ package resource;
 import org.springframework.core.io.ByteArrayResource;
 
 /**
- * ByteArrayResource示例
+ * ByteArrayResource 示例
  * <p>
- * ByteArrayResource类用来读取字节数组资源。
+ * ByteArrayResource 类用来读取字节数组资源。
  * 
  * @author 刘晨伟
  * 

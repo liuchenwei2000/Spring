@@ -6,10 +6,10 @@ package resource;
 import org.springframework.core.io.ClassPathResource;
 
 /**
- * ClassPathResource示例
+ * ClassPathResource 示例
  * <p>
- * ClassPathResource用来访问类加载路径下的资源，其主要优势是方便访问类加载路径里的资源，
- * 尤其对于Web应用，ClassPathResource可自动搜索位于WEB-INF/classes下的资源文件，无需使用绝对路径访问。
+ * ClassPathResource 用来访问类加载路径下的资源，其主要优势是方便访问类加载路径里的资源，
+ * 尤其对于 Web 应用，ClassPathResource 可自动搜索位于 WEB-INF/classes 下的资源文件，无需使用绝对路径访问。
  * 
  * @author 刘晨伟
  * 

@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
                
 	<bean id="byFile" class="resource.spring.TestBean">
-		<!-- 注入资源：配置资源的位置，并使用file:前缀，指明让Spring从文件系统加载book.xml文件。 -->
-		<property name="resource" value="file:resources/books.xml" />
+		<!-- 注入资源：配置资源的位置，并使用 file: 前缀，指明让 Spring 从文件系统加载 book.xml 文件。 -->
+		<property name="resource" value="file:IoC/src/main/java/resource/books.xml" />
 	</bean>
 	
 	<bean id="byClasspath" class="resource.spring.TestBean">
-		<!-- 使用classpath:前缀，指明让Spring从classpath加载book.xml文件。 -->
+		<!-- 使用 classpath: 前缀，指明让 Spring 从 classpath 加载 book.xml 文件。 -->
 		<property name="resource" value="classpath:resource/books.xml" />
 	</bean>
 </beans>         

@@ -3,18 +3,18 @@
  */
 package resource;
 
+import org.springframework.core.io.Resource;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URL;
 
-import org.springframework.core.io.Resource;
-
 /**
- * Resource接口实现示例
+ * Resource 接口实现示例
  * <p>
- * Resource本身是一个接口，是具体资源访问策略的抽象，也是所有资源访问类所实现的接口。
+ * Resource 本身是一个接口，是具体资源访问策略的抽象，也是所有资源访问类所实现的接口。
  * 
  * @author 刘晨伟
  * 
@@ -33,7 +33,7 @@ public class ResourceImpl implements Resource {
 	}
 
 	/**
-	 * 返回Resource所指向的资源是否存在。
+	 * 返回 Resource 所指向的资源是否存在。
 	 * 
 	 * @see org.springframework.core.io.Resource#exists()
 	 */
@@ -53,7 +53,7 @@ public class ResourceImpl implements Resource {
 	}
 	
 	/**
-	 * 返回资源的描述信息，同于资源处理出错时输出该信息，通常是全限定文件名或实际URL。
+	 * 返回资源的描述信息，同于资源处理出错时输出该信息，通常是全限定文件名或实际 URL。
 	 * 
 	 * @see org.springframework.core.io.Resource#getDescription()
 	 */
@@ -63,7 +63,7 @@ public class ResourceImpl implements Resource {
 	}
 
 	/**
-	 * 返回资源对应的URL对象。
+	 * 返回资源对应的 URL 对象。
 	 * 
 	 * @see org.springframework.core.io.Resource#getURL()
 	 */
@@ -73,7 +73,7 @@ public class ResourceImpl implements Resource {
 	}
 	
 	/**
-	 * 返回资源对应的File对象。
+	 * 返回资源对应的 File 对象。
 	 * 
 	 * @see org.springframework.core.io.Resource#getFile()
 	 */

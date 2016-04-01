@@ -21,7 +21,5 @@ public class App {
 		System.out.println("Resource by classpath:");
 		TestBean byClasspath = (TestBean) context.getBean("byClasspath");
 		byClasspath.parse();
-
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

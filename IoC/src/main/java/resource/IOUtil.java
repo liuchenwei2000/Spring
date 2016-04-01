@@ -24,7 +24,7 @@ public class IOUtil {
 			BufferedReader br = null;
 			try {
 				br = new BufferedReader(new FileReader(file));
-				String line = null;
+				String line;
 				while ((line = br.readLine()) != null) {
 					System.out.println(line);
 				}
@@ -48,7 +48,7 @@ public class IOUtil {
 		InputStreamReader reader = null;
 		try {
 			reader = new InputStreamReader(is);
-			int c = -1;
+			int c;
 			while ((c = reader.read()) != -1) {
 				System.out.print((char) c);
 			}
