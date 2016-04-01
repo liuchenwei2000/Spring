@@ -7,13 +7,14 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
- * Bean后处理器示例
+ * Bean 后处理器示例
  * <p>
- * Bean后处理器是一种特殊的Bean，它并不对外提供服务，甚至无需id属性。
- * 它主要负责对容器中的其他Bean执行后处理，例如为容器中的目标Bean生成代理等。
+ * Bean 后处理器是一种特殊的Bean，它并不对外提供服务，甚至无需 id 属性。
+ * 它主要负责对容器中的其他 Bean 执行后处理，例如为容器中的目标 Bean 生成代理等。
  * <p>
- * Bean后处理器会在Bean实例创建成功之后，对Bean实例进行进一步的增强处理。它通常用来检查标记接口，或者将Bean包装成一个Proxy，
- * Spring的很多工具类，就是通过Bean后处理器完成的，比如BeanNameAutoProxyCreator、DefaultAdvisorAutoProxyCreator。
+ * Bean 后处理器会在 Bean 实例创建成功之后，对 Bean 实例进行进一步的增强处理。
+ * 它通常用来检查标记接口，或者将 Bean 包装成一个 Proxy，Spring 的很多工具类，就是通过 Bean 后处理器完成的，
+ * 比如 BeanNameAutoProxyCreator、DefaultAdvisorAutoProxyCreator。
  * 
  * @author 刘晨伟
  * 

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 	
 	<!-- 
-	PropertyPlaceholderConfigurer 负责读取 properties属性文件里的属性值，并将这些属性值设置成Spring配置文件的元数据。 
-	通过这种方法，可以从XML配置文件中分离出部分配置信息。如果仅需要修改属性值，则无需修改XML配置文件，直接修改属性文件即可。
+	PropertyPlaceholderConfigurer 负责读取 properties 属性文件里的属性值，并将这些属性值设置成 Spring 配置文件的元数据。
+	通过这种方法，可以从 XML 配置文件中分离出部分配置信息。如果仅需要修改属性值，则无需修改 XML 配置文件，直接修改属性文件即可。
 	采用属性占位符的配置方式，可以支持使用多个属性文件，通过这种方式，可将配置文件分割成多个属性文件。
 	-->
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -22,8 +20,8 @@
 	
 	<bean id="datasource" class="postprocessor.placeholder.DataSource">
 		<!-- 
-		${key}表达式，其中key对应properties文件中的key。
-		表明容器将从PropertyPlaceholderConfigurer指定的属性文件中搜索这些key对应的value，并为该Bean的属性设置这些value值。
+		${key} 表达式，其中 key 对应 properties 文件中的 key。
+		表明容器将从 PropertyPlaceholderConfigurer 指定的属性文件中搜索这些 key 对应的 value，并为该 Bean 的属性设置这些 value 值。
 		-->
     	<property name="driver" value="${jdbc.driver}" />
     	<property name="url" value="${jdbc.url}" />

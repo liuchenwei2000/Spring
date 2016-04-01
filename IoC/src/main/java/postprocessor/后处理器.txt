@@ -1,11 +1,11 @@
 
-Spring框架提供了很好的扩展性，除了可以与各种第三方框架良好整合外，其IoC容器还允许开发者进行扩展，
-这种扩展无需实现BeanFactory或ApplicationContext接口，而是允许通过两个后处理器对IoC容器进行扩展。
+Spring 框架提供了很好的扩展性，除了可以与各种第三方框架良好整合外，其 IoC 容器还允许开发者进行扩展，
+这种扩展无需实现 BeanFactory 或 ApplicationContext 接口，而是允许通过两个后处理器对 IoC 容器进行扩展。
 
-Bean后处理器：对容器中的Bean进行后处理，对Bean功能进行额外加强。
-容器后处理器：对IoC容器进行后处理，用于增强容器功能。
+Bean 后处理器：对容器中的 Bean 进行后处理，对 Bean 功能进行额外加强。
+容器后处理器：对 IoC 容器进行后处理，用于增强容器功能。
 
-Spring已提供如下几个常用的容器后处理器：
+Spring 已提供如下几个常用的容器后处理器：
 PropertyPlaceholderConfigurer：属性占位符配置器。
 PropertyOverrideConfigurer：重写占位符配置器。
 CustomAutowireConfigurer：自定义自动装配的配置器。

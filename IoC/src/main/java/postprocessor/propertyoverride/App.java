@@ -16,7 +16,5 @@ public class App {
 				"postprocessor/propertyoverride/datasource.xml");
 		DataSource ds = (DataSource) context.getBean("datasource");
 		System.out.println(ds);
-
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }
