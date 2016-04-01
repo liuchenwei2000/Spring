@@ -1,0 +1,3 @@
+
+通过为 <context:component-scan> 配置 <context:include-filter> 和（或）<context:exclude-filter> 子元素，可以随意调整扫描行为。
+

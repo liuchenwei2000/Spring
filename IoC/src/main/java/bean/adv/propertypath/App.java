@@ -25,7 +25,5 @@ public class App {
 		System.out.println("son2=" + context.getBean("son2"));
 		System.out.println("theAge=" + context.getBean("theAge"));
 		System.out.println("newAge=" + context.getBean("newAge"));
-
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

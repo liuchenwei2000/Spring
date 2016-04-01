@@ -27,7 +27,5 @@ public class App {
 		System.out.println("theString=" + context.getBean("theString"));
 		System.out.println("theParamString=" + context.getBean("theParamString"));
 		System.out.println("theStaticString=" + context.getBean("theStaticString"));
-
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

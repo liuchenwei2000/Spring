@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationEvent;
 /**
  * 上下文事件
  * <p>
- * ApplicationEvent：容器事件，必须由ApplicationContext发布。
+ * ApplicationEvent：容器事件，必须由 ApplicationContext 发布。
  * 
  * @author 刘晨伟
  * 

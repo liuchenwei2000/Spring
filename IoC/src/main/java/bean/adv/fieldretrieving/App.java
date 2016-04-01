@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * 注入其他Bean的Field值示例
+ * 注入其他 Bean 的 Field 值示例
  * 
  * @author 刘晨伟
  * 
@@ -24,7 +24,5 @@ public class App {
 		System.out.println("child1=" + context.getBean("child1"));
 		System.out.println("theAge=" + context.getBean("theAge"));
 		System.out.println("staticAge=" + context.getBean("staticAge"));
-
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

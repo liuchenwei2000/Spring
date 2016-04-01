@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
                
 	<!-- 
-	FieldRetrievingFactoryBean获得目标Bean的Field值之后，得到的值可注入给其他Bean，也可以直接定义成新的Bean。
+	FieldRetrievingFactoryBean 获得目标 Bean 的 Field 值之后，得到的值可注入给其他 Bean，也可以直接定义成新的 Bean。
 	-->
 	
-	<!-- 将bean.adv.fieldretrieving.Child类的 DEFAULT_AG 值赋给child1的age属性。-->
+	<!-- 将 bean.adv.fieldretrieving.Child 类的 DEFAULT_AG 值赋给 child1 的 age 属性。-->
 	<bean id="child1" class="bean.adv.fieldretrieving.Child">
 		<property name="age">
-			<!-- 这里的id属性并不是该Bean实例的惟一标识，而是指定Field表达式。 -->
+			<!-- 这里的 id 属性并不是该 Bean 实例的惟一标识，而是指定 Field 表达式。 -->
 			<bean id="bean.adv.fieldretrieving.Child.DEFAULT_AGE" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
 		</property>
 	</bean>
 	
-	<!-- 将Field值定义成Bean实例。-->
+	<!-- 将 Field 值定义成 Bean 实例。-->
 	<bean id="theAge" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
-		<!-- targetClass/targetObject：分别用于指定Field值所在的目标类或目标对象。前者适用于获取静态Field值时，后者适用于获取实例Field值时。 -->
+		<!--
+		targetClass/targetObject：分别用于指定 Field 值所在的目标类或目标对象。
+		前者适用于获取静态 Field 值时，后者适用于获取实例Field值时。
+		-->
 		<property name="targetClass" value="bean.adv.fieldretrieving.Child" />
-		<!-- targetField：用于指定目标Field的Field名。 -->
+		<!-- targetField：用于指定目标 Field 的 Field 名。 -->
 		<property name="targetField" value="DEFAULT_AGE" />
 	</bean>
 	
-	<!-- 如果Field是静态Field，还有一种更加简洁的写法。-->
+	<!-- 如果 Field 是静态 Field，还有一种更加简洁的写法。-->
 	<bean id="staticAge" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
-		<!-- value指定采用哪个类的哪个静态阈值。 -->
+		<!-- value 指定采用哪个类的哪个静态阈值。 -->
 		<property name="staticField" value="bean.adv.fieldretrieving.Child.DEFAULT_AGE" />
 	</bean>
 	

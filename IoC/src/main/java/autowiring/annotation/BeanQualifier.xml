@@ -9,12 +9,14 @@
 
 	<context:annotation-config />
 
-	<!-- 如果属性类型匹配某个 Bean 的类型，则该 Bean 被注入到属性中；否则不会注入。如果找到多个 Bean，则抛出异常。-->
-	<bean id="bean" class="autowiring.annotation.Bean">
+	<bean id="bean" class="autowiring.annotation.BeanQualifier">
 	</bean>
-	
-	<bean id="foo" class="autowiring.annotation.Foo" />
-	<bean id="bar" class="autowiring.annotation.Bar" />
-	<bean id="baz" class="autowiring.annotation.Baz" />
-	<bean id="qux" class="autowiring.annotation.Qux" />
-</beans>         
+
+	<!-- 这里声明了多个同类型的 Bean -->
+	<bean id="kuc1" class="autowiring.annotation.Kuc">
+		<property name="name" value="kuc1" />
+	</bean>
+	<bean id="kuc2" class="autowiring.annotation.Kuc">
+		<property name="name" value="kuc2" />
+	</bean>
+</beans>

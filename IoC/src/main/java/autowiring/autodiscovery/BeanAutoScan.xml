@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!--
+	扫描指定的包及其子包，并查找出能够自动注册为 Spring Bean 的类，base-package 属性标识了要扫描的包。
+
+	默认情况下，<context:component-scan> 查找使用构造型（stereotype）注解所标注的类，具体如下：
+	@Component：通用的构造型注解，标识该类为 Spring 组件。
+	@Controller：标识该类定义为 Spring MVC controller。
+	@Repository：标识该类定义为数据仓库（DAO）。
+	@Service：标识该类定义为服务（Service）。
+	-->
+	<context:component-scan base-package="autowiring.autodiscovery" />
+
+</beans>

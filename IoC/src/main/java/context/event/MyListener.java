@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationListener;
 /**
  * 上下文监听器
  * <p>
- * ApplicationListener：监听器，可由容器中的任何监听器Bean担任。
+ * ApplicationListener：监听器，可由容器中的任何监听器 Bean 担任。
  * 
  * @author 刘晨伟
  * 

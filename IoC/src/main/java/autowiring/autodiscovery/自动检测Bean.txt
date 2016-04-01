@@ -1,0 +1,7 @@
+
+当在 Spring 配置中增加 <context:annotation-config> 时，Spring 会特殊对待所定义的 Bean 里的某一组注解，
+并使用这些注解指导 Bean 装配。即使 <context:annotation-config> 有助于完全消除 Spring 配置中的
+<property> 和 <constructor-arg> 元素，我们仍然需要使用 <bean> 元素显式定义 Bean。
+
+而 <context:component-scan> 元素除了完成与 <context:annotation-config> 一样的工作外，还允许 Spring 自动检测 Bean 和定义 Bean。
+这意味着不使用 <bean> 元素，Spring 应用中的大多数（或者所有）Bean 都能实现定义和装配。

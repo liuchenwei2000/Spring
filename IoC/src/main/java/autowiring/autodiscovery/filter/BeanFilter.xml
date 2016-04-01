@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!--
+	替换掉基于注解的组件扫描策略，再增加一个包含过滤器来自动注册所有 Animal 的实现类。
+	<context:include-filter> 的 type 和 expression 属性一起协作来定义组件扫描策略。
+	这种情况下，派生于 Animal 的所有类（不管其有没有被注解标注）都自动注册为 Spring Bean。
+
+	常用过滤器 type 如下：
+	annotation：扫描使用指定注解标注的类，通过 expression 属性指定要扫描的注解。
+	assignable：扫描派生于 expression 属性所制定类型的那些类。
+	regex：扫描类的名称与 expression 属性所指定的正则表达式所匹配的那些类。
+
+	当对 <context:component-scan> 应用过滤器时，可以有无限的过滤可能，但默认的基于注解的过滤策略是最常用的。
+	-->
+	<context:component-scan base-package="autowiring.autodiscovery">
+		<context:include-filter type="assignable" expression="autowiring.autodiscovery.filter.Animal" />
+		<!-- 使用 <context:exclude-filter> 来告知扫描时哪些类不需要注册为 Spring Bean。 -->
+		<context:exclude-filter type="assignable" expression="autowiring.autodiscovery.filter.Flyable" />
+	</context:component-scan>
+
+</beans>

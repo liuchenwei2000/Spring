@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
                
 	<!-- 
-	MethodInvokingFactoryBean用来获得指定方法的返回值，该方法既可以是静态方法，也可以是实例方法。
-	获得的方法返回值既可被注入到指定Bean实例的指定属性，也可以直接定义成Bean实例。
+	MethodInvokingFactoryBean 用来获得指定方法的返回值，该方法既可以是静态方法，也可以是实例方法。
+	获得的方法返回值既可被注入到指定 Bean 实例的指定属性，也可以直接定义成 Bean 实例。
 	-->
 	
-	<!-- 定义目标Bean，后面将会获取该Bean的方法返回值。 -->
+	<!-- 定义目标 Bean，后面将会获取该 Bean 的方法返回值。 -->
 	<bean id="valueGenerator" class="bean.adv.methodinvoking.ValueGenerator" />
 	
 	<bean id="values" class="bean.adv.methodinvoking.Values">
-		<!-- 获取Bean的实例方法返回值。-->
+		<!-- 获取 Bean 的实例方法返回值。-->
 		<property name="value1">
 			<!-- 
-			当需要获取Bean的实例方法返回值时，必须指定如下两个属性：
-			targetObject：确定目标Bean，该Bean可以是容器中已有的Bean，也可以是嵌套Bean。
-			targetMethod：确定目标方法，也就是获取目标Bean哪个方法的返回值。
+			当需要获取 Bean 的实例方法返回值时，必须指定如下两个属性：
+			targetObject：确定目标 Bean，该 Bean 可以是容器中已有的 Bean，也可以是嵌套 Bean。
+			targetMethod：确定目标方法，也就是获取目标 Bean 哪个方法的返回值。
 			-->
 			<bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
 				<property name="targetObject" ref="valueGenerator" />
@@ -28,12 +26,12 @@
 			</bean>
 		</property>
 		
-		<!-- 获取Bean的静态方法返回值。-->
+		<!-- 获取 Bean 的静态方法返回值。-->
 		<property name="value2">
 			<!-- 
-			当需要获取Bean的静态方法返回值时，必须指定如下两个属性：
-			targetClass：确定目标class。
-			targetMethod：确定目标方法，也就是获取目标class哪个方法的返回值。
+			当需要获取 Bean 的静态方法返回值时，必须指定如下两个属性：
+			targetClass：确定目标 class。
+			targetMethod：确定目标方法，也就是获取目标 class 哪个方法的返回值。
 			-->
 			<bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
 				<property name="targetClass" value="bean.adv.methodinvoking.ValueGenerator" />
@@ -43,7 +41,7 @@
 	</bean>
 	
 	<!-- 
-	将Bean方法返回值定义成Bean实例。通常不采用这种配置方法，而是采用factory-method的方式来配置Bean。
+	将 Bean 方法返回值定义成 Bean 实例。通常不采用这种配置方法，而是采用 factory-method 的方式来配置 Bean。
 	-->
 	<bean id="theString" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
 		<property name="targetObject" ref="valueGenerator" />
@@ -51,8 +49,8 @@
 	</bean>
 	
 	<!-- 
-	如果没有指定参数列表，默认采用空的参数列表，即调用getString()方法。
-	如果要为目标方法确定参数，可以使用arguments属性值，如下：
+	如果没有指定参数列表，默认采用空的参数列表，即调用 getString() 方法。
+	如果要为目标方法确定参数，可以使用 arguments 属性值，如下：
 	-->
 	<bean id="theParamString" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
 		<property name="targetObject" ref="valueGenerator" />
@@ -65,9 +63,9 @@
 		</property>
 	</bean>
 	
-	<!-- 如果是静态方法，则可以直接指定staticMethod属性值来简化配置。-->
+	<!-- 如果是静态方法，则可以直接指定 staticMethod 属性值来简化配置。-->
 	<bean id="theStaticString" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-		<!-- staticMethod属性同时指定类和方法 -->
+		<!-- staticMethod 属性同时指定类和方法 -->
 		<property name="staticMethod" value="bean.adv.methodinvoking.ValueGenerator.genStaticString" />
 	</bean>
 	

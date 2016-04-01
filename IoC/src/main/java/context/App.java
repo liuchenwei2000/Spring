@@ -18,7 +18,5 @@ public class App {
 		System.out.println(bean.getContext());
 		// 可见 ApplicationContext 实例是同一个
 		System.out.println(bean.getContext() == context);
-		
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

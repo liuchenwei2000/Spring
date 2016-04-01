@@ -7,20 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
  * <p>
  * Created by liuchenwei on 2016/4/1.
  */
-public class Bean {
+public class BeanAutowired {
 
     private Foo foo;
     private Bar bar;
     private Baz baz;
 
-    // 1，直接标注属性（不受限于 private 关键字），则该实例变量可以被自动装配
+    // 1，直接标注字段（不受限于 private 关键字），则该实例变量可以被自动装配
     @Autowired
     private Qux qux;
 
     // 2，标注构造器，表示当创建 Bean 时，即使在 XML 文件中没有使用
     // <constructor-arg> 元素配置 Bean，该构造器也需要进行自动装配。
     @Autowired
-    public Bean(Foo foo) {
+    public BeanAutowired(Foo foo) {
         this.foo = foo;
     }
 

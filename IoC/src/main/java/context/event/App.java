@@ -9,8 +9,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * 容器事件监听器示例
  * <p>
- * 通过ApplicationEvent类和ApplicationListener接口，可以实现ApplicationContext的事件处理。
- * 如果容器中有一个ApplicationListener Bean，每当ApplicationContext发布ApplicationEvent时，ApplicationListener将自动被通知。
+ * 通过 ApplicationEvent 类和 ApplicationListener 接口，可以实现 ApplicationContext 的事件处理。
+ * 如果容器中有一个 ApplicationListener Bean，每当 ApplicationContext 发布 ApplicationEvent 时，ApplicationListener 将自动被通知。
  * 
  * @author 刘晨伟
  * 
@@ -25,9 +25,7 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("context/event/listener.xml");
 		
 		System.out.println("After context loading......");
-		// 事件源是ApplicationContext，事件必须由Java程序显式触发。
+		// 事件源是 ApplicationContext，事件必须由 Java 程序显式触发。
 		context.publishEvent(new MyEvent("my event", "Hello world."));
-		
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

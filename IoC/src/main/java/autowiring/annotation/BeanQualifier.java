@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
  * <p>
  * Created by liuchenwei on 2016/4/1.
  */
-public class BeanAdv {
+public class BeanQualifier {
 
     /*
     * 默认情况下，@Autowired 具有强契约特性，其所标注的属性或参数必须是可装配的。
