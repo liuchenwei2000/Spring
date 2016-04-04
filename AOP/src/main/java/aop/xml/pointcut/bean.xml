@@ -2,16 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
 	http://www.springframework.org/schema/aop 
 	http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
     
     <!--  
-	<aop:pointcut>元素来定义切入点。
-	当它作为<aop:config>元素的子元素定义时，表名该切入点可被多个切面共享；
-	当它作为<aop:aspect>元素的子元素定义时，表明该切入点只能在对应的切面中有效。
+	<aop:pointcut> 元素来定义切入点。
+	当它作为 <aop:config> 元素的子元素定义时，表明该切入点可被多个切面共享；
+	当它作为 <aop:aspect> 元素的子元素定义时，表明该切入点只能在对应的切面中有效。
     -->
     <aop:config>
     	<!--  

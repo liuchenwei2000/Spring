@@ -17,7 +17,5 @@ public class App {
 		Pojo pojo = (Pojo) context.getBean("pojo");
 		pojo.foo();
 		pojo.bar();
-		
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

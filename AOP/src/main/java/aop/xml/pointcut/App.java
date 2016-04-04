@@ -29,7 +29,5 @@ public class App {
 
 		bean.call1();
 		bean.call3("110");
-		
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

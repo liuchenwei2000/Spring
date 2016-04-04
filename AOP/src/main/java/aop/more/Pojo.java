@@ -6,7 +6,7 @@ package aop.more;
 /**
  * POJO
  * <p>
- * Spring AOP在同一个类里自身方法相互调用时无法拦截。
+ * Spring AOP 在同一个类里自身方法相互调用时无法拦截。
  * 
  * @author 刘晨伟
  * 

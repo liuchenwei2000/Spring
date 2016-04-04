@@ -2,14 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
 	http://www.springframework.org/schema/aop 
 	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
     
     <!--  
-	在Spring的配置文件中，所有切面、切入点和增强处理都必须定义在<aop:config>元素内部，<beans>元素下可以有多个<aop:config>元素。
+	所有切面、切入点和增强处理都必须定义在 <aop:config> 元素内部，<beans> 元素下可以有多个<aop:config>元素。
     -->
     
     <aop:config>
@@ -24,40 +23,40 @@
     	order：指定该切面Bean的优先级，值越小优先级越高。
     	-->
     	
-    	<!-- 将容器中的 adviceBean Bean转换成切面Bean：adviceAspect -->
+    	<!-- 定义切面：将容器中的 adviceBean 转换成切面Bean adviceAspect -->
     	<aop:aspect id="adviceAspect" ref="adviceBean">
     		<!-- 
     		2，配置增强处理
-    		XML中一样可以配置Before、After、AfterReturning、AfterThrowing和Around五种增强处理，而且完全支持和@Aspect一样的语义。 
+    		XML 中一样可以配置 Before、After、AfterReturning、AfterThrowing 和 Around 五种增强处理。
     		
     		五种增强处理常用属性有：
-    		pointcut：指定一个切入表达式，Spring将在匹配该表达式的连接点时织入该增强处理。
-    		pointcut-ref：指定一个已经存在的切入点名称，通常与pointcut只需使用其中之一即可。
-    		method：指定一个方法名，即指定切面Bean的该方法将作为增强处理。
-    		throwing：只对<after-throwing>元素有效，用于指定一个形参名，增强处理方法可以通过该形参访问目标方法所抛出的异常。
-    		returning：只对<after-returning>元素有效，用于指定一个形参名，增强处理方法可以通过该形参访问目标方法的返回值。
+    		pointcut：指定一个切入表达式，Spring 将在匹配该表达式的连接点时织入该增强处理。
+    		pointcut-ref：指定一个已经存在的切入点名称，通常与 pointcut 只需使用其中之一即可。
+    		method：指定一个方法名，即指定切面 Bean 的该方法将作为增强处理。
+    		throwing：只对 <after-throwing> 元素有效，用于指定一个形参名，增强处理方法可以通过该形参访问目标方法所抛出的异常。
+    		returning：只对< after-returning> 元素有效，用于指定一个形参名，增强处理方法可以通过该形参访问目标方法的返回值。
     		
-    		当定义切入点表达式时，XML配置方式和注解方式支持完全相同的切入点指示符。
+    		当定义切入点表达式时，XML 配置方式和注解方式支持完全相同的切入点指示符。
     		-->
-    		<!-- 配置Before增强处理 -->
+    		<!-- 配置 Before 增强处理 -->
     		<aop:before pointcut="execution(* *.*(..))" method="enterMethod"/>
-    		<!-- 配置After增强处理 -->
+    		<!-- 配置 After 增强处理 -->
     		<!-- 
-    		XML中使用如下三个组合运算符：and（相当于&&）、or（相当于||）、not（相当于!）。 
-    		本例匹配以call为前缀的方法，并且要求参数与切面Bean中release方法参数类型一致。
+    		XML 中使用如下三个组合运算符：and（相当于&&）、or（相当于||）、not（相当于!）。
+    		本例匹配以 call 为前缀的方法，并且要求参数与切面 Bean 中 release 方法参数类型一致。
     		-->
     		<aop:after pointcut="execution(* *.call*(..)) and args(s)" method="release"/>
-    		<!-- 配置AfterReturning增强处理 -->
+    		<!-- 配置 AfterReturning 增强处理 -->
     		<aop:after-returning pointcut="execution(* *.*(..))" method="leaveMethod" returning="returnObj"/>
-    		<!-- 配置AfterThrowing增强处理 -->
+    		<!-- 配置 AfterThrowing 增强处理 -->
     		<aop:after-throwing pointcut="execution(* *.*(..))" method="catchException" throwing="ex"/>
-    		<!-- 配置Around增强处理 -->
+    		<!-- 配置 Around 增强处理 -->
     		<aop:around pointcut="execution(* *.insert*(..))" method="processTx"/>
     	</aop:aspect>
     </aop:config>
     
-    <!-- 普通的Bean，它并不知道自己会被当成切面使用。 -->
+    <!-- 普通的 Bean，它并不知道自己会被当成切面使用。 -->
 	<bean id="adviceBean" class="aop.xml.FiveAdviceAspect" />
-	
+	<!-- 普通的 Bean，它并不知道自己会被增强。 -->
 	<bean id="abean" class="aop.Bean" />
 </beans>         

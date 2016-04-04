@@ -31,7 +31,5 @@ public class App {
 		bean.call3("110");
 		
 		bean.insertString("I'm yours");
-		
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }
