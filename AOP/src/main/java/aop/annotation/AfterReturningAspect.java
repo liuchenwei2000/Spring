@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 
 /**
- * @AfterReturning 切面类示例
+ * AfterReturning增强处理切面类示例
  * <p>
  * @AfterReturning 来标注一个方法后增强处理，它将在目标方法正常完成后被织入。
  * 
@@ -32,8 +32,8 @@ public class AfterReturningAspect {
 	}
 	
 	/**
-	 * returning属性还有额外的作用：它可用于限定切入点只匹配具有对应返回值类型的方法。
-	 * 比如本例该切入点只匹配返回值类型为String的所有方法。
+	 * returning 属性还有额外的作用：它可用于限定切入点只匹配具有对应返回值类型的方法。
+	 * 比如本例该切入点只匹配返回值类型为 String 的所有方法。
 	 */
 	@AfterReturning(pointcut="execution(* *.*(..))", returning="returnStr")
 	public void leaveStringMethod(String returnStr) {

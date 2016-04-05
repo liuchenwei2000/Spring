@@ -18,7 +18,5 @@ public class App {
 		dao.addString("hello world");
 		dao.addInteger(11);
 		dao.close();
-		
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

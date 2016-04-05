@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 需要添加 AOP 用到的信息 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
-               
-	<!-- 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	<!--
 	在 Spring 配置文件中增加如下片段来启用 Aspect 支持。
 	AnnotationAwareAspectJAutoProxyCreator 是一个 Bean 后处理器，它将会为容器中的 Bean 生成 AOP 代理。
-	-->
 	<bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator" />
-	
+	-->
+
+	<!--
+	Spring 在 aop 命名空间提供了一个配置元素 <aop:aspectj-autoproxy>，它将会在 Spring 上下文中
+	创建一个 AnnotationAwareAspectJAutoProxyCreator 类，自动代理一些 Bean。
+	-->
+	<aop:aspectj-autoproxy />
+
 	<!--  
 	配置一个带 @Aspect 注解的Bean，Spring 容器将会自动识别该 Bean，并将该 Bean 作为切面处理。
-	当使用 @Aspect 修饰一个类时，Spring 不会把该 Bean 当成组件 Bean 处理，因此负责自动增强的后处理 Bean 将会忽略该 Bean，不会对其进行任何增强处理。
-	<bean class="aop.annotation.BeforeAspect" />
+	当使用 @Aspect 修饰一个类时，Spring 不会把该 Bean 当成组件 Bean 处理，
+	因此负责自动增强的后处理 Bean 将会忽略该 Bean，不会对其进行任何增强处理。
+
 	<bean class="aop.annotation.AfterAspect" />
 	<bean class="aop.annotation.AfterReturningAspect" />
 	<bean class="aop.annotation.AfterThrowingAspect" />
 	<bean class="aop.annotation.AroundAspect" />
 	<bean class="aop.annotation.JoinPointAspect" />
-	-->
 	<bean class="aop.annotation.AccessArgsAspect" />
-	
+	-->
+	<bean class="aop.annotation.BeforeAspect" />
+
 	<bean id="abean" class="aop.Bean" />
 </beans>         

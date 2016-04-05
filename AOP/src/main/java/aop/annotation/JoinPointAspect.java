@@ -3,12 +3,12 @@
  */
 package aop.annotation;
 
-import java.util.Arrays;
-
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+
+import java.util.Arrays;
 
 /**
  * 在切面类中访问目标方法信息示例
@@ -21,8 +21,8 @@ import org.aspectj.lang.annotation.Before;
 public class JoinPointAspect {
 	
 	/**
-	 * 访问目标方法最简单的做法是定义增强处理方法时，将第一个参数定义为JoinPoint类型（ProceedJoinPoint是其子类），
-	 * 当增强处理方法被调用时，该JoinPoint参数就代表了织入增强处理的连接点。
+	 * 访问目标方法最简单的做法是定义增强处理方法时，将第一个参数定义为 JoinPoint 类型（ProceedJoinPoint 是其子类），
+	 * 当增强处理方法被调用时，该 JoinPoint 参数就代表了织入增强处理的连接点。
 	 */
 	@Before(value="execution(* *.*(..))")
 	public void enterMethod(JoinPoint jp) {

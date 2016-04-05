@@ -17,7 +17,7 @@ import org.aspectj.lang.annotation.Pointcut;
 public class SystemPointcut {
 
 	/**
-	 * 方法是public的，所以本切入点可以被任何切面类使用。
+	 * 方法是 public 的，所以本切入点可以被任何切面类使用。
 	 */
 	@Pointcut(value="execution(* *.*(..))")// 匹配所有方法的执行作为切入点。
 	public void anyMethod(){

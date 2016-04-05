@@ -7,19 +7,18 @@ import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 
 /**
- * @AfterThrowing 切面类示例
+ * AfterThrowing增强处理切面类示例
  * <p>
  * @AfterThrowing 可用于标注一个抛出异常后增强处理，主要用于处理程序中未捕获的异常。
  * <p>
- * AOP的AfterThrowing处理虽然可以对目标方法的异常进行处理，但这与直接使用catch捕获是不同的：
- * catch捕获异常意味着完全处理该异常，如果catch块中没有重新抛出新异常，则该方法可以正常结束；
- * 而AfterThrowing虽然处理了该异常，但该异常依然会传播到上一级调用者。
+ * AOP 的 AfterThrowing 处理虽然可以对目标方法的异常进行处理，但这与直接使用 catch 捕获是不同的：
+ * catch 捕获异常意味着完全处理该异常，如果 catch 块中没有重新抛出新异常，则该方法可以正常结束；
+ * 而 AfterThrowing 虽然处理了该异常，但该异常依然会传播到上一级调用者。
  * 
  * @author 刘晨伟
  * 
  * 创建日期：2014年11月24日
  */
-// 使用@Aspect注解定义一个切面类
 @Aspect
 public class AfterThrowingAspect {
 	
@@ -37,8 +36,8 @@ public class AfterThrowingAspect {
 	}
 	
 	/**
-	 * throwing属性还有额外的作用：可用于限定切入点只匹配指定类型的异常。
-	 * 比如本例该切入点只匹配抛出NullPointerException异常的所有方法。
+	 * throwing 属性还有额外的作用：可用于限定切入点只匹配指定类型的异常。
+	 * 比如本例该切入点只匹配抛出 NullPointerException 异常的所有方法。
 	 */
 	@AfterThrowing(pointcut="execution(* *.*(..))", throwing="npe")
 	public void catchNullPointerException(NullPointerException npe) {

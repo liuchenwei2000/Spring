@@ -3,12 +3,11 @@
  */
 package aop.annotation;
 
-import java.util.Date;
-
+import aop.Bean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import aop.Bean;
+import java.util.Date;
 
 public class App {
 
@@ -49,7 +48,5 @@ public class App {
 		bean.eat("noodles", new Date());
 		
 		bean.register("Tom", 11, '男');
-		
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

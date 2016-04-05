@@ -7,9 +7,9 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
 /**
- * @Before 切面类示例
+ * Before增强处理切面类示例
  * <p>
- * 使用 @Before 来注解一个方法时，该方法将作为Before增强处理，它将在目标方法执行前被织入。
+ * 使用 @Before 来注解一个方法时，该方法将作为 Before 增强处理，它将在目标方法执行前被织入。
  * 
  * @author 刘晨伟
  * 

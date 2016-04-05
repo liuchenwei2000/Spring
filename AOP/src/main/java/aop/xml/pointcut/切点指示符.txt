@@ -1,9 +1,9 @@
 
-execution表达式：用于匹配执行方法的连接点，这是Spring AOP中最主要的切入点指示符。格式如下：
+execution 表达式：用于匹配执行方法的连接点，这是Spring AOP中最主要的切点指示符。格式如下：
 
 execution(modifiers-pattern ret-type-pattern declaring-type-pattern name-pattern(param-pattern) throws-pattern)
 
-其中execution是不变的，用于作为execution表达式的开头，其他各部分解释如下：
+其中 execution 是不变的，用于作为 execution 表达式的开头，其他各部分解释如下：
 
 modifiers-pattern：指定方法的修饰符，支持通配符，该部分可省略。
 ret-type-pattern：指定方法返回值类型，支持通配符，可以使用 * 通配符来匹配所有返回值类型。
@@ -26,11 +26,11 @@ execution(* org.app.Service.* (..));
 execution(* org.app.*.* (..));
 
 
-Spring支持使用以下三个逻辑运算符来组合切入点表达式：
-&&：要求连接点同时匹配两个切入点表达式。
-||：要求连接点匹配任意一个切入点表达式。
-!：要求连接点不匹配切入点表达式。
+Spring支持使用以下三个逻辑运算符来组合切点表达式：
+&&：要求连接点同时匹配两个切点表达式。
+||：要求连接点匹配任意一个切点表达式。
+!：要求连接点不匹配切点表达式。
 
-比如 execution(* *.*(..)) && args(food, time) 需要切入点匹配如下两个条件：
+比如 execution(* *.*(..)) && args(food, time) 需要切点匹配如下两个条件：
 1，匹配任意方法的执行
 2，匹配的方法必须两个参数，第一个参数是food类型，第二个参数是time类型（food、time类型由增强处理方法参数类型决定）。
