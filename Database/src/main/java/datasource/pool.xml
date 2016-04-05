@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--  
-如果不能从JNDI获取数据源，那么下一个选择应该是配置数据源连接池。
+如果不能从 JNDI 获取数据源，那么下一个选择应该是配置数据源连接池。
 本例选用的数据源连接池是 commons-DBCP。
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -8,7 +8,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
                http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
               
-	<!-- BasicDataSource是最常用的一个提供池功能的数据源。 -->
+	<!-- BasicDataSource 是最常用的一个提供池功能的数据源。 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/test" />

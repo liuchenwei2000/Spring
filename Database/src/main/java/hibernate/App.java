@@ -3,10 +3,10 @@
  */
 package hibernate;
 
-import java.util.Date;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.Date;
 
 public class App {
 
@@ -31,7 +31,5 @@ public class App {
 
 		System.out.println("删除一个人...");
 		dao.delete(person);
-
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }

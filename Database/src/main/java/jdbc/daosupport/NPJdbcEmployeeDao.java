@@ -3,20 +3,19 @@
  */
 package jdbc.daosupport;
 
+import jdbc.Employee;
+import jdbc.EmployeeDao;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import jdbc.Employee;
-import jdbc.EmployeeDao;
-
-import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
-
 /**
- * 继承JdbcDaoSupport的EmployeeDao实现
+ * 继承 NamedParameterJdbcDaoSupport 的 EmployeeDao 实现
  * 
  * @author 刘晨伟
  * 
@@ -31,7 +30,7 @@ public class NPJdbcEmployeeDao extends NamedParameterJdbcDaoSupport implements E
 		parameters.put("name", employee.getName());
 		parameters.put("email", employee.getEmail());
 		parameters.put("age", employee.getAge());
-		// 直接通过父类的getNamedParameterJdbcTemplate()获取NamedParameterJdbcTemplate实例
+		// 直接通过父类的 getNamedParameterJdbcTemplate() 获取 NamedParameterJdbcTemplate 实例
 		getNamedParameterJdbcTemplate().update(SQL_SAVE, parameters);
 	}
 	

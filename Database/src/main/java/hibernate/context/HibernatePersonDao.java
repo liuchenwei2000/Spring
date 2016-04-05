@@ -9,12 +9,13 @@ import hibernate.PersonDao;
 import org.hibernate.SessionFactory;
 
 /**
- * 使用SessionFactory的PersonDao
+ * 使用 SessionFactory 的 PersonDao
  * <p>
- * HibernateTemplate的功能之一是管理Hibernate会话，包括打开和关闭会话，以及确保每个事务一个会话。
- * HibernateTemplate的缺点是具有一定的侵入性，使用它的代码被耦合到Spring API中。
- * Hibernate3引入的SessionFactory可以管理每个事务一个会话，也就不需要HibernateTemplate，并能够避免Spring API的代码入侵。
- * 这种方式的缺点是，它们抛出Hibernate特有的异常，而不是像Spring持久异常体系那样与ORM无关的异常。
+ * HibernateTemplate 的功能之一是管理 Hibernate 会话，包括打开和关闭会话，以及确保每个事务一个会话。
+ * HibernateTemplate 的缺点是具有一定的侵入性，使用它的代码被耦合到 Spring API 中。
+ * Hibernate3 引入的 SessionFactory 可以管理每个事务一个会话，
+ * 也就不再需要 HibernateTemplate，并能够避免 Spring API 的代码入侵。
+ * 这种方式的缺点是，它们抛出 Hibernate 特有的异常，而不是像 Spring 持久异常体系那样与 ORM 无关的异常。
  * 
  * @author 刘晨伟
  * 
@@ -22,7 +23,7 @@ import org.hibernate.SessionFactory;
  */
 public class HibernatePersonDao implements PersonDao {
 
-	// 直接使用SessionFactory
+	// 直接使用 SessionFactory
 	private SessionFactory sessionFactory;
 	
 	public SessionFactory getSessionFactory() {
@@ -35,7 +36,7 @@ public class HibernatePersonDao implements PersonDao {
 
 	@Override
 	public void save(Person person) {
-		// 通过SessionFactory获得会话对象
+		// 通过 SessionFactory 获得会话对象
 		getSessionFactory().getCurrentSession().saveOrUpdate(person);
 	}
 

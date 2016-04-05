@@ -3,15 +3,15 @@
  */
 package jdbc;
 
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
-
 /**
- * 基于JdbcTemplate的EmployeeDao实现
+ * 基于 JdbcTemplate 的 EmployeeDao 实现
  * 
  * @author 刘晨伟
  * 
@@ -32,8 +32,8 @@ public class JdbcEmployeeDao implements EmployeeDao {
 	private static final String SQL_SAVE = "insert into employee(name,email,age) values(?,?,?)";
 	
 	public void save(Employee employee) {
-		// JdbcTemplate将获取连接、创建语句并执行插入SQL。
-		// 对SQLException的处理也被隐藏了，JdbcTemplate会捕获全部SQLException，并将其转化成特定RuntimeException重新抛出。
+		// JdbcTemplate 将获取连接、创建语句并执行插入SQL。
+		// 对 SQLException 的处理也被隐藏了，JdbcTemplate 会捕获全部 SQLException，并将其转化成特定 RuntimeException 重新抛出。
 		getJdbcTemplate().update(
 				SQL_SAVE,
 				new Object[] { employee.getName(), employee.getEmail(), employee.getAge() });
@@ -62,8 +62,8 @@ public class JdbcEmployeeDao implements EmployeeDao {
 				new Object[] { name }, new RowMapper<Employee>() {
 
 					/**
-					 * RowMapper对象负责从ResultSet里提取数值并构造一个域对象（Domain Object，本例是Employee）。
-					 * 对于查询返回的每一行，JdbcTemplate都会调用RowMapper的mapRow()方法。
+					 * RowMapper 对象负责从 ResultSet 里提取数值并构造一个域对象（Domain Object，本例是 Employee）。
+					 * 对于查询返回的每一行，JdbcTemplate 都会调用 RowMapper的mapRow() 方法。
 					 * 
 					 * @see org.springframework.jdbc.core.RowMapper#mapRow(java.sql.ResultSet, int)
 					 */

@@ -3,18 +3,17 @@
  */
 package jdbc.daosupport;
 
+import jdbc.Employee;
+import jdbc.EmployeeDao;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.support.JdbcDaoSupport;
-
-import jdbc.Employee;
-import jdbc.EmployeeDao;
-
 /**
- * 继承JdbcDaoSupport的EmployeeDao实现
+ * 继承 JdbcDaoSupport 的 EmployeeDao 实现
  * 
  * @author 刘晨伟
  * 
@@ -25,7 +24,7 @@ public class JdbcEmployeeDao extends JdbcDaoSupport implements EmployeeDao {
 	private static final String SQL_SAVE = "insert into employee(name,email,age) values(?,?,?)";
 	
 	public void save(Employee employee) {
-		// 直接通过父类的getJdbcTemplate()获取JdbcTemplate实例
+		// 直接通过父类的 getJdbcTemplate() 获取 JdbcTemplate 实例
 		getJdbcTemplate().update(
 				SQL_SAVE,
 				new Object[] { employee.getName(), employee.getEmail(), employee.getAge() });

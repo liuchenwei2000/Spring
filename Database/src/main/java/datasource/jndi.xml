@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--  
-当Spring程序运行在一个JavaEE应用服务器中的时候，可以配置为通过JNDI获取数据源。
+当 Spring 程序运行在一个 JavaEE 应用服务器中的时候，可以配置为通过 JNDI 获取数据源。
 这样做的好处是：
-数据源可以在程序之外进行管理，程序本身只需要在访问数据库时请求数据源即可。
-而且，应用服务器管理的数据源通常会被组合起来，从而具有更好的性能，并能够由系统管理员进行热切换。
+数据源可以在应用程序之外进行管理，程序本身只需要在访问数据库时查找数据源即可。
+而且，应用服务器管理的数据源通常以池的方式组织，从而具有更好的性能，并能够由系统管理员进行热切换。
+-->
+<!--
+可以通过使用 jee 命名空间下的 <jee:jndi-lookup> 元素简化数据源配置。
+它可以用于检索 JNDI 中的任何对象（包括数据源）并将其应用于 Spring Bean 中。
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
-              
-	<!-- Spring的JndiObjectFactoryBean能够从JNDI获取任何对象（包括数据源）。 -->
-	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-		<!--  
-		属性 jndiName用于指定JNDI里数据源的名称。如果只设置了jndiName属性，那数据源就直接由它的值指定；
-		但如果程序是运行在JavaEE服务器里，还需要把resourceRef属性设置为true，
-		这意味着jndiName的值会被加上 java:comp/env/，从应用服务器的JNDI目录里获取数据源。
+		   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		   xmlns:jee="http://www.springframework.org/schema/jee"
+		   xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/jee
+               http://www.springframework.org/schema/jee/spring-jee-4.0.xsd ">
+
+		<!--
+		属性 jndiName 用于指定 JNDI 里数据源的名称。如果只设置了jndiName 属性，那数据源就直接由它的值指定；
+		但如果程序是运行在 JavaEE 服务器里，还需要把 resourceRef 属性设置为 true，
+		这意味着 jndiName 的值会被加上 java:comp/env/ 前缀，从应用服务器的 JNDI 目录里获取数据源。
 		-->
-		<property name="jndiName" value="/jdbc/MyDatasource" />
-		<property name="resourceRef" value="true" />
-	</bean>
+		<jee:jndi-lookup id="dataSource" jndi-name="/jdbc/MyDatasource" resource-ref="true" />
 </beans>         

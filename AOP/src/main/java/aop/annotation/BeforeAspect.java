@@ -16,6 +16,9 @@ import org.aspectj.lang.annotation.Before;
  * 创建日期：2014年11月24日
  */
 // 使用@Aspect注解定义一个切面类
+// <aop:aspect> 元素和 @AspectJ 注解都是把一个 POJO 转变为一个切面的有效形式。
+// 但是，<aop:aspect> 的优势是不需要实现切面功能的代码，通过 @AspectJ 则必须标注类和方法，
+// 它需要有源码，而 <aop:aspect> 可以引用任意一个 Bean。
 @Aspect
 public class BeforeAspect {
 	

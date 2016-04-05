@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--  
-Spring提供了JdbcDaoSupport、NamedParameterJdbcDaoSupport和SimpleJdbcDaoSupport类用于编写基于JDBC的DAO类的基类，
-可以让DAO类直接继承它们，然后把数据源直接装配到从XxxDaoSupport集成的dataSource属性，
-XxxDaoSupport会在内部创建一个合适的Template实例，从而使得XML文件中减少了一个Bean。
+Spring 提供了 JdbcDaoSupport、NamedParameterJdbcDaoSupport 和 SimpleJdbcDaoSupport 类用于编写基于 JDBC 的 DAO 类的基类，
+可以让 DAO 类直接继承它们，然后把数据源直接装配到从 XxxDaoSupport 集成的 dataSource 属性，
+XxxDaoSupport 会在内部创建一个合适的 Template 实例，从而使得 XML 文件中减少了一个 Bean。
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
              
 	<!-- 配置DAO -->             
 	<bean id="employeeDao" class="jdbc.daosupport.JdbcEmployeeDao">

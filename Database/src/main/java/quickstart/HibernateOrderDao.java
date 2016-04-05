@@ -6,7 +6,7 @@ package quickstart;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 /**
- * 基于Hibernate实现的DAO
+ * 基于 Hibernate 实现的DAO
  * 
  * @author 刘晨伟
  * 

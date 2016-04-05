@@ -8,7 +8,7 @@ package quickstart;
  * <p>
  * 模拟基本的CRUD操作。
  * <p>
- * DAO的作用在于提供一种手段来读取和写入数据库，它应该通过接口的形式来提供这种功能，让程序的其他部分能够访问它们。
+ * DAO 提供了数据读取和写入数据库中的一种方式，它应该以接口的形式发布功能。
  * 
  * @author 刘晨伟
  * 
@@ -16,11 +16,11 @@ package quickstart;
  */
 public interface OrderDAO {
 
-	public String insert(Order order);
+	String insert(Order order);
 	
-	public void update(Order order);
+	void update(Order order);
 	
-	public void delete(Order order);
+	void delete(Order order);
 	
-	public Order find(String id);
+	Order find(String id);
 }

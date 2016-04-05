@@ -14,11 +14,11 @@ package jdbc;
  */
 public interface EmployeeDao {
 
-	public void save(Employee employee);
+	void save(Employee employee);
 	
-	public void update(Employee employee);
+	void update(Employee employee);
 	
-	public void delete(Employee employee);
+	void delete(Employee employee);
 	
-	public Employee find(String name);
+	Employee find(String name);
 }

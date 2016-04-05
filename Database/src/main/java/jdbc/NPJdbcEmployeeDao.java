@@ -3,22 +3,22 @@
  */
 package jdbc;
 
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-
 /**
- * 基于NamedParameterJdbcTemplate的EmployeeDao实现
+ * 基于 NamedParameterJdbcTemplate 的 EmployeeDao 实现
  * <p>
- * JdbcTemplate使用了索引参数，在把参数传递给update()方法时，必须注意参数值的次序。
- * 如果在修改SQL时不得不改变参数的次序，那么值的次序也必须随之改变。
- * 为了避免这种情况，可以使用命名参数，给SQL里的每个参数赋予一个名称，这样参数的次序就没必要保持一致了。
- * NamedParameterJdbcTemplat支持命名参数。
+ * JdbcTemplate 使用了索引参数，在把参数传递给 update() 方法时，必须注意参数值的次序。
+ * 如果在修改 SQL 时不得不改变参数的次序，那么值的次序也必须随之改变。
+ * 为了避免这种情况，可以使用命名参数，给 SQL 里的每个参数赋予一个名称，这样参数的次序就没必要保持一致。
+ * NamedParameterJdbcTemplat 支持命名参数。
  * 
  * @author 刘晨伟
  * 

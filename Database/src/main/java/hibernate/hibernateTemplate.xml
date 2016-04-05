@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--  
-使用HibernateTemplate访问数据
+使用 HibernateTemplate 访问数据
 
-Spring 的 HibernateTemplate 在 Hibernate Session之上提供了一个抽象层，
-其主要功能是简化打开和关闭Hibernate会话，并且把Hibernate的特定异常转化为Spring ORM异常之一。
+Spring 的 HibernateTemplate 在 Hibernate Session 之上提供了一个抽象层，
+其主要功能是简化打开和关闭 Hibernate 会话，并且把 Hibernate 的特定异常转化为 Spring runtime 异常。
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -17,23 +17,23 @@ Spring 的 HibernateTemplate 在 Hibernate Session之上提供了一个抽象层
 	
 	<!-- 配置 HibernateTemplate -->
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
-		<!-- sessionFactory属性是 org.hibernate.SessionFactory 实现的一个引用。 -->
+		<!-- sessionFactory 属性是 org.hibernate.SessionFactory 实现的一个引用。 -->
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
 	<!--  
-	使用典型的Hibernate映射文件
+	使用典型的 Hibernate 映射文件
 	
-	如果要使用Hibernate的典型XML映射文件，就应该使用Spring的LocalSessionFactoryBean。
-	它是个Spring工厂Bean，用于生成HibernateSessionFactory实例，从一个或多个XML映射文件获取映射元数据。
+	如果要使用 Hibernate 的典型 XML 映射文件，就应该使用 Spring 的 LocalSessionFactoryBean。
+	它是个 Spring 工厂 Bean，用于生成 HibernateSessionFactory 实例，从一个或多个 XML 映射文件获取映射元数据。
 	
-	如果使用基于Annotation的域对象，可以使用Spring的AnnotationSessionFactoryBean来创建SessionFactory。
+	如果使用基于 Annotation 的域对象，可以使用 Spring 的 AnnotationSessionFactoryBean 来创建 SessionFactory。
 	-->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="mappingResources">
 			<list>
-				<!-- 这里可以有多个hbm文件 -->
+				<!-- 这里可以有多个 hbm 文件 -->
 				<value>hibernate/Person.hbm.xml</value>
 			</list>
 		</property>

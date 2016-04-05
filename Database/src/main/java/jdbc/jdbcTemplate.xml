@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--  
-使用JdbcTemplate访问数据
+使用 JdbcTemplate 访问数据
 
-编写基于JDBC的DAO涉及配置JDBC模板Bean、把它装配到DAO类、使用这个模板访问数据库。
-这个过程需要在Spring配置文件里至少配置3个Bean：一个数据源、一个模板、一个DAO。
+编写基于 JDBC 的 DAO 涉及配置 JDBC 模板 Bean、把它装配到 DAO 类、使用这个模板访问数据库。
+这个过程需要在 Spring 配置文件里至少配置3个 Bean：一个数据源、一个模板、一个 DAO。
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
