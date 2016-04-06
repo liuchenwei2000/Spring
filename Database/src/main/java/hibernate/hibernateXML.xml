@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--  
-使用 HibernateTemplate 访问数据
-
-Spring 的 HibernateTemplate 在 Hibernate Session 之上提供了一个抽象层，
-其主要功能是简化打开和关闭 Hibernate 会话，并且把 Hibernate 的特定异常转化为 Spring runtime 异常。
--->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
@@ -12,34 +6,28 @@ Spring 的 HibernateTemplate 在 Hibernate Session 之上提供了一个抽象�
              
 	<!-- 配置DAO -->             
 	<bean id="personDao" class="hibernate.HibernatePersonDao">
-		<property name="hibernateTemplate" ref="hibernateTemplate" />
-	</bean>
-	
-	<!-- 配置 HibernateTemplate -->
-	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
-		<!-- sessionFactory 属性是 org.hibernate.SessionFactory 实现的一个引用。 -->
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
-	<!--  
-	使用典型的 Hibernate 映射文件
-	
+	<!--
+	配置 SessionFactory
+
 	如果要使用 Hibernate 的典型 XML 映射文件，就应该使用 Spring 的 LocalSessionFactoryBean。
 	它是个 Spring 工厂 Bean，用于生成 HibernateSessionFactory 实例，从一个或多个 XML 映射文件获取映射元数据。
-	
-	如果使用基于 Annotation 的域对象，可以使用 Spring 的 AnnotationSessionFactoryBean 来创建 SessionFactory。
 	-->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
+		<!-- mappingResources 属性装配一个或多个 Hibernate 映射文件，这些文件中定义了应用程序的持久化策略。 -->
 		<property name="mappingResources">
 			<list>
-				<!-- 这里可以有多个 hbm 文件 -->
 				<value>hibernate/Person.hbm.xml</value>
 			</list>
 		</property>
+		<!-- hibernateProperties 属性可以对 Hibernate 的属性进行配置 -->
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>
 	</bean>

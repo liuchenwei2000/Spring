@@ -1,0 +1,3 @@
+
+JPA 是基于 POJO 的持久化机制，从 Hibernate 和 JDO 上借鉴了很多理念并加入了注解的特性，是下一代 Java 持久化标准。
+Spring 支持 JPA 后，很多开发人员都推荐在基于 Spring 的应用程序中使用 JPA 实现持久化。

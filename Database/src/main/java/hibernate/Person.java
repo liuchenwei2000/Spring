@@ -3,6 +3,8 @@
  */
 package hibernate;
 
+import javax.persistence.Entity;
+
 /**
  * Person
  * <p>
@@ -12,6 +14,7 @@ package hibernate;
  * 
  * 创建日期：2014年12月1日
  */
+@Entity
 public class Person {
 
 	private Long id;

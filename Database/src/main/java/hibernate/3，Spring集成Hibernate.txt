@@ -1,0 +1,6 @@
+
+以前，在 Spring 应用程序中使用 Hibernate 是通过 HibernateTemplate 进行的。HibernateTemplate 的职责之一是
+管理 Hibernate 的 Session。这涉及打开和关闭 Session 并确保每个事务使用相同的 Session。
+
+机关 HibernateTemplate 还存在，但这已经不是使用 Hibernate 的最佳方式，Hibernate 3 所引入的上下文 Session（Contextual session）
+是 Hibernate 本身所提供的保证每个事务使用同一 Session 的方案，因此没有必要再使用 HibernateTemplate 来保证这一行为。

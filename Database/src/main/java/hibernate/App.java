@@ -14,7 +14,8 @@ public class App {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("hibernate/hibernateTemplate.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("hibernate/hibernateXML.xml");
+//		ApplicationContext context = new ClassPathXmlApplicationContext("hibernate/hibernateAnnotation.xml");
 
 		PersonDao dao = (PersonDao) context.getBean("personDao");
 

@@ -3,18 +3,27 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
                http://www.springframework.org/schema/beans/spring-beans-4.0.xsd ">
-             
-	<!-- 配置DAO -->             
-	<bean id="personDao" class="hibernate.context.HibernatePersonDao">
+
+	<!-- 配置DAO -->
+	<bean id="personDao" class="hibernate.HibernatePersonDao">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
-	<!-- 配置 SessionFactory -->
+
+	<!--  
+	使用典型的 Hibernate 映射文件
+
+	如果使用基于 Annotation 的域对象，可以使用 AnnotationSessionFactoryBean 来创建 SessionFactory。
+	-->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="mappingResources">
+		<!--
+		packagesToScan 属性告诉 Spring 扫描一个或多个包以查找域对象类，这些类通过注解方式表明要使用 Hibernate 进行持久化。
+		使用 JPA 的 @Entity 或 @MappedSuperclass 注解以及 Hibernate 的 @Entity 注解进行标注的类都会包含在内。
+		-->
+		<property name="packagesToScan">
 			<list>
-				<value>hibernate/Person.hbm.xml</value>
+				<!-- 可以配置扫描多个包 -->
+				<value>hibernate</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -23,7 +32,13 @@
 			</props>
 		</property>
 	</bean>
-	
+
+	<!--
+	为了给不使用 HibernateTemplate 的 DAO 添加异常转换功能，需要添加下面的后处理器。
+	它能捕获任何持久化框架（本例是 Hibernate）相关的异常并以 Spring 的非检查异常的形式重新抛出。
+	-->
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
 	<!-- 配置数据源 -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
