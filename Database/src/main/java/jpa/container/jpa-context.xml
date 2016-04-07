@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+使用 Container-managed 类型的 JPA
+
+当在容器中运行时，可以使用容器（本场景是Spring）提供的信息来生成 EntityManagerFactory。
+可以将数据源的配置信息放在 Spring 应用上下文中（即本XML文件）而不是在 persistence.xml 中。
+
+一般而言，对于简单的应用程序来讲，LocalEntityManagerFactoryBean 就足够了；
+但因为 LocalContainerEntityManagerFactoryBean 能够在 Spring 中配置 JPA，所以对于生产级的场景更适合。
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jee="http://www.springframework.org/schema/jee"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd
+               http://www.springframework.org/schema/tx
+               http://www.springframework.org/schema/tx/spring-tx-4.0.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+	<!-- 提供注解支持 -->
+	<context:annotation-config />
+
+	<!-- 自动扫描包 -->
+	<context:component-scan base-package="jpa" />
+
+	<!-- 开启 Spring 提供的基于注解的声明式事务管理 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+	<!--
+	配置 EntityManagerFactory
+
+	LocalContainerEntityManagerFactoryBean 生成容器管理类型的 EntityManagerFactory
+	-->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<!--
+		配置 dataSource 属性，跟使用 JDBC 的配置方式没什么区别。
+		尽管数据源还可以在 persistence.xml 中配置，但这个属性指定的数据源具有更高的优先级。
+		-->
+		<property name="dataSource" ref="dataSource" />
+		<!-- jpaVendorAdapter 属性用于指明所使用的哪一个厂商的 JPA 实现 -->
+		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
+	</bean>
+
+	<!--
+	使用 Hibernate 作为 JPA 实现，配置一个 HibernateJpaVendorAdapter
+	-->
+	<bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<!-- database 属性标识是用的数据库类型，常见的值有 MYSQL、ORACLE、DB2、SQLSERVER -->
+		<property name="database" value="MYSQL"/>
+		<property name="showSql" value="true"/>
+		<property name="generateDdl" value="true"/>
+		<property name="databasePlatform" value="org.hibernate.dialect.MySQL5Dialect"/>
+	</bean>
+
+	<!--
+	如果将 Spring 应用程序部署在应用服务器中，可能 EntityManagerFactory 已经被创建好且置于 JNDI 中等待使用。
+	这种情况下，可以使用 Spring 的 jee 命名空间吓得 <jee:jndi-lookup> 元素来获取对 EntityManagerFactory 的引用。
+
+	<jee:jndi-lookup id="entityManagerFactory" jndi-name="persistence/bookJPA" />
+	-->
+
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/test" />
+		<property name="username" value="root" />
+		<property name="password" value="woailo99" />
+	</bean>
+</beans>         

@@ -10,12 +10,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- * 使用 SessionFactory 的 PersonDao
+ * 不使用 Spring 模板的纯 JPA DAO
  * <p>
- * 使用 Hibernate 的主要接口是 org.hibernate.Session。
- * 该接口提供了基本的数据访问功能（CRUD），使得应用程序的 DAO 能够满足所有的持久化需求。
- * SessionFactory 主要负责 Hibernate Session 的打开、关闭以及管理。
- * 
+ *
  * @author 刘晨伟
  * 
  * 创建日期：2014年12月2日
@@ -39,7 +36,8 @@ public class BookDaoImpl implements BookDao {
 
 	@Override
 	public void delete(Book book) {
-		entityManager.remove(book);
+		// 这么写是为了解决 InvalidDataAccessApiUsageException: Removing a detached instance
+		entityManager.remove(entityManager.contains(book) ? book : entityManager.merge(book));
 	}
 
 	@Override

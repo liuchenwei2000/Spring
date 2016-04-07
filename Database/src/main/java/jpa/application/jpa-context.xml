@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+使用 Application-managed 类型的 JPA
+
+此种类型下，绝大部分配置信息来源于一个名为 persistence.xml 的配置文件，且其必须位于类路径的 META-INF 目录下。
+因为大部分的配置信息都在 persistence.xml 文件中，所以 Spring 的配置文件需要配置的就很少了。
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd
+               http://www.springframework.org/schema/tx
+               http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	<!-- 提供注解支持 -->
+	<context:annotation-config />
+
+	<!-- 自动扫描包 -->
+	<context:component-scan base-package="jpa" />
+
+	<!-- 开启 Spring 提供的基于注解的声明式事务管理 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+	<!--
+	配置 EntityManagerFactory
+
+	LocalEntityManagerFactoryBean 生成 Application-managed 类型的 EntityManagerFactory
+	-->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+		<!-- persistenceUnitName 属性的值就是 persistence.xml 中的持久化单元的名称 -->
+		<property name="persistenceUnitName" value="bookJPA" />
+	</bean>
+</beans>

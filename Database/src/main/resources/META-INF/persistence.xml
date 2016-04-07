@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+本配置文件的作用在于定义一个或多个持久化单元以及一些其他的配置，如数据源和基于XML的配置文件。
+-->
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+
+    <!--
+    定义一个持久化单元，持久化单元是同一个数据源下的一个或多个持久化类。
+
+    name 属性用于定义持久化单元的名字（必输，空值也合法）
+    transaction-type 指定事务类型（可选），JTA 或 RESOURCE_LOCAL
+    -->
+    <persistence-unit name="bookJPA" transaction-type="RESOURCE_LOCAL">
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/test"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="woailo99"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
