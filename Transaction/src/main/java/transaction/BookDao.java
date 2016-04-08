@@ -12,9 +12,9 @@ package transaction;
  */
 public interface BookDao {
 
-	public void save(Book book);
+	void save(Book book);
 	
-	public Book find(String name);
+	Book find(String name);
 	
-	public void deleteAll();
+	void deleteAll();
 }

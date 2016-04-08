@@ -3,21 +3,20 @@
  */
 package transaction.programmatic;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionTemplate;
-
 import transaction.Book;
 import transaction.BookDao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
 /**
- * 有事务控制的BookDao实现
+ * 编码式事务控制的 BookDao 实现
  * 
  * @author 刘晨伟
  * 
@@ -25,7 +24,7 @@ import transaction.BookDao;
  */
 public class JdbcBookDao extends JdbcDaoSupport implements BookDao {
 
-	// 利用Spring的TransactionTemplate为程序添加事务管理能力。
+	// 利用 Spring 的 TransactionTemplate 为程序添加事务管理能力
 	private TransactionTemplate transactionTemplate;
 
 	public TransactionTemplate getTransactionTemplate() {
@@ -59,7 +58,8 @@ public class JdbcBookDao extends JdbcDaoSupport implements BookDao {
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
-					status.setRollbackOnly();// 出现异常时回滚
+					// 如果遇到了异常，可以调用 setRollbackOnly() 方法回滚事务
+					status.setRollbackOnly();
 				}
 				return null;
 			}

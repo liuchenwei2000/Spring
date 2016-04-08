@@ -2,17 +2,14 @@
 <!-- JDBC事务 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
               
 	<!-- 
-	使用JDBC作为持久化手段时，DataSourceTransactionManager可用于事务管理。
+	使用 JDBC 作为持久化手段时，DataSourceTransactionManager 可用于事务管理。
 	
-	DataSourceTransactionManager会使用从DataSource获取的connection对象管理事务：
-	一个成功的事务通过调用当前connection的commit()方法来提交，一个失败的事务通过调用rollback()方法完成回滚。
+	DataSourceTransactionManager 会使用从 DataSource 获取的 connection 对象管理事务：
+	成功的事务通过调用当前 connection 的 commit() 方法来提交，失败的事务通过调用 rollback() 方法完成回滚。
 	-->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />

@@ -4,25 +4,22 @@
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
              
-	<!-- 配置DAO -->             
+	<!-- 配置 DAO -->
 	<bean id="bookDao" class="transaction.programmatic.JdbcBookDao">
 		<property name="transactionTemplate" ref="transactionTemplate" />
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
-	<!-- 配置TransactionTemplate -->
+	<!-- 配置 TransactionTemplate -->
 	<bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
-		<!-- TransactionTemplate需要注入一个TransactionManager来实现管理事务的功能。 -->
+		<!-- TransactionTemplate 需要注入一个 TransactionManager 来实现管理事务的功能。 -->
 		<property name="transactionManager" ref="transactionManager" />
 	</bean>
 	
-	<!-- 配置TransactionManager -->
+	<!-- 配置 TransactionManager -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>

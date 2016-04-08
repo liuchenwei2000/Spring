@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- JPA 事务 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+              
+	<!-- 
+	使用 JTA 作为持久化手段时，JtaTransactionManager 可用于事务管理。
+	
+	JtaTransactionManager 把事务管理委托给一个 JTA 的实现，JTA 指定一个标准的 API 来协调应用程序和一个或多个数据源之间的事务。
+	这里的 transactionManagerName 属性指定了一个 JTA 事务管理器，这个事务管理器应该能够通过 JNDI 找到。
+	-->
+	<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+		<property name="transactionManagerName" value="java:/TransactionManager" />
+	</bean>
+</beans>         

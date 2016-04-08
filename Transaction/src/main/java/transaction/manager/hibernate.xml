@@ -2,17 +2,15 @@
 <!-- Hibernate事务 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
               
 	<!-- 
-	使用Hibernate作为持久化手段时，HibernateTransactionManager可用于事务管理。
+	使用 Hibernate 作为持久化手段时，HibernateTransactionManager 可用于事务管理。
 	
-	HibernateTransactionManager把事务管理委托给一个从当前Hibernate session中获取到的 org.hibernate.Transaction对象。
-	一个事务成功完成时，将会调用Transaction对象的commit()方法来；一个事务失败时，将会调用Transaction对象rollback()方法。
+	HibernateTransactionManager 把事务管理委托给一个从当前 Hibernate session 中获取到的 org.hibernate.Transaction 对象。
+	当事务成功完成时，将会调用 Transaction 对象的 commit() 方法来提交；
+	当事务失败时，将会调用 Transaction 对象 rollback() 方法进行回滚。
 	-->
 	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />

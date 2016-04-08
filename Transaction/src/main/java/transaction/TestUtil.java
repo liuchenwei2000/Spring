@@ -3,14 +3,11 @@
  */
 package transaction;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import transaction.Book;
-import transaction.BookDao;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Transaction 部分测试工具
@@ -40,7 +37,5 @@ public class TestUtil {
 		System.out.println(dao.find("Thinking in Java_" + date));
 		
 		dao.save(new Book("3", "Thinking in Java_" + date, "Bruce Eckel"));
-
-		((ClassPathXmlApplicationContext) context).close();
 	}
 }
