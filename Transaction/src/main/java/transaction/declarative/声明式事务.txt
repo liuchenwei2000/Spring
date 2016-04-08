@@ -1,10 +1,9 @@
 
-Spring提供了对POJO的声明式事务的支持，这是Spring的一个重大特性，因为现在声明原子操作，有了EJB容器之外的选择。
+Spring 提供了对 POJO 的声明式事务的支持，这是 Spring 的一个重大特性，因为现在声明式原子操作，有了EJB容器之外的选择。
 
-Spring对声明式事务管理的支持是通过它的AOP框架来实现的，因为事务是系统级的服务，凌驾于应用程序的主要功能之上。
-可以把Spring的事务想象成是一个切面，用事务性边界包裹着一个方法。
+Spring 对声明式事务的支持是通过它的 AOP 框架来实现的，可以把 Spring 事务想象成将方法包装上了事务边界的切面。
 
-Spring提供了三种配置声明式事务的方式：
-1，使用Spring的 TransactionProxyFactoryBean。
-2，使用简单的XML声明（XML-declared）。
+Spring 提供了三种配置声明式事务的方式：
+1，使用 Spring 的 TransactionProxyFactoryBean。（已过时）
+2，使用简单的 XML 声明（XML-declared）。
 3，使用注释驱动（annotation-driven）事务。

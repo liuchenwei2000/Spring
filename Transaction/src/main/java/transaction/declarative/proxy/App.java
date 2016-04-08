@@ -8,7 +8,7 @@ import transaction.TestUtil;
 /**
  * 传统古旧的声明式事务实现方式示例
  * <p>
- * Spring2.0之前的做法，使用TransactionProxyFactoryBean。
+ * Spring2.0 之前的做法，使用 TransactionProxyFactoryBean。
  * 
  * @author 刘晨伟
  * 

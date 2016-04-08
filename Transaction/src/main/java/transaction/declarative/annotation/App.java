@@ -8,7 +8,7 @@ import transaction.TestUtil;
 /**
  * 注解的声明式事务实现方式示例
  * <p>
- * Spring2.0之后的做法之一，使用注解驱动。
+ * Spring2.0 之后的做法之一，使用注解驱动。
  * 
  * @author 刘晨伟
  * 

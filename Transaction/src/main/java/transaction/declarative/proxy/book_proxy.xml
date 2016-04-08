@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-在Spring2.0之前，声明式事务管理通过使用TransactionProxyFactoryBean代理POJO来完成，它知道如何通过使用事务性边界包裹一个POJO的方法来代理它们。
+在 Spring2.0 之前，声明式事务管理通过使用 TransactionProxyFactoryBean 代理 POJO 来完成，它知道如何通过使用事务性边界包裹一个POJO的方法来代理它们。
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-               http://www.springframework.org/schema/context
-               http://www.springframework.org/schema/context/spring-context-4.0.xsd ">
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
            
 	<!-- 配置  TransactionProxyFactoryBean -->           
 	<bean id="bookDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
-		<!-- 装配事务目标POJO -->
+		<!-- 装配事务目标 POJO -->
 		<property name="target" ref="realBookDao" />
 		<!-- 指定代理接口 -->
 		<property name="proxyInterfaces" value="transaction.BookDao" />
 		<!-- 装配事务管理器 -->
 		<property name="transactionManager" ref="transactionManager" />
 		<!-- 
-		TransactionProxyFactoryBean将基于在transactionAttributes属性中定义的事务参数，来使用这个事务管理器启动、挂起、提交和回滚事务。
+		TransactionProxyFactoryBean 将基于在 transactionAttributes 属性中定义的事务参数，来使用这个事务管理器启动、挂起、提交和回滚事务。
 		声明哪些方法将在一个事务内运行，以及相应的事务参数是什么。
 		-->
 		<property name="transactionAttributes">
 			<props>
 				<!-- 
-				每一个<prop>的键是一个方法名称模式，而相应的值将为所选方法定义事务参数。 
+				每一个 <prop> 的键是一个方法名称模式，而相应的值将为所选方法定义事务参数。
 				值格式为：PROPAGATION, ISOLATION, readOnly, -Exceptiom, +Exception
 				对应含义为：传播行为，隔离级别（非必须），只读标记（非必须），回滚规则（非必须） 
 				-->

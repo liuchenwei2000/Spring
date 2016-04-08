@@ -6,9 +6,9 @@ package transaction.declarative.xml;
 import transaction.TestUtil;
 
 /**
- * XML配置的声明式事务实现方式示例
+ * XML 配置的声明式事务实现方式示例
  * <p>
- * Spring2.0之后的做法之一，使用tx命名空间和AOP。
+ * Spring2.0 之后的做法之一，使用 tx 命名空间和 AOP。
  * 
  * @author 刘晨伟
  * 

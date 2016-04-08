@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-tx命名空间还提供有<tx:annotation-driven>元素，用来支持基于注解驱动的声明式事务。
+tx 命名空间还提供有 <tx:annotation-driven> 元素，用来支持基于注解驱动的声明式事务。
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:aop="http://www.springframework.org/schema/aop"
     xmlns:tx="http://www.springframework.org/schema/tx"
     xsi:schemaLocation="http://www.springframework.org/schema/beans 
            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-           http://www.springframework.org/schema/context
-           http://www.springframework.org/schema/context/spring-context-4.0.xsd
-           http://www.springframework.org/schema/aop 
-           http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
-           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx
            http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
     
 	<!-- 
-	<tx:annotation-driven>元素告诉Spring在类层面或者方法层面检查应用程序上下文中的所有Bean，并且寻找标注了@Transactional 的Bean。
-	对于每一个标注了@Transactional 的Bean，<tx:annotation-driven>元素将自动把事务通知的内容通知给它。
-	通知的事务参数将由@Transactional 注解的参数来定义。
+	<tx:annotation-driven> 元素告诉 Spring 在类层面或者方法层面检查应用程序上下文中的所有Bean，
+	并且寻找标注了 @Transactional 的Bean。对于每一个标注了@Transactional 的 Bean，
+	<tx:annotation-driven> 元素将自动为它添加事务通知，通知的事务属性将由 @Transactional 注解的参数来定义。
 	
-	可以使用transaction-manager参数（参数默认值是transactionManager）指定一个特定的事务管理器Bean。 
+	可以使用 transaction-manager 参数（参数默认值是 transactionManager）指定一个特定的事务管理器 Bean。
 	-->
 	<tx:annotation-driven transaction-manager="txManager" />
 	    	       

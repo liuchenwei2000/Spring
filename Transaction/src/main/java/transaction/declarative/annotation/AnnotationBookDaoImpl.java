@@ -3,21 +3,20 @@
  */
 package transaction.declarative.annotation;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
 import transaction.Book;
 import transaction.BookDao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
 /**
- * 使用注解实现声明式事务控制的BookDao实现
+ * 使用注解实现声明式事务控制的 BookDao 实现
  * <p>
  * 注解允许你在代码中，而不是外部配置文件中直接定义元数据，非常适于声明事务。
  * <p>
