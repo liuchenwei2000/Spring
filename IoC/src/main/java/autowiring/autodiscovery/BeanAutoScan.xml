@@ -18,4 +18,7 @@
 	-->
 	<context:component-scan base-package="autowiring.autodiscovery" />
 
+    <!-- 如果需要扫描多个包，可以继续追加如下配置 -->
+    <!-- <context:component-scan base-package="foo.bar" /> -->
+
 </beans>
