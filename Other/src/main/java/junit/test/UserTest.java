@@ -1,12 +1,12 @@
-package test;
-
-import javax.annotation.Resource;
+package junit.test;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import javax.annotation.Resource;
 
 /**
  * 
@@ -18,7 +18,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * 创建日期：2015年11月21日
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({ "classpath*:testspring*-context.xml" })
+@ContextConfiguration({ "classpath*:testcase/testspring-context.xml" })
 public class UserTest
 {
     @Resource

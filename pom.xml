@@ -11,7 +11,7 @@
         <module>AOP</module>
         <module>Database</module>
         <module>Transaction</module>
-        <module>JUnit</module>
+        <module>Other</module>
     </modules>
 
     <build>

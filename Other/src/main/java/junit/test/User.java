@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test;
+package junit.test;
 
 import org.springframework.stereotype.Component;
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+               
+	<!--
+	使用 <context:property-placeholder> 标签配置外部属性文件：
+	占位符配置将从 /config/db.properties 的文件中获取属性值，该文件位于类路径的根目录下。
+	-->
+	<context:property-placeholder location="classpath:/config/db.properties" />
+
+	<!--
+	也可以从文件系统的属性文件中获取配置信息：
+	<context:property-placeholder location="file:///etc/config/db.properties" />
+	-->
+
+	<!--
+	可以将 Spring 配置中的硬编码值替换为基于 db.properties 属性的占位符变量。
+	变量形如 ${expression}，其中 expression 与 db.properties 的属性名保持一致。
+	-->
+	<bean id="dataSource" class="configuration.DataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+</beans>
