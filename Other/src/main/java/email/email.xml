@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+               
+	<context:property-placeholder location="classpath:/config/email.properties" />
+
+	<!--
+	在配置文件中使用 JavaMailSenderImpl，为其配置所需要的属性:
+	host：要用来发送邮件的服务器主机名
+	port：邮件服务器端口号（默认 25，即标准 SMTP 端口）
+	username、password：用于认证的用户名和密码
+	-->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="${mailserver.host}" />
+		<property name="port" value="${mailserver.port}" />
+		<property name="username" value="${mailserver.username}" />
+		<property name="password" value="${mailserver.password}" />
+	</bean>
+
+	<!-- 将 mailSender 装配到 Bean 中使用 -->
+	<bean id="emailService" class="email.EmailService">
+		<property name="mailSender" ref="mailSender" />
+		<property name="from" value="${mailserver.email}" />
+		<property name="velocityEngine" ref="velocityEngine" />
+	</bean>
+
+	<!-- VelocityEngineFactoryBean 能够在 Spring 上下文中很便利地生成 VelocityEngine -->
+	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<!-- 配置从类路径下加载 Velocity 模板 -->
+		<property name="velocityProperties">
+			<value>
+				resource.loader=class
+				class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+			</value>
+		</property>
+	</bean>
+</beans>

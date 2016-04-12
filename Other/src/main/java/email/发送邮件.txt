@@ -1,0 +1,2 @@
+
+Spring 邮件抽象的核心是 MailSender 接口，它实现了邮件的发送。Spring 自带一个实现类 JavaMailSenderImpl。

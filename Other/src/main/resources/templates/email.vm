@@ -1,0 +1,9 @@
+<html>
+<body>
+<h4>Hello ${username}</h4>
+<p>
+    ${message}
+<p>
+    <img src='cid:logo'>
+</body>
+</html>
