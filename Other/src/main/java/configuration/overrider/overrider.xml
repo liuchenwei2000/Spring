@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+               
+	<!--
+	Spring 外部化配置的另一种方式是使用属性文件来重写 Bean 属性。
+	这种情况下不需要占位符，属性要么使用默认值装配要么使用重写值装配。
+	如果外部属性与 Bean 的属性匹配，那么将使用外部值来替换 Spring 明确装配的值。
+
+	使用 <context:property-override> 标签配置外部属性文件。
+	-->
+	<context:property-override location="classpath:/config/db_overrider.properties" />
+
+	<!--
+	为了让属性重写知道 db_overrider.properties 中的属性匹配到 Spring 应用上下文中的哪个 Bean 属性，
+	必须将 Spring 中的 Bean 和属性名映射到属性文件的属性名上。
+
+	在没有 db_overrider.properties 文件时，将使用 Spring 配置中明确声明的值。
+	但如果 properties 文件存在，并包含 Bean 中定义的属性值，则这些属性值将优先于本文件中的配置。
+	-->
+	<bean id="dataSource" class="configuration.DataSource">
+		<property name="username" value="aaa" />
+		<property name="password" value="12345678" />
+		<property name="dbType" value="MySQL" />
+	</bean>
+</beans>

@@ -1,0 +1,6 @@
+
+JNDI 是能够在目录中通过名字查找对象的 Java API，为 Java 应用程序提供了访问中央仓库存储和检索应用对象的功能。
+它通常应用于 JavaEE 中，用来检索和获取 JDBC 数据源以及 JTA 事务管理器。
+
+Spring 的 JNDI 抽象使得可以在 Spring 上下文配置文件中声明 JNDI 查找信息，这样就可以将 JNDI 管理的对象
+装配到其他 Spring Bean 的属性中，此时 JNDI 对象就像是 Spring 应用上下文中的 Bean 一样。

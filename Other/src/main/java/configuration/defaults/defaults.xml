@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+               
+	<!--
+	默认情况下，Spring 上下文加载以及创建 Bean 时会抛出异常。
+	但是可以配置在失败时不抛出异常，需要设置 ignore-resource-not-found 和 ignore-unresolvable 属性。
+	将这两个属性设置为 true，当占位符变量无法解析或属性文件不存在时则不会抛出异常，占位符会是未解析的状态。
+
+	与其装配没有用的占位符变量，不如装配默认值，也就是 properties-ref 的用处。
+	这个属性可以设置 Properties 类型 Bean 的 id，这个 Bean 包含了默认使用的属性。
+	如果占位符变量无法在 db.properties 文件中找到，则会使用 defaultConfiguration Bean 中的默认值。
+	-->
+	<context:property-placeholder
+			location="classpath:/config/db.properties"
+			ignore-resource-not-found="true"
+			ignore-unresolvable="true"
+			properties-ref="defaultConfiguration"
+	/>
+
+	<bean id="dataSource" class="configuration.DataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="dbType" value="${jdbc.dbType}" />
+	</bean>
+
+	<!-- 默认配置 Bean -->
+	<util:properties id="defaultConfiguration">
+		<prop key="jdbc.driverClassName">com.mysql.jdbc.Driver</prop>
+		<prop key="jdbc.url">jdbc:mysql://localhost:3306/test</prop>
+		<prop key="jdbc.username">aaa</prop>
+		<prop key="jdbc.password">12345678</prop>
+		<prop key="jdbc.dbType">MySQL</prop>
+	</util:properties>
+</beans>
